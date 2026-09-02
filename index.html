@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Lesko Help Quick Guide Library</title>
+<meta name="description" content="Every Lesko Help quick guide in one searchable place. Filter by topic, download the PDF, tick off the organizations you contacted, keep notes, and bookmark the guides you need.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="assets/styles.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%232C4DC9'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='40' font-weight='700' fill='white' text-anchor='middle'%3E?%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+<div class="frame" aria-hidden="true"></div>
+
+<div class="page">
+  <header class="masthead">
+    <a class="brand" href="#" data-action="home">
+      <span class="brand-mark" aria-hidden="true">?</span>
+      <span class="brand-word"><span class="top">Lesko</span><span class="bottom">Help</span></span>
+    </a>
+    <div class="suits" aria-hidden="true"><span>♠</span><span>♥</span><span>♦</span><span>♣</span></div>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Every quick guide,<br>in <em>one place.</em></h1>
+      <p class="lede">Search the whole Lesko Help library, open a guide, download the PDF, and tick off the organizations you have contacted. Bookmark the guides you need and keep your notes right here.</p>
+      <div class="stats" id="stats"></div>
+    </div>
+    <aside class="privacy">
+      <div class="eyebrow">🔒&nbsp; 100% private</div>
+      <p>No sign-up. No SSN, ever. Your bookmarks, notes and check-marks stay on this device. <a href="#" data-action="privacy">Details</a></p>
+    </aside>
+  </section>
+
+  <nav class="tabs" role="tablist" aria-label="Sections">
+    <button class="tab" role="tab" id="tab-library" aria-selected="true" aria-controls="view-library" data-tab="library">01 · The Library</button>
+    <button class="tab" role="tab" id="tab-mine" aria-selected="false" aria-controls="view-mine" data-tab="mine">02 · My Guides <span class="badge" id="mine-badge" hidden>0</span></button>
+    <button class="tab" role="tab" id="tab-request" aria-selected="false" aria-controls="view-request" data-tab="request">03 · Request a Guide</button>
+  </nav>
+
+  <!-- ===== Library ===== -->
+  <section id="view-library" role="tabpanel" aria-labelledby="tab-library">
+    <div class="panel">
+      <div class="panel-head">
+        <h2><span class="suit" aria-hidden="true">♠</span>Find your guide</h2>
+        <span class="count" id="result-count"></span>
+      </div>
+      <div class="toolbar">
+        <label class="search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input id="q" type="search" placeholder="Search guides, topics, organizations…" autocomplete="off" aria-label="Search guides">
+          <button class="clear" id="q-clear" type="button" hidden>Clear</button>
+        </label>
+        <div class="filters">
+          <div class="filter-row">
+            <span class="filter-label">Zone</span>
+            <div id="zones" class="filter-row" role="group" aria-label="Zone"></div>
+          </div>
+          <div class="filter-row">
+            <span class="filter-label">Topic</span>
+            <div id="topics" class="filter-row" role="group" aria-label="Topic"></div>
+          </div>
+          <div class="filter-row">
+            <span class="filter-label">Show</span>
+            <div class="seg" role="group" aria-label="Type" id="kinds">
+              <button type="button" data-kind="all" aria-pressed="true">Everything</button>
+              <button type="button" data-kind="guide" aria-pressed="false">Quick guides &amp; checklists</button>
+              <button type="button" data-kind="lesson" aria-pressed="false">Lessons</button>
+            </div>
+            <span class="spacer"></span>
+            <span class="filter-label">Sort</span>
+            <div class="seg" role="group" aria-label="Sort" id="sort">
+              <button type="button" data-sort="az" aria-pressed="true">A – Z</button>
+              <button type="button" data-sort="series" aria-pressed="false">Series order</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="list" id="list" aria-live="polite"></div>
+    </div>
+  </section>
+
+  <!-- ===== My guides ===== -->
+  <section id="view-mine" role="tabpanel" aria-labelledby="tab-mine" hidden>
+    <div class="panel">
+      <div class="panel-head">
+        <h2><span class="suit" aria-hidden="true">♥</span>My guides</h2>
+        <span class="count" id="mine-count"></span>
+      </div>
+      <p class="panel-sub">The guides you bookmarked, with your progress. Tick a guide done once you have worked through it. Print this page to take your list with you.</p>
+      <div class="progress" id="progress"></div>
+      <div class="cta-row" style="margin-top:0;margin-bottom:6px">
+        <button class="btn small" type="button" data-action="print">🖨&nbsp; Print my list</button>
+        <button class="btn small ghost" type="button" data-action="export">Copy my notes</button>
+        <button class="btn small ghost" type="button" data-action="reset">Clear everything</button>
+      </div>
+      <div class="list" id="mine-list"></div>
+    </div>
+  </section>
+
+  <!-- ===== Request ===== -->
+  <section id="view-request" role="tabpanel" aria-labelledby="tab-request" hidden>
+    <div class="panel">
+      <div class="panel-head">
+        <h2><span class="suit" aria-hidden="true">♦</span>Ask for a new quick guide</h2>
+      </div>
+      <div class="two-col">
+        <div>
+          <p class="panel-sub">Can't find a guide for your situation? Tell us what you need and the Lesko Help team will look into it. Your request is saved here so you can post it in the community or send it by email.</p>
+          <form class="form" id="request-form">
+            <div class="field">
+              <label for="rq-topic">Topic</label>
+              <select id="rq-topic" required></select>
+            </div>
+            <div class="field">
+              <label for="rq-title">What should the guide cover?</label>
+              <input id="rq-title" type="text" required maxlength="120" placeholder="e.g. Grants for food trucks in Texas">
+            </div>
+            <div class="field">
+              <label for="rq-why">Why do you need it? (optional)</label>
+              <textarea id="rq-why" maxlength="800" placeholder="A sentence or two about your situation helps us write the right guide."></textarea>
+              <span class="hint">Please do not include your SSN, bank details or other private numbers.</span>
+            </div>
+            <div class="field">
+              <label for="rq-name">Your name (optional)</label>
+              <input id="rq-name" type="text" maxlength="80" placeholder="So the team knows who asked">
+            </div>
+            <div class="cta-row" style="margin-top:4px">
+              <button class="btn primary" type="submit">Save my request</button>
+            </div>
+          </form>
+        </div>
+        <div>
+          <div class="callout"><b>How requests reach the team.</b> Saving keeps the request on this device. Use <b>Post in the community</b> to open the Questions Channel with your text copied, or <b>Email the team</b> to send it directly.</div>
+          <div class="section" style="border-top:0;padding-top:24px">
+            <div class="section-title"><h3>My requests</h3><span class="hint" id="rq-count"></span></div>
+            <ul class="requests" id="requests"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="site">
+    <span>Lesko Help · Quick Guide Library · <span id="data-date"></span></span>
+    <span><a href="https://lesko-help-2.mn.co/collections/2517908" target="_blank" rel="noopener">Quick Guide Library in the community ↗</a></span>
+  </footer>
+</div>
+
+<!-- ===== Detail drawer ===== -->
+<div class="scrim" id="scrim" hidden></div>
+<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" hidden>
+  <div class="drawer-head">
+    <span class="eyebrow" id="drawer-eyebrow"></span>
+    <span class="spacer"></span>
+    <button class="icon-btn" type="button" data-action="prev" title="Previous guide" aria-label="Previous guide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+    <button class="icon-btn" type="button" data-action="next" title="Next guide" aria-label="Next guide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+    <button class="icon-btn" type="button" data-action="close" title="Close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+  </div>
+  <div class="drawer-body" id="drawer-body"></div>
+</aside>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="data/guides.js"></script>
+<script src="assets/app.js"></script>
+</body>
+</html>
