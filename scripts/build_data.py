@@ -58,12 +58,18 @@ def clean_title(t):
     t = t.replace('&', '&')
     return t
 
-CODE_RE = re.compile(r'Lesko_Help_((?:CB_)?[A-Z]{1,2}_?[A-Z]?\d{2})', re.I)
+CODE_RE = re.compile(r'Lesko_Help_(?:(HC|TL|CB|FC)_?)?([A-Z]?\d{1,2})_', re.I)
+def norm_code(prefix, num):
+    """HC07 -> 'HC 07', TL_A02 -> 'TL A02', FC_A1 -> 'FC A1', 04 -> 'QG 04'."""
+    prefix = (prefix or 'QG').upper()
+    num = num.upper()
+    if num.isdigit(): num = num.zfill(2)
+    return f"{prefix} {num}"
 def code_from(item):
-    if item.get('code'): return item['code'].replace('_', ' ').replace('CB ', 'CB-')
     for f in item.get('pdfs', []) + item.get('drive', []):
-        m = CODE_RE.search(f.get('name', '') or f.get('title', '') or '')
-        if m: return m.group(1).replace('_', ' ').replace('CB ', 'CB-')
+        name = f.get('name') or f.get('title') or ''
+        m = CODE_RE.search(name)
+        if m: return norm_code(m.group(1), m.group(2))
     return None
 
 def main():
@@ -87,7 +93,7 @@ def main():
                 drv = [{'title': html.unescape(x.get('title') or ''), 'viewUrl': x.get('viewUrl'), 'previewUrl': x.get('previewUrl')} for x in p.get('drive', []) if x.get('viewUrl') or x.get('previewUrl')]
                 # Cross-reference the shared Google Drive folder by code (CB_A01 etc.)
                 if code:
-                    dkey = code.replace('CB-', 'CB_').replace(' ', '_')
+                    dkey = code.replace(' ', '_')
                     if dkey in drive and not any(drive[dkey]['id'] in (d.get('viewUrl') or '') for d in drv):
                         d = drive[dkey]
                         drv.append({'title': d['title'], 'viewUrl': f"https://drive.google.com/file/d/{d['id']}/view", 'previewUrl': f"https://drive.google.com/file/d/{d['id']}/preview"})
