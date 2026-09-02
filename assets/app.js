@@ -111,14 +111,14 @@
     const done = !!store.done[it.id];
     const marked = !!store.bookmarks[it.id];
     const hasNote = !!(store.notes[it.id] && store.notes[it.id].trim());
-    const pdf = (it.pdfs && it.pdfs[0]) || null;
+    const pdf = it.download ? { href: it.download } : null;
     return `<article class="row${done ? ' is-done' : ''}" data-id="${it.id}">
       <span class="code${it.code ? '' : ' is-empty'}" title="${it.code ? 'Guide code' : 'No code yet'}">${esc(it.code || '—')}</span>
       <div>
         <button class="title-btn" type="button" data-open="${it.id}"><span class="title">${esc(it.title)}</span></button>
         <div class="meta">
           <span class="topic" style="--dot:${t.color}"><span class="dot"></span>${esc(t.label || '')}</span>
-          <span>·</span><span>${esc(it.series)}</span>
+          ${it.series !== t.label ? `<span>·</span><span>${esc(it.series)}</span>` : ''}
           <span class="kind ${it.kind}">${KIND_LABEL[it.kind] || it.kind}</span>
           ${it.status === 'HIDDEN' ? '<span class="kind">Draft</span>' : ''}
         </div>
@@ -222,7 +222,7 @@
     const t = TOPIC_BY_KEY[it.topic] || {};
     const marked = !!store.bookmarks[id], done = !!store.done[id];
     const checked = store.checked[id] || {};
-    const pdf = (it.pdfs && it.pdfs[0]) || null;
+    const pdf = it.download ? { href: it.download } : null;
     const drive = (it.drive && it.drive[0]) || null;
     $('#drawer-eyebrow').innerHTML = `<span class="dot" style="--dot:${t.color}"></span>${esc(t.label || '')}${it.code ? ' · ' + esc(it.code) : ''}`;
     $('#drawer-body').innerHTML = `
@@ -230,7 +230,7 @@
       <p class="series">${KIND_LABEL[it.kind] || ''} · ${esc(it.series)} · <a href="${esc(it.spaceUrl)}" target="_blank" rel="noopener">${esc(it.space)}</a>${it.status === 'HIDDEN' ? ' · <b>Draft, not yet published</b>' : ''}</p>
       <p class="summary">${esc(it.summary)}</p>
       <div class="cta-row">
-        ${pdf ? `<a class="btn primary" href="${esc(pdf.href)}" target="_blank" rel="noopener" download>${ICON.pdf} Download PDF</a>` : ''}
+        ${pdf ? `<a class="btn primary" href="${esc(pdf.href)}" target="_blank" rel="noopener">${ICON.pdf} ${it.pdfs && it.pdfs.length ? 'Download PDF' : 'Open PDF in Drive'}</a>` : ''}
         <a class="btn" href="${esc(it.url)}" target="_blank" rel="noopener">Open in community ${ICON.ext}</a>
         <button class="btn ghost star-btn" type="button" data-star="${id}" aria-pressed="${marked}">${marked ? '★ Bookmarked' : '☆ Bookmark'}</button>
         <button class="btn ghost done-btn" type="button" data-done="${id}" aria-pressed="${done}">${done ? '✓ Done' : 'Mark done'}</button>
@@ -239,10 +239,10 @@
       <div class="section">
         <div class="section-title"><h3>Files</h3><span class="hint">${(it.pdfs || []).length + (it.drive || []).length} file${((it.pdfs || []).length + (it.drive || []).length) === 1 ? '' : 's'}</span></div>
         <ul class="files">
-          ${(it.pdfs || []).map(f => `<li><a href="${esc(f.href)}" target="_blank" rel="noopener" download><span class="ftype">PDF</span><span class="fname">${esc(f.name)}</span></a></li>`).join('')}
+          ${(it.pdfs || []).map(f => `<li><a href="${esc(f.href)}" target="_blank" rel="noopener"><span class="ftype">PDF</span><span class="fname">${esc(f.name)}</span></a></li>`).join('')}
           ${(it.drive || []).map(d => `<li><a href="${esc(d.viewUrl)}" target="_blank" rel="noopener"><span class="ftype">Drive</span><span class="fname">${esc(d.title || 'Preview in Google Drive')}</span></a></li>`).join('')}
         </ul>
-        ${drive && drive.previewUrl ? `<div class="preview"><iframe src="${esc(drive.previewUrl)}" title="${esc(drive.title || 'Guide preview')}" loading="lazy" allow="fullscreen"></iframe></div>` : ''}
+        ${drive && drive.previewUrl ? `<div class="preview"><iframe src="${esc(drive.previewUrl)}" title="${esc(drive.title || 'Guide preview')}" loading="lazy" allow="fullscreen"></iframe></div><p class="help">If the preview stays blank, open the file in Drive or download the PDF above.</p>` : ''}
       </div>` : ''}
       <div class="section">
         <div class="section-title"><h3>Organizations &amp; links</h3><span class="hint">${(it.links || []).length ? 'Tick the ones you contacted' : ''}</span></div>
@@ -414,7 +414,7 @@
   const guideCount = ITEMS.filter(i => isGuideKind(i.kind)).length;
   const lessonCount = ITEMS.filter(i => i.kind === 'lesson').length;
   const orgCount = new Set(ITEMS.flatMap(i => (i.links || []).map(l => host(l.href)))).size;
-  $('#stats').innerHTML = `<span><b>${guideCount}</b> quick guides</span><span><b>${lessonCount}</b> lessons</span><span><b>${TOPICS.length}</b> topics</span><span><b>${orgCount}</b> organizations linked</span>`;
+  $('#stats').innerHTML = `<span><b>${guideCount}</b> guides &amp; checklists</span><span><b>${lessonCount}</b> lessons</span><span><b>${TOPICS.length}</b> topics</span><span><b>${orgCount}</b> organizations linked</span>`;
   $('#data-date').textContent = DATA.generated ? 'inventory ' + fmtDate(DATA.generated) : '';
   refresh(); renderRequestForm(); route();
 })();
