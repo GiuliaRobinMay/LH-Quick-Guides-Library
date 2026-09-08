@@ -7,7 +7,6 @@
   const DATA = window.LESKO_GUIDES || { topics: [], items: [] };
   const TOPICS = DATA.topics;
   const TOPIC_BY_KEY = Object.fromEntries(TOPICS.map(t => [t.key, t]));
-  const QUICK_TOPICS = ['business', 'nonprofit', 'career'];      // the three buttons
   const QUESTIONS_CHANNEL = 'https://lesko-help-2.mn.co/spaces/11054387';
   const TEAM_EMAIL = 'support@leskohelp.com';
   const STORE_KEY = 'lesko-quick-guides-v2';
@@ -61,16 +60,8 @@
 
   /* ---------- render: filters ---------- */
   function renderTopics() {
-    $('#topics').innerHTML = QUICK_TOPICS.map(k => {
-      const t = TOPIC_BY_KEY[k]; if (!t) return '';
-      return `<button type="button" class="chip" data-topic="${k}" aria-pressed="${state.topic === k}">${esc(t.label)}</button>`;
-    }).join('');
-    const sel = $('#topic-select');
-    if (sel.options.length <= 1) {
-      TOPICS.filter(t => !QUICK_TOPICS.includes(t.key)).forEach(t => { const o = document.createElement('option'); o.value = t.key; o.textContent = t.label; sel.appendChild(o); });
-    }
-    sel.value = state.topic && !QUICK_TOPICS.includes(state.topic) ? state.topic : '';
-    sel.classList.toggle('active', !!sel.value);
+    $('#topics').innerHTML = `<button type="button" class="chip" data-topic="" aria-pressed="${!state.topic}">All</button>` + TOPICS.map(t =>
+      `<button type="button" class="chip" data-topic="${t.key}" aria-pressed="${state.topic === t.key}">${esc(t.label)}</button>`).join('');
   }
 
   /* ---------- render: list ---------- */
@@ -88,7 +79,7 @@
         ${it.download ? `<a class="icon-btn pdf" href="${esc(it.download)}" target="_blank" rel="noopener" title="Download PDF" aria-label="Download PDF">${ICON.pdf}</a>` : '<span class="icon-btn placeholder"></span>'}
         <button class="icon-btn star" type="button" data-star="${it.id}" aria-pressed="${marked}" title="${marked ? 'Remove bookmark' : 'Bookmark'}" aria-label="Bookmark">${marked ? ICON.star : ICON.starOutline}</button>
       </span>
-      ${showInfo ? `<p class="summary">${esc(it.summary)}${it.series && it.series !== t.label ? ` <span class="series">· ${esc(it.series)}</span>` : ''}</p>` : ''}
+      ${showInfo ? `<p class="summary">${esc(it.summary)}</p>` : ''}
     </article>`;
   }
   function renderList() {
@@ -124,7 +115,7 @@
       <span class="rq-meta">${esc(TOPIC_BY_KEY[r.topic]?.label || 'Something else')} · ${fmtDate(r.at)}</span>
       ${r.why ? `<span>${esc(r.why)}</span>` : ''}
       <div class="rq-actions">
-        <a class="btn small" href="${QUESTIONS_CHANNEL}" target="_blank" rel="noopener" data-copy-request="${r.id}">Post in the community ${ICON.ext}</a>
+        <a class="btn small" href="${QUESTIONS_CHANNEL}" target="_blank" rel="noopener" data-copy-request="${r.id}">Post in the community</a>
         <a class="btn small ghost" href="${mailto(r)}">Email the team</a>
         <button class="btn small ghost" type="button" data-remove-request="${r.id}">Remove</button>
       </div></li>`).join('');
@@ -147,10 +138,10 @@
       <p class="series">${it.series !== t.label ? esc(it.series) + ' · ' : ''}<a href="${esc(it.spaceUrl)}" target="_blank" rel="noopener">${esc(it.space)}</a></p>
       <p class="summary">${esc(it.summary)}</p>
       <div class="cta-row">
-        ${it.download ? `<a class="btn primary" href="${esc(it.download)}" target="_blank" rel="noopener">${ICON.pdf} ${it.pdfs && it.pdfs.length ? 'Download PDF' : 'Open PDF'}</a>` : ''}
-        <a class="btn" href="${esc(it.url)}" target="_blank" rel="noopener">Open in community ${ICON.ext}</a>
-        <button class="btn ghost" type="button" data-star="${id}" aria-pressed="${marked}">${marked ? '★ Bookmarked' : '☆ Bookmark'}</button>
-        <button class="btn ghost done-btn" type="button" data-done="${id}" aria-pressed="${done}">${done ? '✓ Done' : 'Mark done'}</button>
+        ${it.download ? `<a class="btn primary" href="${esc(it.download)}" target="_blank" rel="noopener">${ICON.pdf} Download PDF</a>` : ''}
+        <a class="btn" href="${esc(it.url)}" target="_blank" rel="noopener">Open in community</a>
+        <button class="btn ghost" type="button" data-star="${id}" aria-pressed="${marked}">${marked ? ICON.star + ' Bookmarked' : ICON.starOutline + ' Bookmark'}</button>
+        <button class="btn ghost done-btn" type="button" data-done="${id}" aria-pressed="${done}">${done ? ICON.check + ' Done' : 'Mark done'}</button>
       </div>
       ${nFiles ? `
       <div class="section">
@@ -230,7 +221,7 @@
       const it = byId[id];
       lines.push(`${store.done[id] ? '[x]' : '[ ]'} ${it.title}`); lines.push(`    ${it.url}`);
       const ch = store.checked[id] || {};
-      (it.links || []).forEach(l => { if (ch[l.href]) lines.push(`    ✓ contacted: ${l.label} — ${l.href}`); });
+      (it.links || []).forEach(l => { if (ch[l.href]) lines.push(`    contacted: ${l.label} - ${l.href}`); });
       if (store.notes[id]) lines.push('    notes: ' + store.notes[id].replace(/\n/g, '\n           '));
       lines.push('');
     });
@@ -262,18 +253,15 @@
       return;
     }
     const tab = e.target.closest('.tab'); if (tab) { setTab(tab.dataset.tab); return; }
-    const tp = e.target.closest('[data-topic]'); if (tp) { state.topic = state.topic === tp.dataset.topic ? null : tp.dataset.topic; refresh(); return; }
+    const tp = e.target.closest('[data-topic]'); if (tp) { state.topic = tp.dataset.topic || null; refresh(); return; }
     const st = e.target.closest('[data-star]'); if (st) { e.stopPropagation(); toggleStar(st.dataset.star); return; }
     const dn = e.target.closest('[data-done]'); if (dn) { e.stopPropagation(); toggleDone(dn.dataset.done); return; }
     const inf = e.target.closest('[data-info]'); if (inf) { const id = inf.dataset.info; state.info.has(id) ? state.info.delete(id) : state.info.add(id); renderList(); renderMine(); return; }
     const ck = e.target.closest('[data-check]'); if (ck) { toggleCheck(state.open, ck.dataset.check, ck); return; }
     const op = e.target.closest('[data-open]'); if (op) { openGuide(op.dataset.open); return; }
     const rm = e.target.closest('[data-remove-request]'); if (rm) { store.requests = store.requests.filter(r => r.id !== rm.dataset.removeRequest); save(); renderRequestForm(); toast('Request removed'); return; }
-    const cp = e.target.closest('[data-copy-request]'); if (cp) { const r = store.requests.find(x => x.id === cp.dataset.copyRequest); if (r) copy(requestText(r)).then(ok => toast(ok ? 'Request copied — paste it in the channel' : 'Opening the Questions Channel')); return; }
+    const cp = e.target.closest('[data-copy-request]'); if (cp) { const r = store.requests.find(x => x.id === cp.dataset.copyRequest); if (r) copy(requestText(r)).then(ok => toast(ok ? 'Request copied. Paste it in the channel' : 'Opening the Questions Channel')); return; }
     if (e.target.id === 'scrim') closeDrawer();
-  });
-  document.addEventListener('change', e => {
-    if (e.target.id === 'topic-select') { state.topic = e.target.value || null; refresh(); }
   });
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && state.open) closeDrawer();
