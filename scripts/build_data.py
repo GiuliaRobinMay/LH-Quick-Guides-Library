@@ -114,8 +114,12 @@ def library_data(lib, items):
     keys = [t['key'] for t in lib['topics']]
     out = []
     for i in items:
-        if i['status'] != 'POSTED' or i['topic'] not in keys: continue
+        if i['status'] != 'POSTED': continue
         it = dict(i)
+        it['topic'] = lib.get('topicOverrides', {}).get(it['id'], it['topic'])
+        if it['topic'] not in keys: continue
+        it['title'] = lib.get('titleOverrides', {}).get(it['id'], it['title'])
+        it['topicOrder'] = keys.index(it['topic'])
         fid = lib.get('driveFiles', {}).get(it['id'])
         if not fid and it['code']:
             d = drive.get(it['code'].replace(' ', '_'))
@@ -132,6 +136,21 @@ def library_data(lib, items):
         it['isLesson'] = it['id'] in lib.get('lessons', {})
         it['lessonNo'] = lib.get('lessons', {}).get(it['id'])
         out.append(it)
+    # Guides that exist only in the Drive folder (no community post yet)
+    for x in lib.get('extraItems', []):
+        d = drive.get(x['code'].replace(' ', '_'))
+        fid = d['id'] if d else None
+        out.append({
+            'id': 'x' + x['code'].replace(' ', '').lower(), 'code': x['code'], 'title': x['title'], 'kind': 'quick_guide',
+            'status': 'POSTED', 'topic': x['topic'], 'topicOrder': keys.index(x['topic']),
+            'series': '', 'seriesOrder': 99, 'order': 99, 'space': lib['title'], 'spaceId': lib['spaceId'],
+            'spaceUrl': f"https://lesko-help-2.mn.co/spaces/{lib['spaceId']}", 'collection': '',
+            'url': f"https://drive.google.com/file/d/{fid}/view" if fid else '', 'summary': x.get('summary', ''),
+            'pdfs': [], 'drive': [], 'links': [], 'video': None,
+            'download': f"https://drive.google.com/uc?export=download&id={fid}" if fid else None,
+            'preview': f"https://drive.google.com/file/d/{fid}/preview" if fid else None,
+            'isLesson': False, 'lessonNo': None,
+        })
     topics = [{'key': t['key'], 'label': t['label'], 'color': t['color'], 'tint': mix(t['color']),
                'grad': f"linear-gradient(135deg, {t['color']} 0%, {lighten(t['color'])} 100%)", 'icon': t['icon']} for t in lib['topics']]
     return {

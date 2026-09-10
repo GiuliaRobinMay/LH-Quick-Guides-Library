@@ -1,0 +1,36 @@
+{
+  "key": "families",
+  "title": "Families, Seniors & Disabilities",
+  "spaceId": "20982263",
+  "driveFolder": "https://drive.google.com/drive/folders/18zaE1chJw6SDxVZX01om8tHtH4gnulNw",
+  "driveListing": "drive_families.json",
+  "topics": [
+    { "key": "families",     "label": "Families & Children", "color": "#2CA01C", "icon": "users" },
+    { "key": "seniors",      "label": "Seniors",             "color": "#F93946", "icon": "heart-pulse" },
+    { "key": "disabilities", "label": "Disabilities",        "color": "#7C3BB0", "icon": "accessibility" }
+  ],
+  "lessons": { "98434840": 1, "98433226": 1 },
+  "titleOverrides": {
+    "98434840": "Find Your Family Benefits: the Core Federal Programs (by State)",
+    "98433226": "Seniors & Disabilities: Your Free Starting Points",
+    "98435338": "18 Things Every Senior Should Know (Starting at 40)"
+  },
+  "topicOverrides": {},
+  "driveFiles": {
+    "98434840": "1sPGGj7g-EPLGDcgYVjvRPGQhFXIKTkmv",
+    "98433226": "11rd_DGbJZkefnOKb0kOtR9EgCBrrVmY1",
+    "98435338": "1AQrvFYbqtX0QSadOjmx7I_3c2XgpxofE"
+  },
+  "extraItems": [
+    { "code": "FC B2", "topic": "seniors", "title": "Senior Benefits & Eldercare",
+      "summary": "Free benefit screenings, the Eldercare Locator, Medicaid waivers and PACE that pay for in-home care, VA Aid & Attendance, home-delivered meals and getting paid as a family caregiver." },
+    { "code": "FC B3", "topic": "seniors", "title": "Free & Low-Cost Help for Seniors",
+      "summary": "Discounts and free programs for seniors on phone and internet, energy bills, food coupons, prescriptions, transport, fitness, tax help and park passes." },
+    { "code": "FC C1", "topic": "disabilities", "title": "Disability Benefits & Income",
+      "summary": "SSDI and SSI monthly income, the health coverage that comes with them, how to apply and appeal a denial for free, ABLE savings accounts and Ticket to Work." },
+    { "code": "FC C2", "topic": "disabilities", "title": "Disability Support & Services",
+      "summary": "Centers for Independent Living, in-home care through Medicaid, vocational rehabilitation, assistive technology, job accommodations and free legal protection of your rights." },
+    { "code": "FC C3", "topic": "disabilities", "title": "Disability Housing & Home Modifications",
+      "summary": "Free ramps, grab bars and repairs, USDA and Medicaid programs, VA housing grants, HUD counselors and Section 811 supportive housing, plus 211 and findhelp.org for local funds." }
+  ]
+}
