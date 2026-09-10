@@ -129,9 +129,9 @@
   function renderGrid() {
     const items = filtered();
     state.listIds = items.map(i => i.id);
-    $('#result-count').textContent = items.length === 1 ? '1 guide' : `${items.length} guides`;
-    const label = state.topic === 'bookmarked' ? 'Bookmarked' : (state.topic ? TOPIC_BY_KEY[state.topic].label : 'Quick guides & lessons');
+    const label = state.topic === 'bookmarked' ? 'Bookmarked' : (state.topic ? TOPIC_BY_KEY[state.topic].label : 'Quick guides and lessons');
     $('#grid-title').textContent = state.q ? `Results for “${state.q.trim()}”` : label;
+    $('#result-count').textContent = state.q ? `${items.length} result${items.length === 1 ? '' : 's'} for “${state.q.trim()}”` : (items.length === 1 ? '1 guide' : `${items.length} guides`);
     renderInto($('#grid'), items, `<div class="empty"><h3>${state.topic === 'bookmarked' ? 'No bookmarks yet.' : 'Nothing matches.'}</h3><p>${state.topic === 'bookmarked' ? 'Tap the star on any guide and it will show up here.' : 'Try fewer words or pick another topic.'}</p></div>`);
   }
   /* ---------- viewer ---------- */
