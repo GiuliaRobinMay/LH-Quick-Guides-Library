@@ -8,9 +8,9 @@
   const TOPICS = DATA.topics;
   const TOPIC_BY_KEY = Object.fromEntries(TOPICS.map(t => [t.key, t]));
   const TOPIC_STYLE = {
-    business:  { accent: '#2B4EC8', soft: '#E1E7FB' },
-    nonprofit: { accent: '#E6473B', soft: '#FDE4E0' },
-    career:    { accent: '#2E9E5B', soft: '#DDF3E5' }
+    business:  { accent: '#2B4EC8', tint: '#EEF2FD', ink: '#2340B0' },
+    nonprofit: { accent: '#E6473B', tint: '#FDF0EE', ink: '#C93A2F' },
+    career:    { accent: '#2E9E5B', tint: '#E9F7EF', ink: '#22824A' }
   };
   const QUESTIONS_CHANNEL = 'https://lesko-help-2.mn.co/spaces/11054387';
   const TEAM_EMAIL = 'support@leskohelp.com';
@@ -40,7 +40,7 @@
   const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
   const host = url => { try { return new URL(url).hostname.replace(/^www\./, ''); } catch (e) { return ''; } };
   const fmtDate = iso => { try { return new Date(iso).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }); } catch (e) { return iso; } };
-  const styleVars = k => { const s = TOPIC_STYLE[k] || {}; return `--accent:${s.accent || '#4B5470'};--accent-soft:${s.soft || '#F4ECDD'}`; };
+  const styleVars = k => { const s = TOPIC_STYLE[k] || {}; return `--accent:${s.ink || s.accent || '#5B6478'};--tint:${s.tint || '#FAF8F4'}`; };
   const byTitle = (a, b) => a.title.localeCompare(b.title, undefined, { sensitivity: 'base' });
 
   const ICON = {
@@ -69,19 +69,20 @@
 
   /* ---------- render: tiles ---------- */
   function renderTiles() {
-    const all = ITEMS.length;
-    const tiles = [`<button type="button" class="tile" data-topic="" aria-pressed="${!state.topic}" style="--accent:#1B2A4A;--accent-soft:#F4ECDD">
-        <span class="k">All guides</span><span class="v">${all}</span><span class="sub">${ITEMS.filter(i => i.hasPdf).length} PDFs · ${ITEMS.filter(i => i.hasVideo).length} videos</span></button>`];
+    const all = ITEMS.length, allDone = ITEMS.filter(i => store.done[i.id]).length;
+    const tiles = [`<button type="button" class="tile" data-topic="" aria-pressed="${!state.topic}" style="--accent:#1B2A4A;--tint:#FAF8F4">
+        <span class="k"><span class="swatch"></span>All guides</span><span class="v">${all}</span>
+        <span class="sub">${ITEMS.filter(i => i.hasPdf).length} PDFs · ${ITEMS.filter(i => i.hasVideo).length} videos</span></button>`];
     TOPICS.forEach(t => {
       const its = ITEMS.filter(i => i.topic === t.key);
       const done = its.filter(i => store.done[i.id]).length;
-      tiles.push(`<button type="button" class="tile" data-topic="${t.key}" aria-pressed="${state.topic === t.key}" style="${styleVars(t.key)}">
-        <span class="k">${esc(t.label)}</span><span class="v">${its.length}<small>${its.filter(i => i.hasPdf).length} PDFs</small></span>
-        <span class="bar"><i style="width:${its.length ? Math.round(done / its.length * 100) : 0}%"></i></span>
-        <span class="sub">${done} of ${its.length} done</span></button>`);
+      const st = TOPIC_STYLE[t.key] || {};
+      tiles.push(`<button type="button" class="tile" data-topic="${t.key}" aria-pressed="${state.topic === t.key}" style="--accent:${st.accent};--tint:${st.tint}">
+        <span class="k"><span class="swatch"></span>${esc(t.label)}</span><span class="v">${its.length}<small>${its.filter(i => i.hasPdf).length} PDFs</small></span>
+        <span class="sub"><span class="bar"><i style="width:${its.length ? Math.round(done / its.length * 100) : 0}%"></i></span>${done}/${its.length} done</span></button>`);
     });
     $('#tiles').innerHTML = tiles.join('');
-    $('#grid-title').textContent = state.q ? `Results for “${state.q.trim()}”` : (state.topic ? `${TOPIC_BY_KEY[state.topic].label} guides` : 'All guides');
+    $('#grid-title').innerHTML = state.q ? `Results <span>for “${esc(state.q.trim())}”</span>` : (state.topic ? `${esc(TOPIC_BY_KEY[state.topic].label)} <span>guides</span>` : 'All guides');
   }
 
   /* ---------- render: cards ---------- */
@@ -89,19 +90,20 @@
     const t = TOPIC_BY_KEY[it.topic] || {};
     const marked = !!store.bookmarks[it.id];
     const done = !!store.done[it.id];
+    const type = it.hasPdf ? 'PDF' : (it.hasVideo ? 'Video' : 'Lesson');
     return `<article class="card${done ? ' is-done' : ''}" data-id="${it.id}" style="${styleVars(it.topic)}">
-      <div class="card-top">
-        <span class="topic">${esc(t.label || '')}</span>
-        <span class="pills">${it.hasPdf ? '<span class="pill guide">PDF</span>' : ''}${it.hasVideo ? '<span class="pill video">Video</span>' : ''}${!it.hasPdf && !it.hasVideo ? '<span class="pill lesson">Lesson</span>' : ''}</span>
+      <div class="card-meta">
+        <span class="chip">${esc(t.label || '')}</span>
+        <span class="chip type">${type}${it.hasPdf && it.hasVideo ? ' + video' : ''}</span>
+        <span class="spacer"></span>
+        <span class="done-mark">Done</span>
       </div>
-      <div class="card-body">
-        <button class="title-btn" type="button" data-open="${it.id}"><span class="title">${esc(it.title)}</span></button>
-        <p class="summary">${esc(it.summary)}</p>
-      </div>
+      <button class="title-btn" type="button" data-open="${it.id}"><span class="title">${esc(it.title)}</span></button>
+      <p class="summary">${esc(it.summary)}</p>
       <div class="card-foot">
         <button class="open" type="button" data-open="${it.id}">Open</button>
         <span class="spacer"></span>
-        ${it.hasPdf ? `<a class="icon-btn pdf" href="${esc(it.download)}" target="_blank" rel="noopener" title="Download PDF" aria-label="Download PDF">${ICON.pdf}</a>` : ''}
+        ${it.hasPdf ? `<a class="icon-btn" href="${esc(it.download)}" target="_blank" rel="noopener" title="Download PDF" aria-label="Download PDF">${ICON.pdf}</a>` : ''}
         <button class="icon-btn star" type="button" data-star="${it.id}" aria-pressed="${marked}" title="${marked ? 'Remove bookmark' : 'Bookmark'}" aria-label="Bookmark">${marked ? ICON.star : ICON.starOutline}</button>
       </div>
     </article>`;
@@ -125,10 +127,10 @@
     const noted = items.filter(i => store.notes[i.id] && store.notes[i.id].trim()).length;
     const contacted = Object.values(store.checked).reduce((n, m) => n + Object.values(m || {}).filter(Boolean).length, 0);
     $('#mine-tiles').innerHTML = `
-      <div class="tile static" style="--accent:#F5C242"><span class="k">Bookmarked</span><span class="v">${items.length}</span></div>
-      <div class="tile static" style="--accent:#2E9E5B"><span class="k">Worked through</span><span class="v">${done}<small>of ${items.length}</small></span><span class="bar"><i style="width:${items.length ? Math.round(done / items.length * 100) : 0}%"></i></span></div>
-      <div class="tile static" style="--accent:#2B4EC8"><span class="k">Organizations contacted</span><span class="v">${contacted}</span></div>
-      <div class="tile static" style="--accent:#E6473B"><span class="k">Guides with notes</span><span class="v">${noted}</span></div>`;
+      <div class="tile static" style="--accent:#F5C242;--tint:#FFF6DE"><span class="k"><span class="swatch"></span>Bookmarked</span><span class="v">${items.length}</span></div>
+      <div class="tile static" style="--accent:#2E9E5B;--tint:#E9F7EF"><span class="k"><span class="swatch"></span>Worked through</span><span class="v">${done}<small>of ${items.length}</small></span><span class="sub"><span class="bar"><i style="width:${items.length ? Math.round(done / items.length * 100) : 0}%"></i></span></span></div>
+      <div class="tile static" style="--accent:#2B4EC8;--tint:#EEF2FD"><span class="k"><span class="swatch"></span>Organizations contacted</span><span class="v">${contacted}</span></div>
+      <div class="tile static" style="--accent:#E6473B;--tint:#FDF0EE"><span class="k"><span class="swatch"></span>Guides with notes</span><span class="v">${noted}</span></div>`;
     const el = $('#mine-grid');
     el.classList.toggle('list', store.view === 'list');
     el.innerHTML = items.length ? items.map(cardHTML).join('')
@@ -178,7 +180,7 @@
     const checked = store.checked[id] || {};
     const eyebrow = $('#viewer-eyebrow');
     eyebrow.style.cssText = styleVars(it.topic);
-    eyebrow.innerHTML = `${esc(t.label || '')} · ${it.hasPdf ? 'Quick guide' : (it.hasVideo ? 'Video lesson' : 'Lesson')}`;
+    eyebrow.innerHTML = `<span class="chip">${esc(t.label || '')}</span><span class="chip type">${it.hasPdf ? 'Quick guide' : (it.hasVideo ? 'Video lesson' : 'Lesson')}</span>`;
     $('#viewer-body').innerHTML = `
       <div class="stage" id="stage">${stageHTML(it)}</div>
       <div class="detail">
@@ -186,13 +188,13 @@
         <p class="series"><a href="${esc(it.spaceUrl)}" target="_blank" rel="noopener">${esc(it.space)}</a></p>
         <p class="summary">${esc(it.summary)}</p>
         <div class="cta-row">
-          ${it.hasPdf ? `<a class="btn accent" href="${esc(it.download)}" target="_blank" rel="noopener">${ICON.pdf} Download PDF</a>` : ''}
-          ${it.hasVideo ? `<button class="btn primary" type="button" data-stage="video">${ICON.play} Watch video</button>` : ''}
-          <a class="btn ghost" href="${esc(it.url)}" target="_blank" rel="noopener">Open in community ${ICON.ext}</a>
+          ${it.hasPdf ? `<a class="btn primary" href="${esc(it.download)}" target="_blank" rel="noopener">${ICON.pdf} Download PDF</a>` : ''}
+          ${it.hasVideo ? `<button class="btn" type="button" data-stage="video">${ICON.play} Watch video</button>` : ''}
+          <a class="btn" href="${esc(it.url)}" target="_blank" rel="noopener">Open in community ${ICON.ext}</a>
         </div>
         <div class="cta-row" style="margin-top:8px">
-          <button class="btn ghost small" type="button" data-star="${id}" aria-pressed="${marked}">${marked ? ICON.star + ' Bookmarked' : ICON.starOutline + ' Bookmark'}</button>
-          <button class="btn ghost small done-btn" type="button" data-done="${id}" aria-pressed="${done}">${done ? ICON.check + ' Done' : 'Mark done'}</button>
+          <button class="btn small" type="button" data-star="${id}" aria-pressed="${marked}">${marked ? ICON.star + ' Bookmarked' : ICON.starOutline + ' Bookmark'}</button>
+          <button class="btn small done-btn" type="button" data-done="${id}" aria-pressed="${done}">${done ? ICON.check + ' Done' : 'Mark done'}</button>
         </div>
         <div class="section">
           <div class="section-title"><h3>Organizations &amp; links</h3><span class="hint">${(it.links || []).length ? 'Tick the ones you contacted' : ''}</span></div>
@@ -277,7 +279,7 @@
   }
   function setTab(tab) {
     state.tab = tab;
-    $$('.appnav-item').forEach(b => b.setAttribute('aria-selected', String(b.dataset.tab === tab)));
+    $$('.nav-item').forEach(b => b.setAttribute('aria-selected', String(b.dataset.tab === tab)));
     ['library', 'mine', 'request'].forEach(k => { $('#view-' + k).hidden = k !== tab; });
     if (tab === 'mine') renderMine();
     if (tab === 'request') renderRequestForm();
@@ -300,7 +302,7 @@
       if (act === 'go-request') { e.preventDefault(); setTab('request'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
       return;
     }
-    const tab = e.target.closest('.appnav-item'); if (tab) { setTab(tab.dataset.tab); return; }
+    const tab = e.target.closest('.nav-item'); if (tab) { setTab(tab.dataset.tab); return; }
     const tp = e.target.closest('[data-topic]'); if (tp) { state.topic = tp.dataset.topic || null; refresh(); return; }
     const vw = e.target.closest('[data-view]'); if (vw) { store.view = vw.dataset.view; save(); renderGrid(); renderMine(); return; }
     const st = e.target.closest('[data-star]'); if (st) { e.stopPropagation(); toggleStar(st.dataset.star); return; }
