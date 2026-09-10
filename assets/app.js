@@ -59,7 +59,7 @@
   // Inside a topic: lessons first in their teaching order, then quick guides A to Z.
   const byTopicThenTitle = (a, b) => (TOPIC_ORDER[a.topic] - TOPIC_ORDER[b.topic])
     || ((b.isLesson ? 1 : 0) - (a.isLesson ? 1 : 0))
-    || (a.isLesson && b.isLesson ? a.order - b.order : byTitle(a, b));
+    || (a.isLesson && b.isLesson ? (a.lessonNo || a.order) - (b.lessonNo || b.order) : byTitle(a, b));
   const typeLabel = it => it.hasPdf && it.hasVideo ? "PDF · Video" : (it.hasPdf ? "PDF guide" : (it.hasVideo ? "Video lesson" : "Lesson"));
   // "LESSON 1 | Title" (numbered in teaching order inside the topic) or "QUICK GUIDE | Title"
   const LESSON_NO = {};

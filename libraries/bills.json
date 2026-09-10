@@ -1,0 +1,65 @@
+{
+  "key": "bills",
+  "title": "Bills, Housing & Cars",
+  "spaceId": "18392931",
+  "spaces": [
+    "18392931"
+  ],
+  "driveFolder": "https://drive.google.com/drive/folders/1q-6uGLvVzTsfyMxj0AtXLlpX-55-prDP",
+  "driveListing": "drive_bills.json",
+  "topics": [
+    {
+      "key": "bills",
+      "label": "Debt & Bills",
+      "color": "#2CA01C",
+      "icon": "coins"
+    },
+    {
+      "key": "housing",
+      "label": "Home & Housing",
+      "color": "#F93946",
+      "icon": "home"
+    },
+    {
+      "key": "cars",
+      "label": "Cars & Car Repairs",
+      "color": "#7C3BB0",
+      "icon": "car"
+    }
+  ],
+  "lessons": {
+    "80037997": 1,
+    "80038000": 2,
+    "80037998": 3,
+    "80037999": 4,
+    "103063706": 1,
+    "103063707": 2,
+    "103063722": 1
+  },
+  "titleOverrides": {
+    "80037999": "Get Bill Collectors to Stop Calling You and Pay You $1,000",
+    "103063707": "Contact These 10 Key Organizations First"
+  },
+  "summaryOverrides": {
+    "103058215": "LIHEAP heating and cooling help, water company hardship plans and 211, Community Action Agencies, Dollar Energy Fund and Salvation Army, and free weatherization that lowers bills for good.",
+    "103058219": "Lifeline's monthly phone or internet discount and survivor benefit, free Lifeline phones, provider low-income internet plans, EveryoneOn, and low-cost computers from PCs for People, Computers with Causes and Human-I-T.",
+    "103058224": "SNAP and how to apply in your state, Feeding America food banks and 211, WIC for pregnant women and young kids, free school meals, senior food programs and FDPIR.",
+    "103057720": "Free NFCC nonprofit credit counseling, debt management plans, CFPB and FTC help against abusive collectors and scams, and legal aid and approved counseling if you are considering bankruptcy.",
+    "103058226": "StudentAid.gov and the Loan Simulator, income-driven repayment, deferment and forbearance, PSLF, teacher and disability discharge, and getting out of default with free ombudsman help.",
+    "103063811": "The CFPB rental assistance finder and 211, free tenant legal aid to fight eviction, HUD housing counselors, tenant rights and your local public housing agency.",
+    "103063812": "FHA, USDA and VA low or no down payment loans, state Housing Finance Agency down payment grants, Good Neighbor Next Door, HUD homes and free HUD-approved counseling.",
+    "103212390": "USDA Section 504 repair loans and grants, free weatherization and LIHEAP furnace help, local HUD-funded rehab programs, Rebuilding Together, Habitat for Humanity and VA HISA grants.",
+    "103212383": "Free HUD foreclosure counselors and the CFPB mortgage tool, state Homeowner Assistance Funds, HUD and USDA home sales, and the truth about HUD Dollar Homes and local land banks.",
+    "103063748": "211 and Community Action Agencies, Working Cars for Working Families, Free Charity Cars, Catholic Charities, free NHTSA safety-recall repairs, and church and nonprofit garages.",
+    "103063751": "Charities that donate cars, the Working Cars for Working Families directory, TANF work transport, Medicaid medical rides, Eldercare senior rides and reduced transit fares.",
+    "103063753": "USA.gov auctions hub, GSA vehicle and surplus auctions, GovDeals, U.S. Marshals and Treasury seized property, government real estate sales and the free unclaimed money search."
+  },
+  "extraItems": [
+    {
+      "code": "QG 02B",
+      "topic": "bills",
+      "title": "Utilities Resource Guide: Energy, Water & Internet",
+      "summary": "A longer resource list: LIHEAP and Dollar Energy Fund, HUD and Community Action locators, Catholic Charities, Lifeline, low-cost internet plans from major providers, free or cheap computers, trade-ins and free WiFi tools."
+    }
+  ]
+}

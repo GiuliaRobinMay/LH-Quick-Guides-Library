@@ -1,0 +1,90 @@
+{
+  "key": "veterans",
+  "title": "Programs for Veterans",
+  "spaceId": "22214038",
+  "spaces": [
+    "22214038"
+  ],
+  "driveFolder": "https://drive.google.com/drive/folders/1erRxaEO-iMEJuuE1HVe1DaLLDShgOMwX",
+  "driveListing": "drive_veterans.json",
+  "topics": [
+    {
+      "key": "start",
+      "label": "Getting Started",
+      "color": "#2CA01C",
+      "icon": "medal"
+    },
+    {
+      "key": "benefits",
+      "label": "Health, Disability & Pension",
+      "color": "#F93946",
+      "icon": "heart-pulse"
+    },
+    {
+      "key": "life",
+      "label": "Education, Housing & Work",
+      "color": "#7C3BB0",
+      "icon": "graduation-cap"
+    },
+    {
+      "key": "family",
+      "label": "Family & Survivors",
+      "color": "#0060FF",
+      "icon": "users"
+    }
+  ],
+  "lessons": {
+    "98434010": 1,
+    "98435344": 2
+  },
+  "topicOverrides": {
+    "98434010": "start",
+    "98435344": "start"
+  },
+  "titleOverrides": {
+    "98435344": "18 Things Every Veteran Should Know"
+  },
+  "driveFiles": {
+    "98434010": "134O4kmZPSiwe70HOieqYvCYi6RSM0fpp",
+    "98435344": "1Ho3NXlB6qtnCigSJxU15AQVasITC3_u5"
+  },
+  "summaryOverrides": {},
+  "extraItems": [
+    {
+      "code": "VET 3",
+      "topic": "benefits",
+      "title": "VA Disability Compensation & Pension",
+      "summary": "Tax-free disability compensation, PACT Act toxic-exposure claims, filing a strong claim with a free VSO, VA pension and Aid & Attendance, and how to appeal a denial."
+    },
+    {
+      "code": "VET 4",
+      "topic": "benefits",
+      "title": "VA Health Care & CHAMPVA",
+      "summary": "Enrolling in VA health care, PACT Act expanded eligibility, the Veterans Crisis Line and mental health services, CHAMPVA for families, caregiver support and community care."
+    },
+    {
+      "code": "VET 5",
+      "topic": "life",
+      "title": "Veteran Education & GI Bill",
+      "summary": "Post-9/11 GI Bill and the comparison tool, apprenticeships and on-the-job training, VR&E, Yellow Ribbon, VetSuccess on Campus, and transferring benefits to your family."
+    },
+    {
+      "code": "VET 6",
+      "topic": "life",
+      "title": "Veteran Housing & Home Loans",
+      "summary": "Zero-down VA home loans and your Certificate of Eligibility, SAH, SHA and HISA adaptation grants, help if you are behind on a VA loan, and HUD-VASH and SSVF if you are homeless."
+    },
+    {
+      "code": "VET 7",
+      "topic": "life",
+      "title": "Veteran Jobs & Business Support",
+      "summary": "VA careers hub and CareerOneStop priority service, VR&E training, apprenticeships, Veterans Business Outreach Centers, Boots to Business and veteran-owned business certification."
+    },
+    {
+      "code": "VET 8",
+      "topic": "family",
+      "title": "Benefits for Family & Survivors",
+      "summary": "DIC and Survivors Pension, CHAMPVA health coverage, Fry Scholarship and DEA education benefits, VA home loans for surviving spouses, and burial and memorial benefits."
+    }
+  ]
+}

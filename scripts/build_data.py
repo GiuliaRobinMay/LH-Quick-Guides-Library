@@ -115,6 +115,7 @@ def library_data(lib, items):
     out = []
     for i in items:
         if i['status'] != 'POSTED': continue
+        if lib.get('spaces') and str(i['spaceId']) not in [str(x) for x in lib['spaces']]: continue
         it = dict(i)
         it['topic'] = lib.get('topicOverrides', {}).get(it['id'], it['topic'])
         if it['topic'] not in keys: continue

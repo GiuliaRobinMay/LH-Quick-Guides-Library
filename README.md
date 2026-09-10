@@ -28,7 +28,7 @@ any static host). No build step is needed for the site itself.
 | `index.html` | The app shell: hero, tabs, library, my guides, request form, guide drawer |
 | `assets/styles.css` | Lesko Help brand styling (cream ground, navy ink, suit colours, serif display, mono labels), light and dark themes |
 | `assets/app.js` | Search, filters, sorting, bookmarks, done-state, notes, link check-marks, requests, deep links (`#guide/<id>`) |
-| `libraries/*.json` | One settings file per library: title, topics with colour and icon, lesson numbers, Drive listing |
+| `libraries/*.json` | One settings file per library: title, topics with colour and icon, lesson numbers, Drive listing, optional `spaces` filter (business, taxes, families, health, bills, veterans) |
 | `dist/<library>/index.html` | One self-contained app per library, the folder a Netlify site publishes |
 | `data/guides.js` / `data/guides.json` | The generated catalogue (guides.js is the Business library for the root page) |
 | `data/source/` | Raw export from the community: coursework manifest, per-space post details, Google Drive folder listing |
