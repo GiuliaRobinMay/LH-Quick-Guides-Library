@@ -30,7 +30,7 @@
   function save() { try { localStorage.setItem(STORE_KEY, JSON.stringify(store)); } catch (e) { /* private mode */ } }
 
   /* ---------- state ---------- */
-  const state = { tab: 'library', topic: null, q: '', open: null, listIds: [], stage: 'pdf' };
+  const state = { tab: 'library', topic: null, q: '', open: null, listIds: [], stage: 'video' };
 
   /* ---------- helpers ---------- */
   const $ = (sel, root) => (root || document).querySelector(sel);
@@ -137,8 +137,8 @@
   /* ---------- viewer ---------- */
   function stageHTML(it) {
     const tabs = [];
-    if (it.preview) tabs.push(['pdf', 'PDF']);
     if (it.hasVideo) tabs.push(['video', 'Video']);
+    if (it.preview) tabs.push(['pdf', 'PDF']);
     if (!tabs.some(t => t[0] === state.stage)) state.stage = tabs.length ? tabs[0][0] : 'none';
     let media;
     if (state.stage === 'pdf') media = `<div class="media"><iframe src="${esc(it.preview)}" title="${esc(it.title)} PDF" allow="fullscreen"></iframe></div>`;
@@ -171,7 +171,7 @@
     const v = $('#viewer'), scrim = $('#scrim');
     v.classList.remove('open'); scrim.classList.remove('open');
     setTimeout(() => { v.hidden = true; scrim.hidden = true; $('#viewer-body').innerHTML = ''; }, 200);
-    state.open = null; state.stage = 'pdf';
+    state.open = null; state.stage = 'video';
     document.body.style.overflow = '';
     history.replaceState(null, '', location.pathname + location.search);
     refresh();
@@ -221,7 +221,7 @@
       const act = a.dataset.action;
       if (act === 'home') { e.preventDefault(); state.topic = null; setTab('library'); refresh(); }
       if (act === 'close') closeViewer();
-      if (act === 'prev' || act === 'next') { const idx = state.listIds.indexOf(state.open); const nid = state.listIds[idx + (act === 'next' ? 1 : -1)]; if (nid) openGuide(nid); }
+      if (act === 'prev' || act === 'next') { const idx = state.listIds.indexOf(state.open); const nid = state.listIds[idx + (act === 'next' ? 1 : -1)]; if (nid) { state.stage = 'video'; openGuide(nid); } }
       return;
     }
     const tp = e.target.closest('[data-topic]'); if (tp) { state.topic = tp.dataset.topic || null; refresh(); return; }
@@ -229,7 +229,7 @@
     const dn = e.target.closest('[data-done]'); if (dn) { e.stopPropagation(); toggleDone(dn.dataset.done); return; }
     const sg = e.target.closest('[data-stage]'); if (sg) { state.stage = sg.dataset.stage; const it = byId[state.open]; if (it) $('#stage').innerHTML = stageHTML(it); return; }
     const ck = e.target.closest('[data-check]'); if (ck) { toggleCheck(state.open, ck.dataset.check, ck); return; }
-    const op = e.target.closest('[data-open]'); if (op) { state.stage = 'pdf'; openGuide(op.dataset.open); return; }
+    const op = e.target.closest('[data-open]'); if (op) { state.stage = 'video'; openGuide(op.dataset.open); return; }
     if (e.target.id === 'scrim') closeViewer();
   });
   document.addEventListener('keydown', e => {
