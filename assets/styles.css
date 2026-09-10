@@ -88,7 +88,7 @@ input, textarea, select { font: inherit; color: inherit; }
 .section-toggle[aria-expanded="true"] .chev { transform: rotate(90deg); }
 .section-toggle:hover .chev { background: var(--surface-2); color: var(--text); }
 .badge.yellow { background: #FACC15; color: #1F2937; }
-#pinned + .section-head { margin-top: 30px; }
+
 .section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin: 28px 0 16px; }
 .section-head h2 { font-size: 22px; font-weight: 600; }
 .section-head p { color: var(--text-2); margin-top: 2px; font-size: 15px; }
@@ -150,6 +150,12 @@ input, textarea, select { font: inherit; color: inherit; }
 .row .title-btn { all: unset; cursor: pointer; display: block; max-width: 100%; }
 .row .title { font-size: 17px; font-weight: 500; line-height: 1.35; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; }
 .row .title-btn:hover .title { color: var(--accent-ink); }
+.row .title-line { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.row .title-line .title-btn { min-width: 0; flex: 0 1 auto; }
+.kind { flex: none; font-size: 11.5px; font-weight: 600; letter-spacing: .02em; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
+.kind.guide { background: #EEF2FD; color: #3B55C9; }
+.kind.lesson { background: #F3F4F7; color: #6B7280; border: 1px solid var(--border); }
+.viewer-head .kind { margin-left: 6px; }
 .row .about { font-size: 13.5px; font-style: italic; font-weight: 300; color: var(--text-3); margin-top: 3px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
 .row .right { display: flex; align-items: center; gap: 4px; padding: 0 14px 0 8px; }
 
@@ -240,7 +246,13 @@ textarea.notes:focus { border-color: var(--accent); outline: none; box-shadow: 0
   .two-col { grid-template-columns: 1fr; }
 }
 @media (max-width: 860px) {
-  .row .about { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+  .row .title-line { display: flex; align-items: center; gap: 10px; min-width: 0; }
+.row .title-line .title-btn { min-width: 0; flex: 0 1 auto; }
+.kind { flex: none; font-size: 11.5px; font-weight: 600; letter-spacing: .02em; padding: 3px 9px; border-radius: 999px; white-space: nowrap; }
+.kind.guide { background: #EEF2FD; color: #3B55C9; }
+.kind.lesson { background: #F3F4F7; color: #6B7280; border: 1px solid var(--border); }
+.viewer-head .kind { margin-left: 6px; }
+.row .about { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
   .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .topbar-inner { height: auto; flex-wrap: wrap; gap: 8px 14px; padding-top: 10px; padding-bottom: 10px; }
   .brand-word { display: none; }

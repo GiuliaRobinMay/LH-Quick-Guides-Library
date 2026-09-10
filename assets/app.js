@@ -45,8 +45,10 @@
   // Business first, then Nonprofit, then Career; alphabetical inside each topic.
   const byTopicThenTitle = (a, b) => (TOPIC_ORDER[a.topic] - TOPIC_ORDER[b.topic]) || byTitle(a, b);
   const typeLabel = it => it.hasPdf && it.hasVideo ? "PDF · Video" : (it.hasPdf ? "PDF guide" : (it.hasVideo ? "Video lesson" : "Lesson"));
+  const kindPill = it => it.hasPdf ? '<span class="kind guide">Quick guide</span>' : '<span class="kind lesson">Lesson</span>';
 
   const ICON = {
+    grid: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>',
     starThin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="m12 2.8 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.7l-5.9 3.1 1.2-6.5L2.5 9.7l6.6-.9z"/></svg>',
     star: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.8 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.7l-5.9 3.1 1.2-6.5L2.5 9.7l6.6-.9z"/></svg>',
     starOutline: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="m12 2.8 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.7l-5.9 3.1 1.2-6.5L2.5 9.7l6.6-.9z"/></svg>',
@@ -62,7 +64,8 @@
     const q = state.q.trim().toLowerCase();
     const terms = q ? q.split(/\s+/) : [];
     return ITEMS.filter(it => {
-      if (state.topic && it.topic !== state.topic) return false;
+      if (state.topic === 'bookmarked') { if (!store.bookmarks[it.id]) return false; }
+      else if (state.topic && it.topic !== state.topic) return false;
       if (terms.length) {
         const hay = it._hay || (it._hay = [it.title, it.summary, it.series, TOPIC_BY_KEY[it.topic]?.label,
           ...(it.links || []).map(l => l.label + ' ' + host(l.href))].join(' ').toLowerCase());
@@ -74,12 +77,14 @@
 
   /* ---------- render: topic chips ---------- */
   function renderTopics() {
-    const all = `<button type="button" class="chip" data-topic="" aria-pressed="${!state.topic}"><span class="swatch" style="background:linear-gradient(135deg,#F5B300,#FFD54F)">${ICON.starThin}</span>All<span class="count">${ITEMS.length}</span></button>`;
+    const marked = ITEMS.filter(i => store.bookmarks[i.id]).length;
+    const all = `<button type="button" class="chip" data-topic="" aria-pressed="${!state.topic}"><span class="swatch" style="background:#111827">${ICON.grid}</span>All<span class="count">${ITEMS.length}</span></button>`;
+    const saved = `<button type="button" class="chip" data-topic="bookmarked" aria-pressed="${state.topic === 'bookmarked'}"><span class="swatch" style="background:linear-gradient(135deg,#F5B300,#FFD54F)">${ICON.starThin}</span>Bookmarked<span class="count">${marked}</span></button>`;
     $('#topics').innerHTML = all + TOPICS.map(t => {
       const n = ITEMS.filter(i => i.topic === t.key).length;
       return `<button type="button" class="chip" data-topic="${t.key}" aria-pressed="${state.topic === t.key}" style="${styleVars(t.key)}">
         <span class="swatch">${st(t.key).icon}</span>${esc(t.label)}<span class="count">${n}</span></button>`;
-    }).join('');
+    }).join('') + saved;
   }
 
   /* ---------- render: cards & rows ---------- */
@@ -97,6 +102,7 @@
         <button class="star" type="button" data-star="${it.id}" aria-pressed="${marked}" title="${marked ? 'Remove bookmark' : 'Bookmark'}" aria-label="Bookmark">${marked ? ICON.star : ICON.starOutline}</button>
       </div>
       <div class="card-body">
+        <div>${kindPill(it)}</div>
         <button class="title-btn" type="button" data-open="${it.id}"><span class="title">${esc(it.title)}</span></button>
         <p class="summary">${esc(it.summary)}</p>
         <div class="card-meta">
@@ -111,7 +117,7 @@
     return `<article class="row" data-id="${it.id}" style="${styleVars(it.topic)}">
       <div class="block" data-open="${it.id}">${st(it.topic).icon}</div>
       <div class="row-main">
-        <button class="title-btn" type="button" data-open="${it.id}"><span class="title">${esc(it.title)}</span></button>
+        <div class="title-line"><button class="title-btn" type="button" data-open="${it.id}"><span class="title">${esc(it.title)}</span></button>${kindPill(it)}</div>
         <p class="about">${esc(it.summary)}</p>
       </div>
       <div class="right">
@@ -138,21 +144,16 @@
     el.innerHTML = html;
   }
   function renderGrid() {
-    const all = filtered();
-    const pinned = all.filter(i => store.bookmarks[i.id]);
-    const items = all.filter(i => !store.bookmarks[i.id]);
-    state.listIds = pinned.concat(items).map(i => i.id);
-    $('#result-count').textContent = all.length === 1 ? '1 guide' : `${all.length} guides`;
+    const items = filtered();
+    state.listIds = items.map(i => i.id);
+    $('#result-count').textContent = items.length === 1 ? '1 guide' : `${items.length} guides`;
     $$('[data-view]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === store.view)));
-    $('#grid-title').textContent = state.q ? 'Results' : (state.topic ? TOPIC_BY_KEY[state.topic].label : 'All guides');
-    $('#grid-sub').textContent = state.q ? `Matching “${state.q.trim()}”` : (state.topic ? `${all.length} guides and lessons.` : 'Business, nonprofit and career guides from Lesko Help.');
-    // bookmarked guides move up into their own strip and leave the main list
-    $('#pinned').hidden = pinned.length === 0;
-    $('#pinned-count').textContent = pinned.length;
-    $('#pinned-toggle').setAttribute('aria-expanded', String(store.pinnedOpen));
-    $('#pinned-grid').hidden = !store.pinnedOpen;
-    if (pinned.length) renderInto($('#pinned-grid'), pinned, '');
-    renderInto($('#grid'), items, pinned.length ? '' : `<div class="empty"><h3>Nothing matches.</h3><p>Try fewer words or pick another topic.</p></div>`);
+    const label = state.topic === 'bookmarked' ? 'Bookmarked' : (state.topic ? TOPIC_BY_KEY[state.topic].label : 'All guides');
+    $('#grid-title').textContent = state.q ? 'Results' : label;
+    $('#grid-sub').textContent = state.q ? `Matching “${state.q.trim()}”`
+      : (state.topic === 'bookmarked' ? (items.length ? `${items.length} bookmarked.` : 'Tap the star on any guide and it will show up here.')
+      : (state.topic ? `${items.length} guides and lessons.` : 'Business, nonprofit and career guides from Lesko Help.'));
+    renderInto($('#grid'), items, `<div class="empty"><h3>${state.topic === 'bookmarked' ? 'No bookmarks yet.' : 'Nothing matches.'}</h3><p>${state.topic === 'bookmarked' ? 'Tap the star on any guide and it will show up here.' : 'Try fewer words or pick another topic.'}</p></div>`);
   }
   /* ---------- viewer ---------- */
   function stageHTML(it) {
@@ -175,7 +176,7 @@
     const marked = !!store.bookmarks[id];
     const eyebrow = $('#viewer-eyebrow');
     eyebrow.style.cssText = styleVars(it.topic);
-    eyebrow.innerHTML = `<span class="chip static" style="${styleVars(it.topic)}"><span class="swatch">${st(it.topic).icon}</span>${esc(t.label || '')}</span>`;
+    eyebrow.innerHTML = `<span class="chip static" style="${styleVars(it.topic)}"><span class="swatch">${st(it.topic).icon}</span>${esc(t.label || '')}</span>${kindPill(it)}`;
     $('#viewer-body').innerHTML = `
       <div class="stage" id="stage">${stageHTML(it)}</div>
       <div class="detail">
@@ -259,7 +260,6 @@
       if (act === 'prev' || act === 'next') { const idx = state.listIds.indexOf(state.open); const nid = state.listIds[idx + (act === 'next' ? 1 : -1)]; if (nid) openGuide(nid); }
       return;
     }
-    if (e.target.closest('#pinned-toggle')) { store.pinnedOpen = !store.pinnedOpen; save(); renderGrid(); return; }
     const tp = e.target.closest('[data-topic]'); if (tp) { state.topic = tp.dataset.topic || null; refresh(); return; }
     const vw = e.target.closest('[data-view]'); if (vw) { store.view = vw.dataset.view; save(); renderGrid(); return; }
     const st_ = e.target.closest('[data-star]'); if (st_) { e.stopPropagation(); toggleStar(st_.dataset.star); return; }
