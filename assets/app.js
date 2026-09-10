@@ -164,35 +164,20 @@
     let media;
     if (state.stage === 'pdf') media = `<div class="media"><iframe src="${esc(it.preview)}" title="${esc(it.title)} PDF" allow="fullscreen"></iframe></div>`;
     else if (state.stage === 'video') media = `<div class="media video"><iframe src="${esc(it.video)}" title="${esc(it.title)} video" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" referrerpolicy="strict-origin-when-cross-origin"></iframe></div>`;
-    else media = `<div class="media empty">This lesson lives in the community. Use “Open in community” to read it there.</div>`;
+    else media = `<div class="media empty"><div><p>This lesson has no PDF yet.</p><a class="btn small" href="${esc(it.url)}" target="_blank" rel="noopener">Read it in the community ${ICON.ext}</a></div></div>`;
     return `${tabs.length > 1 ? `<div class="stage-tabs">${tabs.map(([k, l]) => `<button type="button" data-stage="${k}" aria-pressed="${state.stage === k}">${l}</button>`).join('')}</div>` : ''}
       ${media}
-      ${state.stage === 'pdf' ? `<div class="stage-note">If the preview stays blank, use Download PDF on the right.</div>` : ''}`;
+      ${state.stage === 'pdf' ? `<div class="stage-note">If the preview stays blank, use Download PDF at the top.</div>` : ''}`;
   }
   function openGuide(id, push) {
     const it = byId[id]; if (!it) return;
     state.open = id;
-    const t = TOPIC_BY_KEY[it.topic] || {};
     const marked = !!store.bookmarks[id];
-    const eyebrow = $('#viewer-eyebrow');
-    eyebrow.style.cssText = styleVars(it.topic);
-    eyebrow.innerHTML = `<span class="chip static" style="${styleVars(it.topic)}"><span class="swatch">${st(it.topic).icon}</span>${esc(t.label || '')}</span>${kindPill(it)}`;
-    $('#viewer-body').innerHTML = `
-      <div class="stage" id="stage">${stageHTML(it)}</div>
-      <div class="detail">
-        <h2 id="viewer-title" tabindex="-1">${esc(it.title)}</h2>
-        <p class="summary">${esc(it.summary)}</p>
-        <div class="cta-row">
-          ${it.hasPdf ? `<a class="btn primary small" href="${esc(it.download)}" target="_blank" rel="noopener">${ICON.download} Download PDF</a>` : ''}
-          ${it.hasVideo ? `<button class="btn small" type="button" data-stage="video">${ICON.play} Watch video</button>` : ''}
-          <button class="btn small star-btn" type="button" data-star="${id}" aria-pressed="${marked}">${marked ? ICON.star + ' Bookmarked' : ICON.starOutline + ' Bookmark'}</button>
-        </div>
-        <div class="section">
-          <div class="section-title"><h3>My notes</h3><span class="hint">Saved on this device</span></div>
-          <textarea class="notes" id="notes" placeholder="Who did you call? What did they say? What is your next step?">${esc(store.notes[id] || '')}</textarea>
-          <div class="saved" id="saved"></div>
-        </div>
-      </div>`;
+    $('#viewer-title').innerHTML = `<span class="swatch" style="${styleVars(it.topic)}">${st(it.topic).icon}</span><span class="t">${esc(it.title)}</span>`;
+    $('#viewer-actions').innerHTML = `
+      ${it.hasPdf ? `<a class="btn primary small" href="${esc(it.download)}" target="_blank" rel="noopener">${ICON.download} Download PDF</a>` : ''}
+      <button class="icon-btn star" type="button" data-star="${id}" aria-pressed="${marked}" title="${marked ? 'Remove bookmark' : 'Bookmark'}" aria-label="Bookmark">${marked ? ICON.star : ICON.starOutline}</button>`;
+    $('#viewer-body').innerHTML = `<div class="stage" id="stage">${stageHTML(it)}</div>`;
     const v = $('#viewer'), scrim = $('#scrim');
     v.hidden = false; scrim.hidden = false;
     requestAnimationFrame(() => { v.classList.add('open'); scrim.classList.add('open'); });
@@ -201,7 +186,7 @@
     $('[data-action="next"]').disabled = idx < 0 || idx >= state.listIds.length - 1;
     if (push !== false) history.replaceState(null, '', '#guide/' + id);
     document.body.style.overflow = 'hidden';
-    setTimeout(() => $('#viewer-title')?.focus(), 50);
+    setTimeout(() => $('[data-action="close"]')?.focus(), 50);
   }
   function closeViewer() {
     const v = $('#viewer'), scrim = $('#scrim');
@@ -225,7 +210,7 @@
     refresh(); if (state.open === id) syncViewerButtons(id);
   }
   function syncViewerButtons(id) {
-    const s = $('#viewer [data-star]'); if (s) { const on = !!store.bookmarks[id]; s.setAttribute('aria-pressed', on); s.innerHTML = on ? ICON.star + ' Bookmarked' : ICON.starOutline + ' Bookmark'; }
+    const s = $('#viewer [data-star]'); if (s) { const on = !!store.bookmarks[id]; s.setAttribute('aria-pressed', on); s.innerHTML = on ? ICON.star : ICON.starOutline; s.title = on ? 'Remove bookmark' : 'Bookmark'; }
   }
   let noteTimer;
   function saveNote(id, text) {
@@ -275,7 +260,6 @@
   });
   document.addEventListener('input', e => {
     if (e.target.id === 'q') { state.q = e.target.value; $('#q-clear').hidden = !state.q; renderGrid(); }
-    if (e.target.id === 'notes') saveNote(state.open, e.target.value);
   });
   $('#q-clear').addEventListener('click', () => { $('#q').value = ''; state.q = ''; $('#q-clear').hidden = true; renderGrid(); $('#q').focus(); });
   window.addEventListener('hashchange', route);
