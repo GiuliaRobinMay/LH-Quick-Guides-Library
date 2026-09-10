@@ -18,7 +18,7 @@
       "icon": "brain"
     },
     {
-      "key": "bills",
+      "key": "medbills",
       "label": "Bills, Illness & Caregivers",
       "color": "#F93946",
       "icon": "coins"
@@ -44,13 +44,13 @@
     "84451097": "mind",
     "84451457": "mind",
     "84452145": "mind",
-    "80242803": "bills",
-    "80957140": "bills",
-    "103398061": "bills",
-    "103398050": "bills",
-    "103398237": "bills",
-    "103398218": "bills",
-    "103398205": "bills"
+    "80242803": "medbills",
+    "80957140": "medbills",
+    "103398061": "medbills",
+    "103398050": "medbills",
+    "103398237": "medbills",
+    "103398218": "medbills",
+    "103398205": "medbills"
   },
   "titleOverrides": {
     "103398061": "Medical Bill Assistance"
