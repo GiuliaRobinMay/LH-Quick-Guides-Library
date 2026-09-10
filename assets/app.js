@@ -24,7 +24,7 @@
   /* ---------- storage ---------- */
   const store = load();
   function load() {
-    const base = { bookmarks: {}, done: {}, notes: {}, checked: {}, requests: [], view: 'list' };
+    const base = { bookmarks: {}, done: {}, notes: {}, checked: {}, requests: [], view: 'list', pinnedOpen: true };
     try { const raw = localStorage.getItem(STORE_KEY); return raw ? Object.assign(base, JSON.parse(raw)) : base; } catch (e) { return base; }
   }
   function save() { try { localStorage.setItem(STORE_KEY, JSON.stringify(store)); } catch (e) { /* private mode */ } }
@@ -133,16 +133,12 @@
     $('#grid-sub').textContent = state.q ? `Matching “${state.q.trim()}”` : (state.topic ? `${all.length} guides and lessons.` : 'Business, nonprofit and career guides from Lesko Help.');
     // bookmarked guides move up into their own strip and leave the main list
     $('#pinned').hidden = pinned.length === 0;
+    $('#pinned-count').textContent = pinned.length;
+    $('#pinned-toggle').setAttribute('aria-expanded', String(store.pinnedOpen));
+    $('#pinned-grid').hidden = !store.pinnedOpen;
     if (pinned.length) renderInto($('#pinned-grid'), pinned, '');
     renderInto($('#grid'), items, pinned.length ? '' : `<div class="empty"><h3>Nothing matches.</h3><p>Try fewer words or pick another topic.</p></div>`);
   }
-  function renderMine() {
-    const items = Object.keys(store.bookmarks).filter(id => store.bookmarks[id] && byId[id]).map(id => byId[id]).sort(byTitle);
-    const badge = $('#mine-badge'); badge.textContent = items.length; badge.hidden = items.length === 0;
-    $('#mine-sub').textContent = items.length ? `${items.length} bookmarked` : 'The guides you star will show up here.';
-    renderInto($('#mine-grid'), items, `<div class="empty"><h3>No bookmarks yet.</h3><p>Tap the star on any guide and it will show up here.</p></div>`);
-  }
-
   /* ---------- viewer ---------- */
   function stageHTML(it) {
     const tabs = [];
@@ -235,27 +231,8 @@
   let toastTimer;
   function toast(msg) { const t = $('#toast'); t.textContent = msg; t.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => t.classList.remove('show'), 1600); }
   function copy(text) { return navigator.clipboard && navigator.clipboard.writeText ? navigator.clipboard.writeText(text).then(() => true, () => false) : Promise.resolve(false); }
-  function exportNotes() {
-    const lines = ['Lesko Help - My guides', ''];
-    Object.keys(store.bookmarks).filter(id => byId[id]).forEach(id => {
-      const it = byId[id];
-      lines.push(`${store.done[id] ? '[x]' : '[ ]'} ${it.title}`); lines.push(`    ${it.url}`);
-      const ch = store.checked[id] || {};
-      (it.links || []).forEach(l => { if (ch[l.href]) lines.push(`    contacted: ${l.label} - ${l.href}`); });
-      if (store.notes[id]) lines.push('    notes: ' + store.notes[id].replace(/\n/g, '\n           '));
-      lines.push('');
-    });
-    copy(lines.join('\n')).then(ok => toast(ok ? 'Copied to clipboard' : 'Could not copy'));
-  }
-  function setTab(tab) {
-    state.tab = tab;
-    $$('.nav-item[data-tab]').forEach(b => b.setAttribute('aria-selected', String(b.dataset.tab === tab)));
-    $('.brand').classList.toggle('active', tab === 'library');
-    ['library', 'mine'].forEach(k => { $('#view-' + k).hidden = k !== tab; });
-    if (tab === 'mine') renderMine();
-    window.scrollTo({ top: 0 });
-  }
-  function refresh() { renderTopics(); renderGrid(); renderMine(); }
+  function setTab(tab) { state.tab = 'library'; window.scrollTo({ top: 0 }); }
+  function refresh() { renderTopics(); renderGrid(); }
 
   /* ---------- events ---------- */
   document.addEventListener('click', e => {
@@ -265,16 +242,11 @@
       if (act === 'home') { e.preventDefault(); state.topic = null; setTab('library'); refresh(); }
       if (act === 'close') closeViewer();
       if (act === 'prev' || act === 'next') { const idx = state.listIds.indexOf(state.open); const nid = state.listIds[idx + (act === 'next' ? 1 : -1)]; if (nid) openGuide(nid); }
-      if (act === 'export') exportNotes();
-      if (act === 'reset' && confirm('Clear all bookmarks, notes, check-marks and saved requests on this device?')) {
-        ['bookmarks', 'done', 'notes', 'checked'].forEach(k => store[k] = {}); save(); refresh(); toast('Cleared');
-      }
       return;
     }
-    const tl = e.target.closest('[data-tab-link]'); if (tl) { e.preventDefault(); setTab(tl.dataset.tabLink); return; }
-    const tab = e.target.closest('.nav-item[data-tab]'); if (tab) { setTab(tab.dataset.tab); return; }
-    const tp = e.target.closest('[data-topic]'); if (tp) { state.topic = tp.dataset.topic || null; if (state.tab !== 'library') setTab('library'); refresh(); return; }
-    const vw = e.target.closest('[data-view]'); if (vw) { store.view = vw.dataset.view; save(); renderGrid(); renderMine(); return; }
+    if (e.target.closest('#pinned-toggle')) { store.pinnedOpen = !store.pinnedOpen; save(); renderGrid(); return; }
+    const tp = e.target.closest('[data-topic]'); if (tp) { state.topic = tp.dataset.topic || null; refresh(); return; }
+    const vw = e.target.closest('[data-view]'); if (vw) { store.view = vw.dataset.view; save(); renderGrid(); return; }
     const st_ = e.target.closest('[data-star]'); if (st_) { e.stopPropagation(); toggleStar(st_.dataset.star); return; }
     const dn = e.target.closest('[data-done]'); if (dn) { e.stopPropagation(); toggleDone(dn.dataset.done); return; }
     const sg = e.target.closest('[data-stage]'); if (sg) { state.stage = sg.dataset.stage; const it = byId[state.open]; if (it) $('#stage').innerHTML = stageHTML(it); return; }
@@ -287,14 +259,14 @@
     if (e.key === '/' && document.activeElement && !/INPUT|TEXTAREA|SELECT/.test(document.activeElement.tagName)) { e.preventDefault(); $('#q').focus(); }
   });
   document.addEventListener('input', e => {
-    if (e.target.id === 'q') { state.q = e.target.value; $('#q-clear').hidden = !state.q; if (state.tab !== 'library') setTab('library'); renderGrid(); }
+    if (e.target.id === 'q') { state.q = e.target.value; $('#q-clear').hidden = !state.q; renderGrid(); }
     if (e.target.id === 'notes') saveNote(state.open, e.target.value);
   });
   $('#q-clear').addEventListener('click', () => { $('#q').value = ''; state.q = ''; $('#q-clear').hidden = true; renderGrid(); $('#q').focus(); });
   window.addEventListener('hashchange', route);
   function route() {
     const m = location.hash.match(/^#guide\/(\d+)$/);
-    if (m && byId[m[1]]) { setTab('library'); if (!state.listIds.includes(m[1])) { state.topic = null; state.q = ''; $('#q').value = ''; refresh(); } openGuide(m[1], false); }
+    if (m && byId[m[1]]) { if (!state.listIds.includes(m[1])) { state.topic = null; state.q = ''; $('#q').value = ''; refresh(); } openGuide(m[1], false); }
   }
 
   /* ---------- boot ---------- */

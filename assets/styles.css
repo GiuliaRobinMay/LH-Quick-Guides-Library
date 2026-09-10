@@ -82,6 +82,13 @@ input, textarea, select { font: inherit; color: inherit; }
 .chip.static .swatch { width: 26px; height: 26px; }
 
 /* ---------- Sections ---------- */
+.section-toggle { display: flex; align-items: center; gap: 10px; border: 0; background: transparent; padding: 0; margin: 28px 0 14px; font-size: 22px; font-weight: 600; letter-spacing: -.015em; color: var(--text); }
+.section-toggle .chev { width: 28px; height: 28px; border-radius: 8px; display: grid; place-items: center; color: var(--text-3); transition: transform .15s; }
+.section-toggle .chev svg { width: 18px; height: 18px; }
+.section-toggle[aria-expanded="true"] .chev { transform: rotate(90deg); }
+.section-toggle:hover .chev { background: var(--surface-2); color: var(--text); }
+.badge.yellow { background: #FACC15; color: #1F2937; }
+#pinned + .section-head { margin-top: 30px; }
 .section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin: 28px 0 16px; }
 .section-head h2 { font-size: 22px; font-weight: 600; }
 .section-head p { color: var(--text-2); margin-top: 2px; font-size: 15px; }
