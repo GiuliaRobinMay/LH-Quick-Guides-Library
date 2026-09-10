@@ -80,11 +80,20 @@ def download_for(code, drive, pdfs, drv):
     if drv and drv[0].get('viewUrl'): return drv[0]['viewUrl']
     return None
 
+def preview_for(code, drive, drv, pdfs):
+    dkey = (code or '').replace(' ', '_')
+    if dkey in drive:
+        return f"https://drive.google.com/file/d/{drive[dkey]['id']}/preview"
+    if drv and drv[0].get('previewUrl'): return drv[0]['previewUrl']
+    if pdfs: return pdfs[0]['href']
+    return None
+
 APP_TOPICS = {'business', 'nonprofit', 'career'}   # the app ships only the Business Hub guides
 
 def main():
     manifest = json.load(open(os.path.join(SRC, 'manifest.json')))
     drive = {d['code']: d for d in json.load(open(os.path.join(SRC, 'drive_folder.json')))}
+    videos = json.load(open(os.path.join(SRC, 'videos.json'))) if os.path.exists(os.path.join(SRC, 'videos.json')) else {}
     posts = {}
     for f in sorted(glob.glob(os.path.join(SRC, 'posts_*.json'))):
         for p in json.load(open(f)):
@@ -129,6 +138,8 @@ def main():
                     'fetched': 'error' not in p and bool(p),
                     'pdfs': pdfs, 'drive': drv, 'links': links,
                     'download': download_for(code, drive, pdfs, drv),
+                    'video': (f"https://www.youtube.com/embed/{videos[str(lid)]['youtube']}" if str(lid) in videos and videos[str(lid)].get('youtube') else None),
+                    'preview': preview_for(code, drive, drv, pdfs),
                     'wordCount': p.get('wordCount', 0),
                 })
     data = {

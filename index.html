@@ -4,96 +4,98 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Lesko Help Quick Guide Library</title>
-<meta name="description" content="Every Lesko Help quick guide in one searchable list. Filter by topic, open the guide, download the PDF, and bookmark the ones you need.">
+<meta name="description" content="The Lesko Help Business, Nonprofit and Career quick guides in one dashboard. Open a guide, read or download the PDF, watch the lesson, and bookmark what you need.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Mono:wght@400;500;600&family=Inter:wght@400;500;600;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="assets/styles.css">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%232C4DC9'/%3E%3Ctext x='32' y='45' font-family='Georgia,serif' font-size='40' font-weight='700' fill='white' text-anchor='middle'%3E?%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='32' fill='%232B4EC8'/%3E%3Ctext x='32' y='45' font-family='Arial,sans-serif' font-size='38' font-weight='700' fill='white' text-anchor='middle'%3E?%3C/text%3E%3C/svg%3E">
 </head>
 <body>
-<div class="frame" aria-hidden="true"></div>
 
-<div class="page">
-  <header class="masthead">
+<header class="appbar">
+  <div class="appbar-inner">
     <a class="brand" href="#" data-action="home">
       <span class="brand-mark" aria-hidden="true">?</span>
-      <span class="brand-word"><span class="top">Lesko</span><span class="bottom">Help</span></span>
+      <span class="brand-word">Lesko <b>Help</b></span>
     </a>
-    <nav class="tabs" role="tablist" aria-label="Sections">
-      <button class="tab" role="tab" id="tab-library" aria-selected="true" aria-controls="view-library" data-tab="library">01 · The Library</button>
-      <button class="tab" role="tab" id="tab-mine" aria-selected="false" aria-controls="view-mine" data-tab="mine">02 · Bookmarked <span class="badge" id="mine-badge" hidden>0</span></button>
+    <nav class="appnav" role="tablist" aria-label="Sections">
+      <button class="appnav-item" role="tab" id="tab-library" aria-selected="true" aria-controls="view-library" data-tab="library">Library</button>
+      <button class="appnav-item" role="tab" id="tab-mine" aria-selected="false" aria-controls="view-mine" data-tab="mine">Bookmarked <span class="badge" id="mine-badge" hidden>0</span></button>
     </nav>
-  </header>
+    <label class="search">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+      <input id="q" type="search" placeholder="Search guides" autocomplete="off" aria-label="Search guides">
+      <button class="clear" id="q-clear" type="button" hidden aria-label="Clear search">&times;</button>
+    </label>
+  </div>
+</header>
+
+<main class="page">
 
   <!-- ===== Library ===== -->
   <section id="view-library" role="tabpanel" aria-labelledby="tab-library">
-    <div class="panel">
-      <div class="toolbar">
-        <label class="search">
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
-          <input id="q" type="search" placeholder="Search…" autocomplete="off" aria-label="Search guides">
-          <button class="clear" id="q-clear" type="button" hidden>Clear</button>
-        </label>
-        <div class="filter-row">
-          <div id="topics" class="filter-row" role="group" aria-label="Topic"></div>
-          <span class="spacer"></span>
-          <span class="legend" aria-hidden="true"><span class="dot guide"></span>Quick guide <span class="dot lesson"></span>Lesson</span>
+    <div class="tiles" id="tiles" role="group" aria-label="Topic"></div>
+    <div class="grid-head">
+      <h2 id="grid-title">All guides</h2>
+      <div class="grid-tools">
+        <span class="legend" aria-hidden="true"><span class="pill guide">PDF</span><span class="pill video">Video</span><span class="pill lesson">Lesson</span></span>
+        <div class="seg" role="group" aria-label="View">
+          <button type="button" data-view="cards" aria-pressed="true" title="Cards"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="4" y="4" width="7" height="7" rx="1.5"/><rect x="13" y="4" width="7" height="7" rx="1.5"/><rect x="4" y="13" width="7" height="7" rx="1.5"/><rect x="13" y="13" width="7" height="7" rx="1.5"/></svg></button>
+          <button type="button" data-view="list" aria-pressed="false" title="List"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M5 7h14M5 12h14M5 17h14"/></svg></button>
         </div>
       </div>
-      <div class="list" id="list" aria-live="polite"></div>
-      <p class="foot-note"><span id="result-count"></span> · Can't find what you need? <a href="#" data-action="go-request">Request a guide</a></p>
     </div>
+    <div class="grid" id="grid" aria-live="polite"></div>
+    <p class="foot-note"><span id="result-count"></span> · Can't find what you need? <a href="#" data-action="go-request">Request a guide</a></p>
   </section>
 
   <!-- ===== Bookmarked ===== -->
   <section id="view-mine" role="tabpanel" aria-labelledby="tab-mine" hidden>
-    <div class="panel">
-      <div class="filter-row" style="margin-bottom:12px">
-        <span class="count" id="mine-count"></span>
-        <span class="spacer"></span>
+    <div class="tiles" id="mine-tiles"></div>
+    <div class="grid-head">
+      <h2>Bookmarked guides</h2>
+      <div class="grid-tools">
         <button class="btn small ghost" type="button" data-action="print">Print</button>
         <button class="btn small ghost" type="button" data-action="export">Copy my notes</button>
         <button class="btn small ghost" type="button" data-action="reset">Clear all</button>
       </div>
-      <div class="list" id="mine-list"></div>
     </div>
+    <div class="grid" id="mine-grid"></div>
   </section>
 
   <!-- ===== Request ===== -->
   <section id="view-request" role="tabpanel" hidden>
-    <div class="panel">
-      <div class="panel-head">
-        <h2>Request a quick guide</h2>
-        <button class="btn small ghost" type="button" data-action="home">Back to the library</button>
-      </div>
-      <div class="two-col">
-        <form class="form" id="request-form">
-          <div class="field">
-            <label for="rq-topic">Topic</label>
-            <select id="rq-topic" class="select" required></select>
-          </div>
-          <div class="field">
-            <label for="rq-title">What should the guide cover?</label>
-            <input id="rq-title" type="text" required maxlength="120" placeholder="e.g. Grants for food trucks in Texas">
-          </div>
-          <div class="field">
-            <label for="rq-why">Why do you need it? (optional)</label>
-            <textarea id="rq-why" maxlength="800"></textarea>
-            <span class="hint">Please do not include your SSN, bank details or other private numbers.</span>
-          </div>
-          <div class="field">
-            <label for="rq-name">Your name (optional)</label>
-            <input id="rq-name" type="text" maxlength="80">
-          </div>
-          <div class="cta-row" style="margin-top:4px">
-            <button class="btn primary" type="submit">Save my request</button>
-          </div>
-        </form>
-        <div>
-          <div class="section-title"><h3>My requests</h3><span class="hint" id="rq-count"></span></div>
-          <ul class="requests" id="requests"></ul>
+    <div class="grid-head">
+      <h2>Request a quick guide</h2>
+      <button class="btn small ghost" type="button" data-action="home">Back to the library</button>
+    </div>
+    <div class="panel two-col">
+      <form class="form" id="request-form">
+        <div class="field">
+          <label for="rq-topic">Topic</label>
+          <select id="rq-topic" class="select" required></select>
         </div>
+        <div class="field">
+          <label for="rq-title">What should the guide cover?</label>
+          <input id="rq-title" type="text" required maxlength="120" placeholder="e.g. Grants for food trucks in Texas">
+        </div>
+        <div class="field">
+          <label for="rq-why">Why do you need it? (optional)</label>
+          <textarea id="rq-why" maxlength="800"></textarea>
+          <span class="hint">Please do not include your SSN, bank details or other private numbers.</span>
+        </div>
+        <div class="field">
+          <label for="rq-name">Your name (optional)</label>
+          <input id="rq-name" type="text" maxlength="80">
+        </div>
+        <div class="cta-row" style="margin-top:4px">
+          <button class="btn primary" type="submit">Save my request</button>
+        </div>
+      </form>
+      <div>
+        <div class="section-title"><h3>My requests</h3><span class="hint" id="rq-count"></span></div>
+        <ul class="requests" id="requests"></ul>
       </div>
     </div>
   </section>
@@ -102,20 +104,20 @@
     <span>Lesko Help Quick Guide Library</span>
     <span><a href="https://lesko-help-2.mn.co/spaces/18083958" target="_blank" rel="noopener">Open the community</a></span>
   </footer>
-</div>
+</main>
 
-<!-- ===== Detail drawer ===== -->
+<!-- ===== Viewer ===== -->
 <div class="scrim" id="scrim" hidden></div>
-<aside class="drawer" id="drawer" role="dialog" aria-modal="true" aria-labelledby="drawer-title" hidden>
-  <div class="drawer-head">
-    <span class="eyebrow" id="drawer-eyebrow"></span>
+<div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-labelledby="viewer-title" hidden>
+  <div class="viewer-head">
+    <span class="eyebrow" id="viewer-eyebrow"></span>
     <span class="spacer"></span>
     <button class="icon-btn" type="button" data-action="prev" title="Previous" aria-label="Previous guide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
     <button class="icon-btn" type="button" data-action="next" title="Next" aria-label="Next guide"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
     <button class="icon-btn" type="button" data-action="close" title="Close" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
   </div>
-  <div class="drawer-body" id="drawer-body"></div>
-</aside>
+  <div class="viewer-body" id="viewer-body"></div>
+</div>
 <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
 <script src="data/guides.js"></script>
