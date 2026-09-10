@@ -5,11 +5,11 @@
 @font-face { font-family: "Inter"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("fonts/inter-var.woff2") format("woff2"); }
 
 :root {
-  --bg: #F7F8FA;
+  --bg: #FAF6ED;
   --surface: #FFFFFF;
-  --surface-2: #F3F4F7;
-  --border: #E6E8EE;
-  --border-2: #D9DCE4;
+  --surface-2: #F4EFE3;
+  --border: #EAE4D6;
+  --border-2: #DDD5C3;
   --text: #111827;
   --text-2: #6B7280;
   --text-3: #9CA3AF;
@@ -145,7 +145,7 @@ input, textarea, select { font: inherit; color: inherit; }
 
 /* ---------- Rows (Luma-style): coloured block with icon, title, subline ---------- */
 .rows { display: grid; gap: 12px; }
-.row { background: var(--surface); border-radius: 12px; box-shadow: 0 1px 2px rgba(17,24,39,.05), 0 6px 20px -10px rgba(17,24,39,.14); display: grid; grid-template-columns: 84px minmax(0, 1fr) auto; align-items: center; overflow: hidden; transition: box-shadow .14s, transform .14s; }
+.row { background: var(--surface); border-radius: 12px; box-shadow: 0 1px 2px rgba(60,45,20,.05), 0 6px 20px -10px rgba(60,45,20,.14); display: grid; grid-template-columns: 84px minmax(0, 1fr) auto; align-items: center; overflow: hidden; transition: box-shadow .14s, transform .14s; }
 .row:hover { box-shadow: 0 2px 4px rgba(17,24,39,.06), 0 14px 32px -14px rgba(17,24,39,.22); transform: translateY(-1px); }
 .row .block { align-self: stretch; background: var(--grad); color: #fff; display: grid; place-items: center; cursor: pointer; min-height: 82px; }
 .row .block svg { width: 38px; height: 38px; }
