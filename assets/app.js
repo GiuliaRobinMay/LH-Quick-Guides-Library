@@ -9,13 +9,14 @@
   const TOPIC_BY_KEY = Object.fromEntries(TOPICS.map(t => [t.key, t]));
   // Topic look: gradient cover, icon tint, ink colour, icon (Lucide line icons).
   const TOPIC_STYLE = {
-    business:  { grad: 'linear-gradient(135deg, #0FB88A 0%, #19D6B4 100%)', tint: '#E1F7F0', ink: '#0E9F78',
+    business:  { grad: 'linear-gradient(135deg, #2CA01C 0%, #43B834 100%)', tint: '#E6F5E3', ink: '#2CA01C',
                  icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>' },
-    nonprofit: { grad: 'linear-gradient(135deg, #EF4E7B 0%, #FB8A7A 100%)', tint: '#FDE7EE', ink: '#DB3A6C',
+    nonprofit: { grad: 'linear-gradient(135deg, #F93946 0%, #FF5E69 100%)', tint: '#FEE7E9', ink: '#F93946',
                  icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/><path d="m18 15-2-2"/><path d="m15 18-2-2"/></svg>' },
-    career:    { grad: 'linear-gradient(135deg, #6A5AF9 0%, #A97CFF 100%)', tint: '#EDEAFE', ink: '#6552E8',
+    career:    { grad: 'linear-gradient(135deg, #7C3BB0 0%, #9557C9 100%)', tint: '#F0E7F7', ink: '#7C3BB0',
                  icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>' }
   };
+  const YELLOW = '#FDCC0A';
   const STORE_KEY = 'lesko-quick-guides-v2';
 
   const ITEMS = DATA.items.map(i => Object.assign({}, i, { hasPdf: !!i.download, hasVideo: !!i.video }));
@@ -86,7 +87,7 @@
   function renderTopics() {
     const marked = ITEMS.filter(i => store.bookmarks[i.id]).length;
     const all = `<button type="button" class="chip" data-topic="" aria-pressed="${!state.topic}"><span class="swatch" style="background:#111827">${ICON.grid}</span>All<span class="count">${ITEMS.length}</span></button>`;
-    const saved = `<button type="button" class="chip" data-topic="bookmarked" aria-pressed="${state.topic === 'bookmarked'}"><span class="swatch" style="background:linear-gradient(135deg,#F5B300,#FFD54F)">${ICON.starThin}</span>Bookmarked<span class="count">${marked}</span></button>`;
+    const saved = `<button type="button" class="chip" data-topic="bookmarked" aria-pressed="${state.topic === 'bookmarked'}"><span class="swatch" style="background:${YELLOW}">${ICON.starThin}</span>Bookmarked<span class="count">${marked}</span></button>`;
     $('#topics').innerHTML = all + TOPICS.map(t => {
       const n = ITEMS.filter(i => i.topic === t.key).length;
       return `<button type="button" class="chip" data-topic="${t.key}" aria-pressed="${state.topic === t.key}" style="${styleVars(t.key)}">

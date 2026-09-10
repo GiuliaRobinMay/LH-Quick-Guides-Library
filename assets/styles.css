@@ -13,9 +13,9 @@
   --text: #111827;
   --text-2: #6B7280;
   --text-3: #9CA3AF;
-  --accent: #5B4FE9;
-  --accent-ink: #4A3FD6;
-  --accent-soft: #EEEDFD;
+  --accent: #0060FF;
+  --accent-ink: #0050D6;
+  --accent-soft: #E5EFFF;
   --green: #16A34A;  --green-soft: #DCFCE7;
   --amber: #B45309;  --amber-soft: #FEF3C7;
   --shadow-sm: 0 1px 2px rgba(17,24,39,.04);
@@ -39,7 +39,7 @@ input, textarea, select { font: inherit; color: inherit; }
 [hidden] { display: none !important; }
 
 /* ---------- Top bar ---------- */
-:root { --bar: #1E3F8A; }   /* top bar blue; swap for the exact brand value */
+:root { --bar: #0060FF; }   /* Lesko Help brand blue */
 .topbar { position: sticky; top: 0; z-index: 30; background: var(--bar); color: #fff; }
 .topbar-inner { max-width: 1180px; margin: 0 auto; padding: 0 clamp(16px, 3vw, 32px); height: 66px; display: flex; align-items: center; gap: 22px; }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: #fff; padding: 6px 10px 6px 0; border-radius: 10px; }
@@ -63,9 +63,9 @@ input, textarea, select { font: inherit; color: inherit; }
 .btn.primary:hover { background: var(--accent-ink); }
 .btn svg { width: 17px; height: 17px; }
 .btn.small { padding: 8px 14px; font-size: 14px; border-radius: 10px; }
-.btn[aria-pressed="true"] { background: #FEF3C7; border-color: #FDE68A; color: #92400E; }
+.btn[aria-pressed="true"] { background: #FFF6D1; border-color: #FDE58A; color: #7A5A00; }
 .btn.star-btn svg { width: 20px; height: 20px; }
-.btn.star-btn[aria-pressed="true"] svg { color: #FACC15; }
+.btn.star-btn[aria-pressed="true"] svg { color: #FDCC0A; }
 
 .page { max-width: 1180px; margin: 0 auto; padding: 22px clamp(16px, 3vw, 32px) 72px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
@@ -90,7 +90,7 @@ input, textarea, select { font: inherit; color: inherit; }
 .section-toggle .chev svg { width: 18px; height: 18px; }
 .section-toggle[aria-expanded="true"] .chev { transform: rotate(90deg); }
 .section-toggle:hover .chev { background: var(--surface-2); color: var(--text); }
-.badge.yellow { background: #FACC15; color: #1F2937; }
+.badge.yellow { background: #FDCC0A; color: #1F2937; }
 
 .section-head { display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin: 28px 0 16px; }
 .section-head h2 { font-size: 22px; font-weight: 600; }
@@ -114,7 +114,7 @@ input, textarea, select { font: inherit; color: inherit; }
 .cover .star { position: absolute; top: 8px; right: 8px; border: 0; background: transparent; color: #fff; width: 30px; height: 30px; border-radius: 50%; display: grid; place-items: center; opacity: .85; }
 .cover .star:hover { background: rgba(255,255,255,.2); opacity: 1; }
 .cover .star svg { width: 18px; height: 18px; }
-.cover .star[aria-pressed="true"] { opacity: 1; color: #FACC15; }
+.cover .star[aria-pressed="true"] { opacity: 1; color: #FDCC0A; }
 .card-body { padding: 14px 16px 14px; display: flex; flex-direction: column; gap: 5px; flex: 1; }
 .card .title-btn { all: unset; cursor: pointer; display: block; }
 .card .title { font-size: 15px; font-weight: 600; line-height: 1.35; letter-spacing: -.01em; color: var(--text); display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
@@ -162,8 +162,8 @@ input, textarea, select { font: inherit; color: inherit; }
 .icon-btn:hover { background: var(--surface-2); color: var(--text); }
 .icon-btn svg { width: 19px; height: 19px; }
 .icon-btn.star svg { width: 24px; height: 24px; }
-.icon-btn.star[aria-pressed="true"] { color: #FACC15; }
-.icon-btn.star[aria-pressed="true"]:hover { color: #EAB308; }
+.icon-btn.star[aria-pressed="true"] { color: #FDCC0A; }
+.icon-btn.star[aria-pressed="true"]:hover { color: #E9BB00; }
 
 .foot-note { margin-top: 24px; font-size: 14px; color: var(--text-3); }
 .empty { grid-column: 1 / -1; padding: 56px 12px; text-align: center; color: var(--text-2); background: var(--surface); border: 1px dashed var(--border-2); border-radius: 18px; }
