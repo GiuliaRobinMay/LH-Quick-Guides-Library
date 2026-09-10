@@ -102,7 +102,7 @@
         <p class="summary">${esc(it.summary)}</p>
         <div class="card-meta">
           <span class="left">${it.hasVideo && !it.hasPdf ? ICON.play : ICON.file}${typeLabel(it)}</span>
-          <span class="right">${it.hasPdf ? `<a href="${esc(it.download)}" target="_blank" rel="noopener" title="Download PDF">${ICON.download} Download</a>` : ''}${statusHTML(it)}</span>
+          <span class="right">${it.hasPdf ? `<a href="${esc(it.download)}" target="_blank" rel="noopener" title="Download PDF">${ICON.download} Download</a>` : ''}${done ? '<span class="status done">Done</span>' : ''}</span>
         </div>
         <div class="progress"><i></i></div>
       </div>
