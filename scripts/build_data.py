@@ -163,7 +163,18 @@ def library_data(lib, items):
 
 def read(p): return open(os.path.join(ROOT, p), encoding='utf-8').read()
 
-def single_file(data_js, title):
+def brand_mark_html(lib):
+    """The library's own icon, inlined as a data URI, for the white square in the top bar."""
+    name = lib.get('mark')
+    if not name:
+        return None
+    path = os.path.join(ROOT, 'brand', name)
+    if not os.path.exists(path):
+        return None
+    b64 = base64.b64encode(open(path, 'rb').read()).decode('ascii')
+    return f'<span class="brand-mark has-img" aria-hidden="true"><img src="data:image/png;base64,{b64}" alt=""></span>'
+
+def single_file(data_js, title, mark=None):
     """Inline styles, font, data and script into one HTML page."""
     css = read('assets/styles.css')
     font_path = os.path.join(ROOT, 'assets', 'fonts', 'inter-var.woff2')
@@ -171,6 +182,8 @@ def single_file(data_js, title):
         b64 = base64.b64encode(open(font_path, 'rb').read()).decode('ascii')
         css = css.replace('url("fonts/inter-var.woff2")', f'url("data:font/woff2;base64,{b64}")')
     page = read('index.html')
+    if mark:
+        page = re.sub(r'<span class="brand-mark".*?</span>', lambda m: mark, page, count=1, flags=re.S)
     page = page.replace('<title>Lesko Help Quick Guide Library</title>', f'<title>{html.escape(title)}</title>')
     page = page.replace('<link rel="stylesheet" href="assets/styles.css">', '<style>\n' + css + '\n</style>')
     page = page.replace('<script src="data/guides.js"></script>', '<script>\n' + data_js + '\n</script>')
@@ -188,7 +201,7 @@ def main():
         if lib['key'] == 'business':
             open(os.path.join(ROOT, 'data', 'guides.js'), 'w', encoding='utf-8').write(data_js)
         out_dir = os.path.join(ROOT, 'dist', lib['key']); os.makedirs(out_dir, exist_ok=True)
-        open(os.path.join(out_dir, 'index.html'), 'w', encoding='utf-8').write(single_file(data_js, 'Lesko Help ' + lib['title']))
+        open(os.path.join(out_dir, 'index.html'), 'w', encoding='utf-8').write(single_file(data_js, 'Lesko Help ' + lib['title'], brand_mark_html(lib)))
         print(f"{lib['key']:10} {len(data['items']):3} items, {sum(1 for i in data['items'] if i['download'])} with PDFs, {sum(1 for i in data['items'] if i['isLesson'])} lessons -> dist/{lib['key']}/index.html")
 
 if __name__ == '__main__':

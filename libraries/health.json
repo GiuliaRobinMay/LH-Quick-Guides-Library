@@ -1,6 +1,7 @@
 {
   "key": "health",
   "title": "Healthcare Assistance",
+  "mark": "Icon_01.png",
   "spaceId": "18453836",
   "driveFolder": "https://drive.google.com/drive/folders/1hqcLbkcldbUEn_hwwt791CTN6pAbkJwm",
   "driveListing": "drive_health.json",
