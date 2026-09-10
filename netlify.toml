@@ -1,0 +1,6 @@
+# One repo, one Netlify site per library.
+# Each site sets the environment variable LIBRARY (business, taxes, ...).
+# The build copies that library's finished app into public/ and Netlify serves it.
+[build]
+  command = "bash scripts/netlify_publish.sh"
+  publish = "public"
