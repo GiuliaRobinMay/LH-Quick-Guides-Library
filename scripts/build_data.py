@@ -88,6 +88,9 @@ def preview_for(code, drive, drv, pdfs):
     if pdfs: return pdfs[0]['href']
     return None
 
+# Teaching lessons come first in each topic, in series order; quick guides follow alphabetically.
+LESSON_IDS = {'79122514', '79122515', '83646154', '80242726', '80242727', '85344073', '85344076'}
+
 APP_TOPICS = {'business', 'nonprofit', 'career'}   # the app ships only the Business Hub guides
 
 def main():
@@ -138,6 +141,7 @@ def main():
                     'fetched': 'error' not in p and bool(p),
                     'pdfs': pdfs, 'drive': drv, 'links': links,
                     'download': download_for(code, drive, pdfs, drv),
+                    'isLesson': str(lid) in LESSON_IDS,
                     'video': (f"https://www.youtube.com/embed/{videos[str(lid)]['youtube']}" if str(lid) in videos and videos[str(lid)].get('youtube') else None),
                     'preview': preview_for(code, drive, drv, pdfs),
                     'wordCount': p.get('wordCount', 0),

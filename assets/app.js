@@ -43,9 +43,12 @@
   const TOPIC_ORDER = Object.fromEntries(TOPICS.map((t, i) => [t.key, i]));
   const byTitle = (a, b) => a.title.localeCompare(b.title, undefined, { sensitivity: 'base' });
   // Business first, then Nonprofit, then Career; alphabetical inside each topic.
-  const byTopicThenTitle = (a, b) => (TOPIC_ORDER[a.topic] - TOPIC_ORDER[b.topic]) || byTitle(a, b);
+  // Inside a topic: lessons first in their teaching order, then quick guides A to Z.
+  const byTopicThenTitle = (a, b) => (TOPIC_ORDER[a.topic] - TOPIC_ORDER[b.topic])
+    || ((b.isLesson ? 1 : 0) - (a.isLesson ? 1 : 0))
+    || (a.isLesson && b.isLesson ? a.order - b.order : byTitle(a, b));
   const typeLabel = it => it.hasPdf && it.hasVideo ? "PDF · Video" : (it.hasPdf ? "PDF guide" : (it.hasVideo ? "Video lesson" : "Lesson"));
-  const kindPill = it => it.hasPdf ? '<span class="kind guide">Quick guide</span>' : '<span class="kind lesson">Lesson</span>';
+  const kindPill = it => it.isLesson ? '<span class="kind lesson">Lesson</span>' : '<span class="kind guide">Quick guide</span>';
 
   const ICON = {
     grid: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>',
