@@ -48,7 +48,11 @@
     || ((b.isLesson ? 1 : 0) - (a.isLesson ? 1 : 0))
     || (a.isLesson && b.isLesson ? a.order - b.order : byTitle(a, b));
   const typeLabel = it => it.hasPdf && it.hasVideo ? "PDF · Video" : (it.hasPdf ? "PDF guide" : (it.hasVideo ? "Video lesson" : "Lesson"));
-  const kindPill = it => it.isLesson ? '<span class="kind lesson">Lesson</span>' : '<span class="kind guide">Quick guide</span>';
+  // "LESSON 1 | Title" (numbered in teaching order inside the topic) or "QUICK GUIDE | Title"
+  const LESSON_NO = {};
+  TOPICS.forEach(t => ITEMS.filter(i => i.topic === t.key && i.isLesson).sort((x, y) => x.order - y.order).forEach((i, n) => { LESSON_NO[i.id] = n + 1; }));
+  const prefix = it => it.isLesson ? `Lesson ${LESSON_NO[it.id] || ''}`.trim() : 'Quick guide';
+  const titleHTML = it => `<span class="prefix">${esc(prefix(it))}</span><span class="pipe">|</span>${esc(it.title)}`;
 
   const ICON = {
     grid: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>',
@@ -101,7 +105,7 @@
     return `<article class="row" data-id="${it.id}" style="${styleVars(it.topic)}">
       <div class="block" data-open="${it.id}">${st(it.topic).icon}</div>
       <div class="row-main">
-        <div class="title-line"><button class="title-btn" type="button" data-open="${it.id}"><span class="title">${esc(it.title)}</span></button>${kindPill(it)}</div>
+        <button class="title-btn" type="button" data-open="${it.id}"><span class="title">${titleHTML(it)}</span></button>
         <p class="about">${esc(it.summary)}</p>
       </div>
       <div class="right">
@@ -152,7 +156,7 @@
     const it = byId[id]; if (!it) return;
     state.open = id;
     const marked = !!store.bookmarks[id];
-    $('#viewer-title').innerHTML = `<span class="swatch" style="${styleVars(it.topic)}">${st(it.topic).icon}</span><span class="t">${esc(it.title)}</span>`;
+    $('#viewer-title').innerHTML = `<span class="swatch" style="${styleVars(it.topic)}">${st(it.topic).icon}</span><span class="t">${titleHTML(it)}</span>`;
     $('#viewer-actions').innerHTML = `
       ${it.hasPdf ? `<a class="btn primary small" href="${esc(it.download)}" target="_blank" rel="noopener">${ICON.download} Download PDF</a>` : ''}
       <button class="icon-btn star" type="button" data-star="${id}" aria-pressed="${marked}" title="${marked ? 'Remove bookmark' : 'Bookmark'}" aria-label="Bookmark">${marked ? ICON.star : ICON.starOutline}</button>`;
