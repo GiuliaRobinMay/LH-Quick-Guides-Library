@@ -5,11 +5,29 @@
   "driveFolder": "https://drive.google.com/drive/folders/18zaE1chJw6SDxVZX01om8tHtH4gnulNw",
   "driveListing": "drive_families.json",
   "topics": [
-    { "key": "families",     "label": "Families & Children", "color": "#2CA01C", "icon": "users" },
-    { "key": "seniors",      "label": "Seniors",             "color": "#F93946", "icon": "heart-pulse" },
-    { "key": "disabilities", "label": "Disabilities",        "color": "#7C3BB0", "icon": "accessibility" }
+    {
+      "key": "families",
+      "label": "Families & Children",
+      "color": "#2CA01C",
+      "icon": "users"
+    },
+    {
+      "key": "seniors",
+      "label": "Seniors",
+      "color": "#F93946",
+      "icon": "heart-pulse"
+    },
+    {
+      "key": "disabilities",
+      "label": "Disabilities",
+      "color": "#7C3BB0",
+      "icon": "accessibility"
+    }
   ],
-  "lessons": { "98434840": 1, "98433226": 1 },
+  "lessons": {
+    "98434840": 1,
+    "98433226": 1
+  },
   "titleOverrides": {
     "98434840": "Find Your Family Benefits: the Core Federal Programs (by State)",
     "98433226": "Seniors & Disabilities: Your Free Starting Points",
@@ -22,15 +40,44 @@
     "98435338": "1AQrvFYbqtX0QSadOjmx7I_3c2XgpxofE"
   },
   "extraItems": [
-    { "code": "FC B2", "topic": "seniors", "title": "Senior Benefits & Eldercare",
-      "summary": "Free benefit screenings, the Eldercare Locator, Medicaid waivers and PACE that pay for in-home care, VA Aid & Attendance, home-delivered meals and getting paid as a family caregiver." },
-    { "code": "FC B3", "topic": "seniors", "title": "Free & Low-Cost Help for Seniors",
-      "summary": "Discounts and free programs for seniors on phone and internet, energy bills, food coupons, prescriptions, transport, fitness, tax help and park passes." },
-    { "code": "FC C1", "topic": "disabilities", "title": "Disability Benefits & Income",
-      "summary": "SSDI and SSI monthly income, the health coverage that comes with them, how to apply and appeal a denial for free, ABLE savings accounts and Ticket to Work." },
-    { "code": "FC C2", "topic": "disabilities", "title": "Disability Support & Services",
-      "summary": "Centers for Independent Living, in-home care through Medicaid, vocational rehabilitation, assistive technology, job accommodations and free legal protection of your rights." },
-    { "code": "FC C3", "topic": "disabilities", "title": "Disability Housing & Home Modifications",
-      "summary": "Free ramps, grab bars and repairs, USDA and Medicaid programs, VA housing grants, HUD counselors and Section 811 supportive housing, plus 211 and findhelp.org for local funds." }
-  ]
+    {
+      "code": "FC B2",
+      "topic": "seniors",
+      "title": "Senior Benefits & Eldercare",
+      "summary": "Free benefit screenings, the Eldercare Locator, Medicaid waivers and PACE that pay for in-home care, VA Aid & Attendance, home-delivered meals and getting paid as a family caregiver."
+    },
+    {
+      "code": "FC B3",
+      "topic": "seniors",
+      "title": "Free & Low-Cost Help for Seniors",
+      "summary": "Discounts and free programs for seniors on phone and internet, energy bills, food coupons, prescriptions, transport, fitness, tax help and park passes."
+    },
+    {
+      "code": "FC C1",
+      "topic": "disabilities",
+      "title": "Disability Benefits & Income",
+      "summary": "SSDI and SSI monthly income, the health coverage that comes with them, how to apply and appeal a denial for free, ABLE savings accounts and Ticket to Work."
+    },
+    {
+      "code": "FC C2",
+      "topic": "disabilities",
+      "title": "Disability Support & Services",
+      "summary": "Centers for Independent Living, in-home care through Medicaid, vocational rehabilitation, assistive technology, job accommodations and free legal protection of your rights."
+    },
+    {
+      "code": "FC C3",
+      "topic": "disabilities",
+      "title": "Disability Housing & Home Modifications",
+      "summary": "Free ramps, grab bars and repairs, USDA and Medicaid programs, VA housing grants, HUD counselors and Section 811 supportive housing, plus 211 and findhelp.org for local funds."
+    }
+  ],
+  "summaryOverrides": {
+    "98435336": "TANF cash assistance, SNAP food benefits, Medicaid and CHIP for kids and parents, child care help, child support services, Head Start and your local Community Action Agency.",
+    "104522827": "State child care financial assistance, Head Start, how to find and compare licensed care, the child and dependent care tax credit, and military and pre-K options.",
+    "104523348": "Medicaid and CHIP for mom and baby, WIC food and formula, free home-visiting programs, the maternal mental health line, diaper banks and 211 for baby supplies.",
+    "104523430": "Confidential 24/7 hotlines for domestic violence, sexual assault and child abuse, how to find a shelter and a local advocate, and free legal help with protective orders.",
+    "104523555": "AdoptUSKids, the federal adoption tax credit, monthly adoption assistance and Medicaid, foster parent support, and help for grandparents raising a relative's child.",
+    "104523724": "Your child's rights under IDEA, free parent training centers, PACER and Wrightslaw for advocacy, and how to request an evaluation, IEP or 504 plan in writing.",
+    "98435338": "Eighteen plain-spoken tips for anyone over 40: age discrimination protection, free legal help, property tax breaks, Medicare counseling, home repairs, caregiver money, free tax prep and college."
+  }
 }

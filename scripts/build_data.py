@@ -119,6 +119,7 @@ def library_data(lib, items):
         it['topic'] = lib.get('topicOverrides', {}).get(it['id'], it['topic'])
         if it['topic'] not in keys: continue
         it['title'] = lib.get('titleOverrides', {}).get(it['id'], it['title'])
+        it['summary'] = lib.get('summaryOverrides', {}).get(it['id'], it['summary'])
         it['topicOrder'] = keys.index(it['topic'])
         fid = lib.get('driveFiles', {}).get(it['id'])
         if not fid and it['code']:
