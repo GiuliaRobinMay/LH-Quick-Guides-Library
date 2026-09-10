@@ -1,0 +1,79 @@
+{
+  "key": "health",
+  "title": "Healthcare Assistance",
+  "spaceId": "18453836",
+  "driveFolder": "https://drive.google.com/drive/folders/1hqcLbkcldbUEn_hwwt791CTN6pAbkJwm",
+  "driveListing": "drive_health.json",
+  "topics": [
+    {
+      "key": "care",
+      "label": "Care & Coverage",
+      "color": "#2CA01C",
+      "icon": "stethoscope"
+    },
+    {
+      "key": "mind",
+      "label": "Mind & Recovery",
+      "color": "#7C3BB0",
+      "icon": "brain"
+    },
+    {
+      "key": "bills",
+      "label": "Bills, Illness & Caregivers",
+      "color": "#F93946",
+      "icon": "coins"
+    }
+  ],
+  "lessons": {
+    "80242802": 1,
+    "80957182": 2,
+    "80242803": 1,
+    "80957140": 2
+  },
+  "topicOverrides": {
+    "80242802": "care",
+    "80957182": "care",
+    "103397959": "care",
+    "103397950": "care",
+    "103397943": "care",
+    "103397934": "care",
+    "103398065": "care",
+    "84452354": "care",
+    "81350215": "mind",
+    "84450576": "mind",
+    "84451097": "mind",
+    "84451457": "mind",
+    "84452145": "mind",
+    "80242803": "bills",
+    "80957140": "bills",
+    "103398061": "bills",
+    "103398050": "bills",
+    "103398237": "bills",
+    "103398218": "bills",
+    "103398205": "bills"
+  },
+  "titleOverrides": {
+    "103398061": "Medical Bill Assistance"
+  },
+  "driveFiles": {
+    "103398050": "1ZC2M2TM8GbH7lJG5rMoLKTr91pvVAoPb"
+  },
+  "summaryOverrides": {
+    "81350215": "Free, confidential lifelines open around the clock: 988, Crisis Text Line, the Veterans Crisis Line, the Trevor Project, the domestic violence hotline, SAMHSA and disaster distress help.",
+    "84450576": "Professional counseling and mental health resources, relaxation and sound-healing techniques, emotional recovery tips, and diagnosis-based and financial help for treatment.",
+    "84451097": "SAMHSA's free 24/7 helpline, funded treatment options, 211 and local support networks, help for teens, veterans and military families, and trusted recovery platforms.",
+    "84451457": "Free patches, gum and coaching, federal and health agency quit programs, what to expect when you quit, and specialised help for vaping, youth and older adults.",
+    "84452145": "Alzheimer's and dementia caregiving, traumatic brain injury recovery, Parkinson's therapies, autoimmune and immune disorder support, and multiple sclerosis grants.",
+    "84452354": "EatFresh.org recipes, dietitian answers and free classes, food co-ops and community supported agriculture, and apps that compare grocery deals and give cash back.",
+    "103397959": "Free and sliding-scale dental clinics, Dental Lifeline's volunteer dentists, dental school clinics, Medicaid and CHIP dental benefits, and programs for kids, survivors and veterans.",
+    "103397950": "Federal health centers that see everyone regardless of ability to pay, free clinics, Medicaid, CHIP, marketplace plans with subsidies and free enrollment help.",
+    "103397943": "Patient assistance programs for your exact medication, GoodRx and Cost Plus Drugs, free surplus medicine, and Medicare Extra Help for seniors.",
+    "103397934": "Free eye exams and glasses through EyeCare America, VSP and New Eyes, low-cost online glasses, over-the-counter hearing aids, hearing charities and VA benefits.",
+    "103398065": "Free unbiased SHIP counseling, Medicare Savings Programs and Extra Help, the basics of Parts A to D, enrollment deadlines and how to spot Medicare fraud.",
+    "103398061": "Hospital charity care with Dollar For, copay grants from PAN, HealthWell and the Patient Advocate Foundation, surprise-bill protections, itemized bills and payment plans.",
+    "103398050": "How to erase medical debt already in collections: charity care, Undue Medical Debt, your rights under federal rules, free credit counseling and legal aid, and negotiating what you owe.",
+    "103398237": "Copay and treatment grants, cancer-specific support from the American Cancer Society and CancerCare, rare disease help, and free travel, lodging and clinical trials.",
+    "103398218": "Eldercare Locator and Caregiver Action Network, getting paid through Medicaid self-directed care or the VA, paid family leave, respite care and caregiver support groups.",
+    "103398205": "Emergency vet bill grants from RedRover and Frankie's Friends, help for low-income pet owners, low-cost clinics and spay/neuter, and pet food banks."
+  }
+}
