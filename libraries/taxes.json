@@ -5,10 +5,23 @@
   "driveFolder": "https://drive.google.com/drive/folders/1j3lhUfY7UVKk1WZ_LpXhxZYUxNopBW_x",
   "driveListing": "drive_taxes.json",
   "topics": [
-    { "key": "taxes", "label": "Taxes", "color": "#2CA01C", "icon": "receipt" },
-    { "key": "legal", "label": "Legal", "color": "#7C3BB0", "icon": "scale" }
+    {
+      "key": "taxes",
+      "label": "Taxes",
+      "color": "#2CA01C",
+      "icon": "receipt"
+    },
+    {
+      "key": "legal",
+      "label": "Legal",
+      "color": "#7C3BB0",
+      "icon": "scale"
+    }
   ],
-  "lessons": { "98435149": 1, "98435371": 3, "98433706": 1 },
+  "lessons": {
+    "98435149": 1,
+    "98433706": 1
+  },
   "driveFiles": {
     "98435149": "1i8hmSLBV2hmuDZNZn5XA79OEEV56VMbi",
     "98435371": "1_HJhnIVrIjCJ5yMPZfBEfRXQPRro0lja",
