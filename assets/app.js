@@ -40,7 +40,10 @@
   const fmtDate = iso => { try { return new Date(iso).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' }); } catch (e) { return iso; } };
   const st = k => TOPIC_STYLE[k] || { grad: 'linear-gradient(135deg,#9CA3AF,#D1D5DB)', tint: '#F3F4F7', ink: '#6B7280', icon: '' };
   const styleVars = k => { const s = st(k); return `--grad:${s.grad};--tint:${s.tint};--ink:${s.ink}`; };
+  const TOPIC_ORDER = Object.fromEntries(TOPICS.map((t, i) => [t.key, i]));
   const byTitle = (a, b) => a.title.localeCompare(b.title, undefined, { sensitivity: 'base' });
+  // Business first, then Nonprofit, then Career; alphabetical inside each topic.
+  const byTopicThenTitle = (a, b) => (TOPIC_ORDER[a.topic] - TOPIC_ORDER[b.topic]) || byTitle(a, b);
   const typeLabel = it => it.hasPdf && it.hasVideo ? "PDF · Video" : (it.hasPdf ? "PDF guide" : (it.hasVideo ? "Video lesson" : "Lesson"));
 
   const ICON = {
@@ -66,7 +69,7 @@
         if (!terms.every(t => hay.includes(t))) return false;
       }
       return true;
-    }).sort(byTitle);
+    }).sort(byTopicThenTitle);
   }
 
   /* ---------- render: topic chips ---------- */
@@ -120,7 +123,19 @@
   function renderInto(el, items, emptyHTML) {
     const list = store.view === 'list';
     el.className = list ? 'rows' : 'grid';
-    el.innerHTML = items.length ? items.map(list ? rowHTML : cardHTML).join('') : emptyHTML;
+    if (!items.length) { el.innerHTML = emptyHTML; return; }
+    // a small topic label opens each group when more than one topic is on screen
+    const topicsShown = new Set(items.map(i => i.topic));
+    let html = '', last = null;
+    items.forEach(it => {
+      if (topicsShown.size > 1 && it.topic !== last) {
+        const t = TOPIC_BY_KEY[it.topic] || {};
+        html += `<div class="group-label" style="${styleVars(it.topic)}"><span class="swatch">${st(it.topic).icon}</span>${esc(t.label || '')}</div>`;
+        last = it.topic;
+      }
+      html += list ? rowHTML(it) : cardHTML(it);
+    });
+    el.innerHTML = html;
   }
   function renderGrid() {
     const all = filtered();
