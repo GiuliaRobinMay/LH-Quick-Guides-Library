@@ -26,7 +26,7 @@
   /* ---------- storage ---------- */
   const store = load();
   function load() {
-    const base = { bookmarks: {}, done: {}, notes: {}, checked: {}, requests: [], view: 'cards' };
+    const base = { bookmarks: {}, done: {}, notes: {}, checked: {}, requests: [], view: 'list' };
     try { const raw = localStorage.getItem(STORE_KEY); return raw ? Object.assign(base, JSON.parse(raw)) : base; } catch (e) { return base; }
   }
   function save() { try { localStorage.setItem(STORE_KEY, JSON.stringify(store)); } catch (e) { /* private mode */ } }
@@ -70,16 +70,14 @@
     }).sort(byTitle);
   }
 
-  /* ---------- render: sidebar ---------- */
-  function renderSidebar() {
-    $('#side-topics').innerHTML = TOPICS.map(t => {
+  /* ---------- render: topic chips ---------- */
+  function renderTopics() {
+    const all = `<button type="button" class="chip" data-topic="" aria-pressed="${!state.topic}"><span class="swatch" style="background:#111827"></span>All<span class="count">${ITEMS.length}</span></button>`;
+    $('#topics').innerHTML = all + TOPICS.map(t => {
       const n = ITEMS.filter(i => i.topic === t.key).length;
-      return `<button type="button" class="nav-item topic-item" data-topic="${t.key}" aria-selected="${state.topic === t.key}" style="${styleVars(t.key)}">
-        <span class="icon">${st(t.key).icon}</span>${esc(t.label)}<span class="count">${n}</span></button>`;
+      return `<button type="button" class="chip" data-topic="${t.key}" aria-pressed="${state.topic === t.key}" style="${styleVars(t.key)}">
+        <span class="swatch">${st(t.key).icon}</span>${esc(t.label)}<span class="count">${n}</span></button>`;
     }).join('');
-    const marked = Object.keys(store.bookmarks).filter(id => byId[id]).length;
-    const done = Object.keys(store.done).filter(id => byId[id]).length;
-    $('#side-stats').textContent = `${ITEMS.length} guides · ${marked} bookmarked · ${done} done`;
   }
 
   /* ---------- render: cards & rows ---------- */
@@ -113,13 +111,13 @@
     const marked = !!store.bookmarks[it.id];
     const done = !!store.done[it.id];
     return `<article class="row${done ? ' is-done' : ''}" data-id="${it.id}" style="${styleVars(it.topic)}">
-      <div class="thumb" data-open="${it.id}">${it.hasVideo && !it.hasPdf ? ICON.play : ICON.file}</div>
-      <div>
+      <div class="block" data-open="${it.id}">${st(it.topic).icon}</div>
+      <div class="row-main">
         <button class="title-btn" type="button" data-open="${it.id}"><span class="title">${esc(it.title)}</span></button>
-        <div class="meta"><span>${esc(t.label || '')}</span><span class="sep">·</span><span>${typeLabel(it)}</span></div>
+        <div class="meta"><span class="topic">${esc(t.label || '')}</span><span class="sep">·</span><span>${typeLabel(it)}</span></div>
       </div>
       <div class="right">
-        ${it.hasPdf ? '<span class="tag">PDF</span>' : ''}${it.hasVideo ? '<span class="tag">Video</span>' : ''}${statusHTML(it)}
+        ${done ? '<span class="status done">Done</span>' : ''}
         ${it.hasPdf ? `<a class="icon-btn" href="${esc(it.download)}" target="_blank" rel="noopener" title="Download PDF" aria-label="Download PDF">${ICON.download}</a>` : ''}
         <button class="icon-btn star" type="button" data-star="${it.id}" aria-pressed="${marked}" title="${marked ? 'Remove bookmark' : 'Bookmark'}" aria-label="Bookmark">${marked ? ICON.star : ICON.starOutline}</button>
       </div>
@@ -142,7 +140,7 @@
     const pinned = Object.keys(store.bookmarks).filter(id => store.bookmarks[id] && byId[id]).map(id => byId[id]).sort(byTitle).slice(0, 3);
     const show = pinned.length && !state.q && !state.topic;
     $('#pinned').hidden = !show;
-    if (show) { const el = $('#pinned-grid'); el.className = 'grid'; el.innerHTML = pinned.map(cardHTML).join(''); }
+    if (show) renderInto($('#pinned-grid'), pinned, '');
   }
   function renderMine() {
     const items = Object.keys(store.bookmarks).filter(id => store.bookmarks[id] && byId[id]).map(id => byId[id]).sort(byTitle);
@@ -300,7 +298,7 @@
     if (tab === 'request') renderRequestForm();
     window.scrollTo({ top: 0 });
   }
-  function refresh() { renderSidebar(); renderGrid(); renderMine(); }
+  function refresh() { renderTopics(); renderGrid(); renderMine(); }
 
   /* ---------- events ---------- */
   document.addEventListener('click', e => {
@@ -320,7 +318,7 @@
     }
     const tl = e.target.closest('[data-tab-link]'); if (tl) { e.preventDefault(); setTab(tl.dataset.tabLink); return; }
     const tab = e.target.closest('.nav-item[data-tab]'); if (tab) { setTab(tab.dataset.tab); return; }
-    const tp = e.target.closest('[data-topic]'); if (tp) { state.topic = state.topic === tp.dataset.topic ? null : tp.dataset.topic; setTab('library'); refresh(); return; }
+    const tp = e.target.closest('[data-topic]'); if (tp) { state.topic = tp.dataset.topic || null; if (state.tab !== 'library') setTab('library'); refresh(); return; }
     const vw = e.target.closest('[data-view]'); if (vw) { store.view = vw.dataset.view; save(); renderGrid(); renderMine(); return; }
     const st_ = e.target.closest('[data-star]'); if (st_) { e.stopPropagation(); toggleStar(st_.dataset.star); return; }
     const dn = e.target.closest('[data-done]'); if (dn) { e.stopPropagation(); toggleDone(dn.dataset.done); return; }
