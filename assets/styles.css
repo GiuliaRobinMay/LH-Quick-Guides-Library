@@ -63,6 +63,7 @@ input, textarea, select { font: inherit; color: inherit; }
 .btn svg { width: 17px; height: 17px; }
 .btn.small { padding: 8px 14px; font-size: 14px; border-radius: 10px; }
 .btn[aria-pressed="true"] { background: #FEF3C7; border-color: #FDE68A; color: #92400E; }
+.btn.star-btn svg { width: 20px; height: 20px; }
 .btn.star-btn[aria-pressed="true"] svg { color: #FACC15; }
 
 .page { max-width: 1180px; margin: 0 auto; padding: 22px clamp(16px, 3vw, 32px) 72px; }
@@ -74,7 +75,7 @@ input, textarea, select { font: inherit; color: inherit; }
 .chip:hover { border-color: var(--border-2); }
 .chip[aria-pressed="true"] { background: var(--text); border-color: var(--text); color: #fff; }
 .chip .swatch { width: 28px; height: 28px; border-radius: 50%; background: var(--grad, #111827); color: #fff; display: grid; place-items: center; flex: none; }
-.chip .swatch svg { width: 15px; height: 15px; }
+.chip .swatch svg { width: 17px; height: 17px; }
 .chip .count { font-size: 13px; color: var(--text-3); font-variant-numeric: tabular-nums; }
 .chip[aria-pressed="true"] .count { color: rgba(255,255,255,.7); }
 .chip.static { cursor: default; box-shadow: none; padding-right: 12px; }
@@ -142,6 +143,7 @@ input, textarea, select { font: inherit; color: inherit; }
 .icon-btn { border: 0; background: transparent; width: 34px; height: 34px; border-radius: 10px; display: inline-grid; place-items: center; color: var(--text-3); padding: 0; }
 .icon-btn:hover { background: var(--surface-2); color: var(--text); }
 .icon-btn svg { width: 19px; height: 19px; }
+.icon-btn.star svg { width: 24px; height: 24px; }
 .icon-btn.star[aria-pressed="true"] { color: #FACC15; }
 .icon-btn.star[aria-pressed="true"]:hover { color: #EAB308; }
 

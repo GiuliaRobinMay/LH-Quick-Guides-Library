@@ -10,14 +10,12 @@
   // Topic look: gradient cover, icon tint, ink colour, icon (Lucide line icons).
   const TOPIC_STYLE = {
     business:  { grad: 'linear-gradient(135deg, #0FB88A 0%, #19D6B4 100%)', tint: '#E1F7F0', ink: '#0E9F78',
-                 icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>' },
+                 icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 20V4a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><rect width="20" height="14" x="2" y="6" rx="2"/></svg>' },
     nonprofit: { grad: 'linear-gradient(135deg, #EF4E7B 0%, #FB8A7A 100%)', tint: '#FDE7EE', ink: '#DB3A6C',
-                 icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/><path d="m18 15-2-2"/><path d="m15 18-2-2"/></svg>' },
+                 icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/><path d="M12 5 9.04 7.96a2.17 2.17 0 0 0 0 3.08c.82.82 2.13.85 3 .07l2.07-1.9a2.82 2.82 0 0 1 3.79 0l2.96 2.66"/><path d="m18 15-2-2"/><path d="m15 18-2-2"/></svg>' },
     career:    { grad: 'linear-gradient(135deg, #6A5AF9 0%, #A97CFF 100%)', tint: '#EDEAFE', ink: '#6552E8',
-                 icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>' }
+                 icon: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>' }
   };
-  const QUESTIONS_CHANNEL = 'https://lesko-help-2.mn.co/spaces/11054387';
-  const TEAM_EMAIL = 'support@leskohelp.com';
   const STORE_KEY = 'lesko-quick-guides-v2';
 
   const ITEMS = DATA.items.map(i => Object.assign({}, i, { hasPdf: !!i.download, hasVideo: !!i.video }));
@@ -46,6 +44,7 @@
   const typeLabel = it => it.hasPdf && it.hasVideo ? "PDF · Video" : (it.hasPdf ? "PDF guide" : (it.hasVideo ? "Video lesson" : "Lesson"));
 
   const ICON = {
+    starThin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="m12 2.8 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.7l-5.9 3.1 1.2-6.5L2.5 9.7l6.6-.9z"/></svg>',
     star: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.8 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.7l-5.9 3.1 1.2-6.5L2.5 9.7l6.6-.9z"/></svg>',
     starOutline: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="m12 2.8 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.7l-5.9 3.1 1.2-6.5L2.5 9.7l6.6-.9z"/></svg>',
     check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>',
@@ -72,7 +71,7 @@
 
   /* ---------- render: topic chips ---------- */
   function renderTopics() {
-    const all = `<button type="button" class="chip" data-topic="" aria-pressed="${!state.topic}"><span class="swatch" style="background:#111827"></span>All<span class="count">${ITEMS.length}</span></button>`;
+    const all = `<button type="button" class="chip" data-topic="" aria-pressed="${!state.topic}"><span class="swatch" style="background:linear-gradient(135deg,#F5B300,#FFD54F)">${ICON.starThin}</span>All<span class="count">${ITEMS.length}</span></button>`;
     $('#topics').innerHTML = all + TOPICS.map(t => {
       const n = ITEMS.filter(i => i.topic === t.key).length;
       return `<button type="button" class="chip" data-topic="${t.key}" aria-pressed="${state.topic === t.key}" style="${styleVars(t.key)}">
@@ -143,27 +142,6 @@
     $('#mine-sub').textContent = items.length ? `${items.length} bookmarked` : 'The guides you star will show up here.';
     renderInto($('#mine-grid'), items, `<div class="empty"><h3>No bookmarks yet.</h3><p>Tap the star on any guide and it will show up here.</p></div>`);
   }
-
-  /* ---------- render: requests ---------- */
-  function renderRequestForm() {
-    const sel = $('#rq-topic');
-    if (!sel.options.length) sel.innerHTML = TOPICS.map(t => `<option value="${t.key}">${esc(t.label)}</option>`).join('') + '<option value="other">Something else</option>';
-    const list = $('#requests');
-    const reqs = store.requests.slice().reverse();
-    $('#rq-count').textContent = reqs.length ? `${reqs.length} saved` : '';
-    if (!reqs.length) { list.innerHTML = `<li><span class="rq-meta">Nothing saved yet</span></li>`; return; }
-    list.innerHTML = reqs.map(r => `<li>
-      <span class="rq-title">${esc(r.title)}</span>
-      <span class="rq-meta">${esc(TOPIC_BY_KEY[r.topic]?.label || 'Something else')} · ${fmtDate(r.at)}</span>
-      ${r.why ? `<span>${esc(r.why)}</span>` : ''}
-      <div class="rq-actions">
-        <a class="btn small" href="${QUESTIONS_CHANNEL}" target="_blank" rel="noopener" data-copy-request="${r.id}">Post in the community</a>
-        <a class="btn small" href="${mailto(r)}">Email the team</a>
-        <button class="btn small" type="button" data-remove-request="${r.id}">Remove</button>
-      </div></li>`).join('');
-  }
-  const requestText = r => `Quick guide request\nTopic: ${TOPIC_BY_KEY[r.topic]?.label || 'Something else'}\nGuide: ${r.title}${r.why ? '\nWhy: ' + r.why : ''}${r.name ? '\nFrom: ' + r.name : ''}`;
-  const mailto = r => `mailto:${TEAM_EMAIL}?subject=${encodeURIComponent('Quick guide request: ' + r.title)}&body=${encodeURIComponent(requestText(r))}`;
 
   /* ---------- viewer ---------- */
   function stageHTML(it) {
@@ -273,9 +251,8 @@
     state.tab = tab;
     $$('.nav-item[data-tab]').forEach(b => b.setAttribute('aria-selected', String(b.dataset.tab === tab)));
     $('.brand').classList.toggle('active', tab === 'library');
-    ['library', 'mine', 'request'].forEach(k => { $('#view-' + k).hidden = k !== tab; });
+    ['library', 'mine'].forEach(k => { $('#view-' + k).hidden = k !== tab; });
     if (tab === 'mine') renderMine();
-    if (tab === 'request') renderRequestForm();
     window.scrollTo({ top: 0 });
   }
   function refresh() { renderTopics(); renderGrid(); renderMine(); }
@@ -290,9 +267,8 @@
       if (act === 'prev' || act === 'next') { const idx = state.listIds.indexOf(state.open); const nid = state.listIds[idx + (act === 'next' ? 1 : -1)]; if (nid) openGuide(nid); }
       if (act === 'export') exportNotes();
       if (act === 'reset' && confirm('Clear all bookmarks, notes, check-marks and saved requests on this device?')) {
-        ['bookmarks', 'done', 'notes', 'checked'].forEach(k => store[k] = {}); store.requests = []; save(); refresh(); renderRequestForm(); toast('Cleared');
+        ['bookmarks', 'done', 'notes', 'checked'].forEach(k => store[k] = {}); save(); refresh(); toast('Cleared');
       }
-      if (act === 'go-request') { e.preventDefault(); setTab('request'); }
       return;
     }
     const tl = e.target.closest('[data-tab-link]'); if (tl) { e.preventDefault(); setTab(tl.dataset.tabLink); return; }
@@ -304,8 +280,6 @@
     const sg = e.target.closest('[data-stage]'); if (sg) { state.stage = sg.dataset.stage; const it = byId[state.open]; if (it) $('#stage').innerHTML = stageHTML(it); return; }
     const ck = e.target.closest('[data-check]'); if (ck) { toggleCheck(state.open, ck.dataset.check, ck); return; }
     const op = e.target.closest('[data-open]'); if (op) { state.stage = 'pdf'; openGuide(op.dataset.open); return; }
-    const rm = e.target.closest('[data-remove-request]'); if (rm) { store.requests = store.requests.filter(r => r.id !== rm.dataset.removeRequest); save(); renderRequestForm(); toast('Request removed'); return; }
-    const cp = e.target.closest('[data-copy-request]'); if (cp) { const r = store.requests.find(x => x.id === cp.dataset.copyRequest); if (r) copy(requestText(r)).then(ok => toast(ok ? 'Request copied. Paste it in the channel' : 'Opening the Questions Channel')); return; }
     if (e.target.id === 'scrim') closeViewer();
   });
   document.addEventListener('keydown', e => {
@@ -317,12 +291,6 @@
     if (e.target.id === 'notes') saveNote(state.open, e.target.value);
   });
   $('#q-clear').addEventListener('click', () => { $('#q').value = ''; state.q = ''; $('#q-clear').hidden = true; renderGrid(); $('#q').focus(); });
-  $('#request-form').addEventListener('submit', e => {
-    e.preventDefault();
-    const r = { id: 'r' + Date.now().toString(36), topic: $('#rq-topic').value, title: $('#rq-title').value.trim(), why: $('#rq-why').value.trim(), name: $('#rq-name').value.trim(), at: new Date().toISOString() };
-    if (!r.title) return;
-    store.requests.push(r); save(); e.target.reset(); renderRequestForm(); toast('Request saved');
-  });
   window.addEventListener('hashchange', route);
   function route() {
     const m = location.hash.match(/^#guide\/(\d+)$/);
@@ -330,5 +298,5 @@
   }
 
   /* ---------- boot ---------- */
-  refresh(); renderRequestForm(); route();
+  refresh(); route();
 })();

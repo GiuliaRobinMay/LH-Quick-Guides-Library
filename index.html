@@ -17,7 +17,6 @@
     </a>
     <nav class="nav" role="tablist" aria-label="Sections">
       <button class="nav-item" role="tab" id="tab-mine" aria-selected="false" aria-controls="view-mine" data-tab="mine">Bookmarked <span class="badge" id="mine-badge" hidden>0</span></button>
-      <button class="nav-item" role="tab" id="tab-request" aria-selected="false" aria-controls="view-request" data-tab="request">Request a guide</button>
     </nav>
     <label class="search">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
@@ -41,7 +40,6 @@
     <div id="pinned" hidden>
       <div class="section-head">
         <div><h2>Bookmarked</h2><p>The ones you keep open.</p></div>
-        <a class="link" href="#" data-tab-link="mine">View all <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
       <div class="rows" id="pinned-grid"></div>
     </div>
@@ -64,40 +62,6 @@
     <div class="rows" id="mine-grid"></div>
   </section>
 
-  <!-- ===== Request ===== -->
-  <section id="view-request" role="tabpanel" aria-labelledby="tab-request" hidden>
-    <div class="section-head">
-      <div><h2>Request a quick guide</h2><p>Tell the team what you need. Your request is saved here so you can post it in the community or email it.</p></div>
-    </div>
-    <div class="panel two-col">
-      <form class="form" id="request-form">
-        <div class="field">
-          <label for="rq-topic">Topic</label>
-          <select id="rq-topic" class="select" required></select>
-        </div>
-        <div class="field">
-          <label for="rq-title">What should the guide cover?</label>
-          <input id="rq-title" type="text" required maxlength="120" placeholder="e.g. Grants for food trucks in Texas">
-        </div>
-        <div class="field">
-          <label for="rq-why">Why do you need it? (optional)</label>
-          <textarea id="rq-why" maxlength="800"></textarea>
-          <span class="hint">Please do not include your SSN, bank details or other private numbers.</span>
-        </div>
-        <div class="field">
-          <label for="rq-name">Your name (optional)</label>
-          <input id="rq-name" type="text" maxlength="80">
-        </div>
-        <div class="cta-row" style="margin-top:4px">
-          <button class="btn primary" type="submit">Save my request</button>
-        </div>
-      </form>
-      <div>
-        <div class="section-title"><h3>My requests</h3><span class="hint" id="rq-count"></span></div>
-        <ul class="requests" id="requests"></ul>
-      </div>
-    </div>
-  </section>
 </main>
 
 <!-- ===== Viewer ===== -->
