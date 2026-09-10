@@ -183,7 +183,7 @@ def single_file(data_js, title, mark=None):
         css = css.replace('url("fonts/inter-var.woff2")', f'url("data:font/woff2;base64,{b64}")')
     page = read('index.html')
     if mark:
-        page = re.sub(r'<span class="brand-mark".*?</span>', lambda m: mark, page, count=1, flags=re.S)
+        page = re.sub(r'<span class="brand-mark[^"]*"[^>]*>.*?</span>', lambda m: mark, page, count=1, flags=re.S)
     page = page.replace('<title>Lesko Help Quick Guide Library</title>', f'<title>{html.escape(title)}</title>')
     page = page.replace('<link rel="stylesheet" href="assets/styles.css">', '<style>\n' + css + '\n</style>')
     page = page.replace('<script src="data/guides.js"></script>', '<script>\n' + data_js + '\n</script>')
