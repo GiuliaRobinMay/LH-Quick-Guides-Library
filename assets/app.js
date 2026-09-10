@@ -50,7 +50,7 @@
   const ICON = {
     grid: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>',
     starThin: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" aria-hidden="true"><path d="m12 2.8 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.7l-5.9 3.1 1.2-6.5L2.5 9.7l6.6-.9z"/></svg>',
-    star: '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="m12 2.8 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.7l-5.9 3.1 1.2-6.5L2.5 9.7l6.6-.9z"/></svg>',
+    star: '<svg viewBox="0 0 24 24" fill="currentColor" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="m12 2.8 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.7l-5.9 3.1 1.2-6.5L2.5 9.7l6.6-.9z"/></svg>',
     starOutline: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" aria-hidden="true"><path d="m12 2.8 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.7l-5.9 3.1 1.2-6.5L2.5 9.7l6.6-.9z"/></svg>',
     check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg>',
     file: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>',
@@ -93,25 +93,6 @@
     if (store.bookmarks[it.id]) return '<span class="status saved">Bookmarked</span>';
     return '';
   }
-  function cardHTML(it) {
-    const t = TOPIC_BY_KEY[it.topic] || {};
-    const marked = !!store.bookmarks[it.id];
-    return `<article class="card" data-id="${it.id}" style="${styleVars(it.topic)}">
-      <div class="cover" data-open="${it.id}">
-        <span class="label">${st(it.topic).icon}${esc(t.label || '')}</span>
-        <button class="star" type="button" data-star="${it.id}" aria-pressed="${marked}" title="${marked ? 'Remove bookmark' : 'Bookmark'}" aria-label="Bookmark">${marked ? ICON.star : ICON.starOutline}</button>
-      </div>
-      <div class="card-body">
-        <div>${kindPill(it)}</div>
-        <button class="title-btn" type="button" data-open="${it.id}"><span class="title">${esc(it.title)}</span></button>
-        <p class="summary">${esc(it.summary)}</p>
-        <div class="card-meta">
-          <span class="left">${it.hasVideo && !it.hasPdf ? ICON.play : ICON.file}${typeLabel(it)}</span>
-          <span class="right">${it.hasPdf ? `<a href="${esc(it.download)}" target="_blank" rel="noopener" title="Download PDF">${ICON.download} Download</a>` : ''}</span>
-        </div>
-      </div>
-    </article>`;
-  }
   function rowHTML(it) {
     const marked = !!store.bookmarks[it.id];
     return `<article class="row" data-id="${it.id}" style="${styleVars(it.topic)}">
@@ -127,8 +108,7 @@
     </article>`;
   }
   function renderInto(el, items, emptyHTML) {
-    const list = store.view === 'list';
-    el.className = list ? 'rows' : 'grid';
+    el.className = 'rows';
     if (!items.length) { el.innerHTML = emptyHTML; return; }
     // a small topic label opens each group when more than one topic is on screen
     const topicsShown = new Set(items.map(i => i.topic));
@@ -139,7 +119,7 @@
         html += `<div class="group-label" style="${styleVars(it.topic)}"><span class="swatch">${st(it.topic).icon}</span>${esc(t.label || '')}</div>`;
         last = it.topic;
       }
-      html += list ? rowHTML(it) : cardHTML(it);
+      html += rowHTML(it);
     });
     el.innerHTML = html;
   }
@@ -147,12 +127,8 @@
     const items = filtered();
     state.listIds = items.map(i => i.id);
     $('#result-count').textContent = items.length === 1 ? '1 guide' : `${items.length} guides`;
-    $$('[data-view]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === store.view)));
-    const label = state.topic === 'bookmarked' ? 'Bookmarked' : (state.topic ? TOPIC_BY_KEY[state.topic].label : 'All guides');
-    $('#grid-title').textContent = state.q ? 'Results' : label;
-    $('#grid-sub').textContent = state.q ? `Matching “${state.q.trim()}”`
-      : (state.topic === 'bookmarked' ? (items.length ? `${items.length} bookmarked.` : 'Tap the star on any guide and it will show up here.')
-      : (state.topic ? `${items.length} guides and lessons.` : 'Business, nonprofit and career guides from Lesko Help.'));
+    const label = state.topic === 'bookmarked' ? 'Bookmarked' : (state.topic ? TOPIC_BY_KEY[state.topic].label : 'Quick guides & lessons');
+    $('#grid-title').textContent = state.q ? `Results for “${state.q.trim()}”` : label;
     renderInto($('#grid'), items, `<div class="empty"><h3>${state.topic === 'bookmarked' ? 'No bookmarks yet.' : 'Nothing matches.'}</h3><p>${state.topic === 'bookmarked' ? 'Tap the star on any guide and it will show up here.' : 'Try fewer words or pick another topic.'}</p></div>`);
   }
   /* ---------- viewer ---------- */
@@ -246,7 +222,6 @@
       return;
     }
     const tp = e.target.closest('[data-topic]'); if (tp) { state.topic = tp.dataset.topic || null; refresh(); return; }
-    const vw = e.target.closest('[data-view]'); if (vw) { store.view = vw.dataset.view; save(); renderGrid(); return; }
     const st_ = e.target.closest('[data-star]'); if (st_) { e.stopPropagation(); toggleStar(st_.dataset.star); return; }
     const dn = e.target.closest('[data-done]'); if (dn) { e.stopPropagation(); toggleDone(dn.dataset.done); return; }
     const sg = e.target.closest('[data-stage]'); if (sg) { state.stage = sg.dataset.stage; const it = byId[state.open]; if (it) $('#stage').innerHTML = stageHTML(it); return; }
