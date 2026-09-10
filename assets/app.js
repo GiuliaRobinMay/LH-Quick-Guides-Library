@@ -123,18 +123,18 @@
     el.innerHTML = items.length ? items.map(list ? rowHTML : cardHTML).join('') : emptyHTML;
   }
   function renderGrid() {
-    const items = filtered();
-    state.listIds = items.map(i => i.id);
-    $('#result-count').textContent = items.length === 1 ? '1 guide' : `${items.length} guides`;
+    const all = filtered();
+    const pinned = all.filter(i => store.bookmarks[i.id]);
+    const items = all.filter(i => !store.bookmarks[i.id]);
+    state.listIds = pinned.concat(items).map(i => i.id);
+    $('#result-count').textContent = all.length === 1 ? '1 guide' : `${all.length} guides`;
     $$('[data-view]').forEach(b => b.setAttribute('aria-pressed', String(b.dataset.view === store.view)));
     $('#grid-title').textContent = state.q ? 'Results' : (state.topic ? TOPIC_BY_KEY[state.topic].label : 'All guides');
-    $('#grid-sub').textContent = state.q ? `Matching “${state.q.trim()}”` : (state.topic ? `${items.length} guides and lessons.` : 'Business, nonprofit and career guides from Lesko Help.');
-    renderInto($('#grid'), items, `<div class="empty"><h3>Nothing matches.</h3><p>Try fewer words or pick another topic.</p></div>`);
-    // pinned strip: bookmarked, only on the unfiltered library
-    const pinned = Object.keys(store.bookmarks).filter(id => store.bookmarks[id] && byId[id]).map(id => byId[id]).sort(byTitle).slice(0, 3);
-    const show = pinned.length && !state.q && !state.topic;
-    $('#pinned').hidden = !show;
-    if (show) renderInto($('#pinned-grid'), pinned, '');
+    $('#grid-sub').textContent = state.q ? `Matching “${state.q.trim()}”` : (state.topic ? `${all.length} guides and lessons.` : 'Business, nonprofit and career guides from Lesko Help.');
+    // bookmarked guides move up into their own strip and leave the main list
+    $('#pinned').hidden = pinned.length === 0;
+    if (pinned.length) renderInto($('#pinned-grid'), pinned, '');
+    renderInto($('#grid'), items, pinned.length ? '' : `<div class="empty"><h3>Nothing matches.</h3><p>Try fewer words or pick another topic.</p></div>`);
   }
   function renderMine() {
     const items = Object.keys(store.bookmarks).filter(id => store.bookmarks[id] && byId[id]).map(id => byId[id]).sort(byTitle);
