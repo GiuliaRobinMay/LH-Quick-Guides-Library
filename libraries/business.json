@@ -1,0 +1,14 @@
+{
+  "key": "business",
+  "title": "Lessons & Quick Guides",
+  "spaceId": "18083958",
+  "driveFolder": "https://drive.google.com/drive/folders/195pNLPbwHeqE7CI_wImUSZyMnaVOIQwI",
+  "driveListing": "drive_folder.json",
+  "topics": [
+    { "key": "business",  "label": "Business",  "color": "#2CA01C", "icon": "briefcase" },
+    { "key": "nonprofit", "label": "Nonprofit", "color": "#F93946", "icon": "heart-handshake" },
+    { "key": "career",    "label": "Career",    "color": "#7C3BB0", "icon": "graduation-cap" }
+  ],
+  "lessons": { "79122514": 1, "79122515": 2, "83646154": 3, "80242726": 1, "80242727": 2, "85344073": 1, "85344076": 2 },
+  "driveFiles": {}
+}

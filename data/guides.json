@@ -1,71 +1,57 @@
 {
  "generated": "2026-09-10",
- "community": "https://lesko-help-2.mn.co",
  "topics": [
   {
    "key": "business",
-   "label": "Business",
-   "color": "#2C4DC9"
+   "label": "Business"
   },
   {
    "key": "nonprofit",
-   "label": "Nonprofit",
-   "color": "#E2483A"
+   "label": "Nonprofit"
   },
   {
    "key": "career",
-   "label": "Career",
-   "color": "#2F8F5B"
+   "label": "Career"
   },
   {
    "key": "grants",
-   "label": "Grant Basics",
-   "color": "#F3C23A"
+   "label": "Grant Basics"
   },
   {
    "key": "housing",
-   "label": "Home & Housing",
-   "color": "#7A4FBF"
+   "label": "Home & Housing"
   },
   {
    "key": "bills",
-   "label": "Bills & Debt",
-   "color": "#D9772B"
+   "label": "Bills & Debt"
   },
   {
    "key": "cars",
-   "label": "Cars & Car Repairs",
-   "color": "#1F8BA8"
+   "label": "Cars & Car Repairs"
   },
   {
    "key": "health",
-   "label": "Healthcare",
-   "color": "#C2386F"
+   "label": "Healthcare"
   },
   {
    "key": "taxes",
-   "label": "Taxes",
-   "color": "#5B6B2F"
+   "label": "Taxes"
   },
   {
    "key": "legal",
-   "label": "Legal Help",
-   "color": "#8A5A2B"
+   "label": "Legal Help"
   },
   {
    "key": "families",
-   "label": "Families & Children",
-   "color": "#3A9C8F"
+   "label": "Families & Children"
   },
   {
    "key": "seniors",
-   "label": "Seniors & Disabilities",
-   "color": "#6C6F9B"
+   "label": "Seniors & Disabilities"
   },
   {
    "key": "veterans",
-   "label": "Veterans",
-   "color": "#9C2F2F"
+   "label": "Veterans"
   }
  ],
  "items": [
@@ -86,15 +72,8 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-how-to-get-started-with-a-free-business-mentor",
    "summary": "Shows you how to book a free appointment with a nonprofit business mentor (SBDC, SCORE, SBA), what to prepare, and where veterans, people with disabilities and rural founders can get tailored help.",
-   "fetched": true,
    "pdfs": [],
-   "drive": [
-    {
-     "title": "Lesko_Help_CB_A01_Free_Business_Mentor.pdf",
-     "viewUrl": "https://drive.google.com/file/d/1Ch4NWMxJ5yEwLGsJYlk8rixR2jh-V9Wy/view",
-     "previewUrl": "https://drive.google.com/file/d/1Ch4NWMxJ5yEwLGsJYlk8rixR2jh-V9Wy/preview"
-    }
-   ],
+   "drive": [],
    "links": [
     {
      "label": "AmericasSBDC.org",
@@ -125,11 +104,7 @@
      "href": "https://www.meetup.com/"
     }
    ],
-   "download": "https://drive.google.com/uc?export=download&id=1Ch4NWMxJ5yEwLGsJYlk8rixR2jh-V9Wy",
-   "isLesson": true,
-   "video": "https://www.youtube.com/embed/Unc9T7DFlio",
-   "preview": "https://drive.google.com/file/d/1Ch4NWMxJ5yEwLGsJYlk8rixR2jh-V9Wy/preview",
-   "wordCount": 382
+   "video": "https://www.youtube.com/embed/Unc9T7DFlio"
   },
   {
    "id": "79122515",
@@ -148,15 +123,8 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-contact-these-10-key-organizations",
    "summary": "Walks you through the 10 government and nonprofit organizations to call first for business grants, loans and training, with tips on how to approach them and avoid paid scams.",
-   "fetched": true,
    "pdfs": [],
-   "drive": [
-    {
-     "title": "Lesko_Help_CB_A02_Contact_10_Key_Organizations.pdf",
-     "viewUrl": "https://drive.google.com/file/d/1Sd4MckY_zYjO0kyPFOJDNKxMDlFVBWbE/view",
-     "previewUrl": "https://drive.google.com/file/d/1Sd4MckY_zYjO0kyPFOJDNKxMDlFVBWbE/preview"
-    }
-   ],
+   "drive": [],
    "links": [
     {
      "label": "eda.gov/resources",
@@ -211,11 +179,7 @@
      "href": "https://www.sba.gov/local-assistance/resource-partners/veterans-business-outreach-center-vboc-program#id-find-your-local-veterans-business-outreach-center"
     }
    ],
-   "download": "https://drive.google.com/uc?export=download&id=1Sd4MckY_zYjO0kyPFOJDNKxMDlFVBWbE",
-   "isLesson": true,
-   "video": "https://www.youtube.com/embed/4kJSIygdy0s",
-   "preview": "https://drive.google.com/file/d/1Sd4MckY_zYjO0kyPFOJDNKxMDlFVBWbE/preview",
-   "wordCount": 474
+   "video": "https://www.youtube.com/embed/4kJSIygdy0s"
   },
   {
    "id": "83136879",
@@ -234,7 +198,6 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-your-first-steps-to-start-a-business-legally",
    "summary": "An 8-step checklist for legally setting up your business, from choosing a name and structure to getting an EIN, bank account and licenses, with a downloadable PDF and planning templates.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "✅ The Lesko Help Business Start-Up Checklist.pdf",
@@ -272,11 +235,7 @@
      "href": "https://www.mycompanyworks.com/states.htm"
     }
    ],
-   "download": "https://media2-production.mightynetworks.com/asset/b63a6d32-0c23-48ba-a8b5-27ce3ece07a9/__The_Lesko_Help_Business_Start-Up_Checklist.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://media2-production.mightynetworks.com/asset/b63a6d32-0c23-48ba-a8b5-27ce3ece07a9/__The_Lesko_Help_Business_Start-Up_Checklist.pdf",
-   "wordCount": 608
+   "video": null
   },
   {
    "id": "83136916",
@@ -295,15 +254,8 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-federal-local-support-for-small-business-owners",
    "summary": "Points you to federal small business offices, USA.gov and SBA certification portals, plus county and city lookup tools so you can find support programs close to home.",
-   "fetched": true,
    "pdfs": [],
-   "drive": [
-    {
-     "title": "Lesko_Help_CB_A04_Federal_Local_Support.pdf",
-     "viewUrl": "https://drive.google.com/file/d/1ihVM0mNMCngp0pA-3TrWrXvjVKzvZ-kY/view",
-     "previewUrl": "https://drive.google.com/file/d/1ihVM0mNMCngp0pA-3TrWrXvjVKzvZ-kY/preview"
-    }
-   ],
+   "drive": [],
    "links": [
     {
      "label": "Federal Small Business Offices",
@@ -326,11 +278,7 @@
      "href": "https://www.nlc.org/"
     }
    ],
-   "download": "https://drive.google.com/uc?export=download&id=1ihVM0mNMCngp0pA-3TrWrXvjVKzvZ-kY",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1ihVM0mNMCngp0pA-3TrWrXvjVKzvZ-kY/preview",
-   "wordCount": 345
+   "video": null
   },
   {
    "id": "83136974",
@@ -349,15 +297,8 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-general-business-grants-funding-opportunities",
    "summary": "A curated list of national small business grant competitions, microgrants and pitch opportunities, plus a large grant directory and food-and-beverage grants for women founders.",
-   "fetched": true,
    "pdfs": [],
-   "drive": [
-    {
-     "title": "Lesko_Help_CB_A05_General_Business_Grants.pdf",
-     "viewUrl": "https://drive.google.com/file/d/1Be2P77JbpRgUCBh1x7Ka5TYsywe5j8Oh/view",
-     "previewUrl": "https://drive.google.com/file/d/1Be2P77JbpRgUCBh1x7Ka5TYsywe5j8Oh/preview"
-    }
-   ],
+   "drive": [],
    "links": [
     {
      "label": "CO—100: America’s Top 100 Small Businesses",
@@ -392,11 +333,7 @@
      "href": "https://www.stacyssnacks.com/riseproject"
     }
    ],
-   "download": "https://drive.google.com/uc?export=download&id=1Be2P77JbpRgUCBh1x7Ka5TYsywe5j8Oh",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1Be2P77JbpRgUCBh1x7Ka5TYsywe5j8Oh/preview",
-   "wordCount": 420
+   "video": null
   },
   {
    "id": "83136982",
@@ -415,15 +352,8 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-foundations-grants-mission-driven-support",
    "summary": "Lists corporate and foundation grant programs from Visa, Walmart, Verizon, Nike, FedEx, Amazon, American Express and others that fund mission-driven and community-focused small businesses.",
-   "fetched": true,
    "pdfs": [],
-   "drive": [
-    {
-     "title": "Lesko_Help_CB_A06_Foundations_Mission_Driven_Grants.pdf",
-     "viewUrl": "https://drive.google.com/file/d/1qEb6YmlzBa8JGTkfSR2yrO8YUUZho21g/view",
-     "previewUrl": "https://drive.google.com/file/d/1qEb6YmlzBa8JGTkfSR2yrO8YUUZho21g/preview"
-    }
-   ],
+   "drive": [],
    "links": [
     {
      "label": "Visa Everywhere Initiative",
@@ -482,11 +412,7 @@
      "href": "https://digitalundivided.com/breakthrough"
     }
    ],
-   "download": "https://drive.google.com/uc?export=download&id=1qEb6YmlzBa8JGTkfSR2yrO8YUUZho21g",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1qEb6YmlzBa8JGTkfSR2yrO8YUUZho21g/preview",
-   "wordCount": 406
+   "video": null
   },
   {
    "id": "83136997",
@@ -505,15 +431,8 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-alternative-loans-funding-options",
    "summary": "Introduces alternative lending options like Kiva 0% microloans, revenue-based funding and SBA 8(a), aimed at women, minority-owned and early-stage businesses that do not fit bank loans.",
-   "fetched": true,
    "pdfs": [],
-   "drive": [
-    {
-     "title": "Lesko_Help_CB_A07_Alternative_Loans_Funding.pdf",
-     "viewUrl": "https://drive.google.com/file/d/1DQjTAvaM6XDkE2KJGLe5T8BarOoVs9Gs/view",
-     "previewUrl": "https://drive.google.com/file/d/1DQjTAvaM6XDkE2KJGLe5T8BarOoVs9Gs/preview"
-    }
-   ],
+   "drive": [],
    "links": [
     {
      "label": "Kiva U.S. Microloans",
@@ -536,11 +455,7 @@
      "href": "https://www.sba.gov/federal-contracting/contracting-assistance-programs/8a-business-development-program"
     }
    ],
-   "download": "https://drive.google.com/uc?export=download&id=1DQjTAvaM6XDkE2KJGLe5T8BarOoVs9Gs",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1DQjTAvaM6XDkE2KJGLe5T8BarOoVs9Gs/preview",
-   "wordCount": 286
+   "video": null
   },
   {
    "id": "83137019",
@@ -559,7 +474,6 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-grants-support-for-minority-groups",
    "summary": "Gathers business centers, grants, accelerators and certification resources for Black, Latino, Asian, Indigenous and other underrepresented entrepreneurs, including industry-specific funds.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -660,11 +574,7 @@
      "href": "https://www.aapistrong.com/aapistrong-restaurant-fund"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 572
+   "video": null
   },
   {
    "id": "83645851",
@@ -683,15 +593,8 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-grants-resources-for-female-entrepreneurs",
    "summary": "A guide to Women's Business Centers, grants, pitch programs, microloans and WOSB/WBENC certifications for women-owned businesses, with extra resources for Latina and Black women founders.",
-   "fetched": true,
    "pdfs": [],
-   "drive": [
-    {
-     "title": "Lesko_Help_CB_A09_Female_Entrepreneurs.pdf",
-     "viewUrl": "https://drive.google.com/file/d/1Y9S3KFg6oDbgNACaOjqEmVzNSJPOz3kD/view",
-     "previewUrl": "https://drive.google.com/file/d/1Y9S3KFg6oDbgNACaOjqEmVzNSJPOz3kD/preview"
-    }
-   ],
+   "drive": [],
    "links": [
     {
      "label": "Find Your Local WBC",
@@ -800,17 +703,9 @@
     {
      "label": "WMNtech Leaders | 1871",
      "href": "https://1871.com/wmntech-leaders/"
-    },
-    {
-     "label": "Grant Planner & Tracker",
-     "href": "https://storage.googleapis.com/ifw-drupal-files/2023-08/Grant%20Planner%20+%20Grant%20Tracker.pdf"
     }
    ],
-   "download": "https://drive.google.com/uc?export=download&id=1Y9S3KFg6oDbgNACaOjqEmVzNSJPOz3kD",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1Y9S3KFg6oDbgNACaOjqEmVzNSJPOz3kD/preview",
-   "wordCount": 458
+   "video": null
   },
   {
    "id": "83137050",
@@ -829,15 +724,8 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-grants-resources-for-farmers-ranchers",
    "summary": "A comprehensive directory of USDA service centers, planning guides, grant and loan programs, safety rules and tax help for farmers, ranchers and rural entrepreneurs.",
-   "fetched": true,
    "pdfs": [],
-   "drive": [
-    {
-     "title": "Lesko_Help_CB_A10_Farmers_Ranchers.pdf",
-     "viewUrl": "https://drive.google.com/file/d/1Hj6mNeQBFu2MDDDZITrSL-AM8yXB1M5C/view",
-     "previewUrl": "https://drive.google.com/file/d/1Hj6mNeQBFu2MDDDZITrSL-AM8yXB1M5C/preview"
-    }
-   ],
+   "drive": [],
    "links": [
     {
      "label": "Find Your Local USDA Service Center",
@@ -1052,11 +940,7 @@
      "href": "https://www.farmers.gov/your-business/taxes"
     }
    ],
-   "download": "https://drive.google.com/uc?export=download&id=1Hj6mNeQBFu2MDDDZITrSL-AM8yXB1M5C",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1Hj6mNeQBFu2MDDDZITrSL-AM8yXB1M5C/preview",
-   "wordCount": 396
+   "video": null
   },
   {
    "id": "83137068",
@@ -1075,15 +959,8 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-business-support-mentorship-for-veterans",
    "summary": "Connects veterans and military families with mentorship programs, VBOCs, Boots to Business courses, defense small business offices, contracting help and veteran-focused grants.",
-   "fetched": true,
    "pdfs": [],
-   "drive": [
-    {
-     "title": "Lesko_Help_CB_A11_Veterans_Business_Support.pdf",
-     "viewUrl": "https://drive.google.com/file/d/1doan3JUbXq36I3jDlDCva5fJhHMj9wdL/view",
-     "previewUrl": "https://drive.google.com/file/d/1doan3JUbXq36I3jDlDCva5fJhHMj9wdL/preview"
-    }
-   ],
+   "drive": [],
    "links": [
     {
      "label": "DoD OSBP Mentor-Protégé Program",
@@ -1222,11 +1099,7 @@
      "href": "https://www.dodciviliancareers.com/"
     }
    ],
-   "download": "https://drive.google.com/uc?export=download&id=1doan3JUbXq36I3jDlDCva5fJhHMj9wdL",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1doan3JUbXq36I3jDlDCva5fJhHMj9wdL/preview",
-   "wordCount": 318
+   "video": null
   },
   {
    "id": "83137095",
@@ -1245,15 +1118,8 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-federal-government-resources-for-small-businesses",
    "summary": "Links you to federal grant databases (SAM.gov, Grants.gov) and small business funding from the Departments of Energy and Labor, NIH and the SBIR/STTR innovation programs.",
-   "fetched": true,
    "pdfs": [],
-   "drive": [
-    {
-     "title": "Lesko_Help_CB_A12_Federal_Government_Resources.pdf",
-     "viewUrl": "https://drive.google.com/file/d/1xNgWW_O5vS5twWq4FSiUzxUntwYqznqh/view",
-     "previewUrl": "https://drive.google.com/file/d/1xNgWW_O5vS5twWq4FSiUzxUntwYqznqh/preview"
-    }
-   ],
+   "drive": [],
    "links": [
     {
      "label": "SAM.gov",
@@ -1310,17 +1176,9 @@
     {
      "label": "Lab to Market Hub",
      "href": "https://www.sbir.gov/lab2market"
-    },
-    {
-     "label": "SBIR vs STTR: Which One?",
-     "href": "https://www.sbir.gov/sites/all/themes/sbir/dawnbreaker/img/documents/Course1-Tutorial3.pdf"
     }
    ],
-   "download": "https://drive.google.com/uc?export=download&id=1xNgWW_O5vS5twWq4FSiUzxUntwYqznqh",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1xNgWW_O5vS5twWq4FSiUzxUntwYqznqh/preview",
-   "wordCount": 265
+   "video": null
   },
   {
    "id": "83646154",
@@ -1339,7 +1197,6 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-governement-contracting-for-small-businesses",
    "summary": "Explains step by step how to start selling to the government: register on SAM.gov, find your NAICS and PSC codes, get free help from APEX Accelerators and use SBA set-aside programs.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -1368,11 +1225,7 @@
      "href": "https://www.sba.gov/federal-contracting/contracting-assistance-programs"
     }
    ],
-   "download": null,
-   "isLesson": true,
-   "video": null,
-   "preview": null,
-   "wordCount": 605
+   "video": null
   },
   {
    "id": "83137118",
@@ -1391,15 +1244,8 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-accelerators-incubators-angel-investors",
    "summary": "Lists startup accelerators and incubators like Techstars, MassChallenge and Y Combinator Startup School, plus angel investor networks and an overview of non-traditional funding.",
-   "fetched": true,
    "pdfs": [],
-   "drive": [
-    {
-     "title": "Lesko_Help_CB_A14_Accelerators_Incubators_Angels.pdf",
-     "viewUrl": "https://drive.google.com/file/d/1A9QUky6eiKfAiqU7akhNwEg8P-jS8sqN/view",
-     "previewUrl": "https://drive.google.com/file/d/1A9QUky6eiKfAiqU7akhNwEg8P-jS8sqN/preview"
-    }
-   ],
+   "drive": [],
    "links": [
     {
      "label": "AngelPad",
@@ -1450,11 +1296,7 @@
      "href": "https://www.invstor.com/"
     }
    ],
-   "download": "https://drive.google.com/uc?export=download&id=1A9QUky6eiKfAiqU7akhNwEg8P-jS8sqN",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1A9QUky6eiKfAiqU7akhNwEg8P-jS8sqN/preview",
-   "wordCount": 293
+   "video": null
   },
   {
    "id": "83137128",
@@ -1473,15 +1315,8 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-raise-money-with-crowdfunding",
    "summary": "Explains the types of crowdfunding and lists platforms for business, real estate, artists and writers, including GoFundMe, Kickstarter, Indiegogo and Wefunder.",
-   "fetched": true,
    "pdfs": [],
-   "drive": [
-    {
-     "title": "Lesko_Help_CB_A15_Crowdfunding.pdf",
-     "viewUrl": "https://drive.google.com/file/d/1I8uyDQVQbV42n2BE6ub0ftRsIu98Hqrp/view",
-     "previewUrl": "https://drive.google.com/file/d/1I8uyDQVQbV42n2BE6ub0ftRsIu98Hqrp/preview"
-    }
-   ],
+   "drive": [],
    "links": [
     {
      "label": "GoFundMe – Business Fundraising",
@@ -1532,11 +1367,7 @@
      "href": "https://inkubate.com/"
     }
    ],
-   "download": "https://drive.google.com/uc?export=download&id=1I8uyDQVQbV42n2BE6ub0ftRsIu98Hqrp",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1I8uyDQVQbV42n2BE6ub0ftRsIu98Hqrp/preview",
-   "wordCount": 150
+   "video": null
   },
   {
    "id": "83137145",
@@ -1555,15 +1386,8 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-industry-specific-resources",
    "summary": "Industry-specific funding and accelerator links for AI, arts, cybersecurity, exporting, healthcare IT, home services, manufacturing, restaurants and tech, plus member-requested Google Doc series.",
-   "fetched": true,
    "pdfs": [],
-   "drive": [
-    {
-     "title": "Lesko_Help_CB_A16_Industry_Specific_Resources.pdf",
-     "viewUrl": "https://drive.google.com/file/d/1yEIRDJQfFQ2nVY0u1XyDf_KBpdEAxlW4/view",
-     "previewUrl": "https://drive.google.com/file/d/1yEIRDJQfFQ2nVY0u1XyDf_KBpdEAxlW4/preview"
-    }
-   ],
+   "drive": [],
    "links": [
     {
      "label": "https://capria.vc/",
@@ -1694,11 +1518,7 @@
      "href": "https://docs.google.com/document/d/1eZ-DDX-MnA5FlI7wUPb3pirFfFQCfpXIeZsku_0eNyA/edit?usp=sharing"
     }
    ],
-   "download": "https://drive.google.com/uc?export=download&id=1yEIRDJQfFQ2nVY0u1XyDf_KBpdEAxlW4",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1yEIRDJQfFQ2nVY0u1XyDf_KBpdEAxlW4/preview",
-   "wordCount": 273
+   "video": null
   },
   {
    "id": "83137199",
@@ -1717,7 +1537,6 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-gig-economy-learning-resources",
    "summary": "A big directory of gig and freelance opportunities, from virtual assistance, rideshare and delivery to pet sitting, translation, mystery shopping and selling creative work, with learning resources.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -2484,17 +2303,9 @@
     {
      "label": "What Is a Mock Jury? (With Common Juror Requirements) | Indeed.com",
      "href": "https://www.indeed.com/career-advice/career-development/mock-jury"
-    },
-    {
-     "label": "Checklist for Housekeepers and Cleaning Services",
-     "href": "https://www.simplelifecorp.com/Housekeeper%20checklist.pdf"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 1618
+   "video": null
   },
   {
    "id": "103407339",
@@ -2513,15 +2324,10 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/103407339",
    "summary": "Draft lesson, not yet published in the community.",
-   "fetched": false,
    "pdfs": [],
    "drive": [],
    "links": [],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 0
+   "video": null
   },
   {
    "id": "103407333",
@@ -2540,15 +2346,10 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/103407333",
    "summary": "Draft lesson, not yet published in the community.",
-   "fetched": false,
    "pdfs": [],
    "drive": [],
    "links": [],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 0
+   "video": null
   },
   {
    "id": "103407327",
@@ -2567,15 +2368,10 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/103407327",
    "summary": "Draft lesson, not yet published in the community.",
-   "fetched": false,
    "pdfs": [],
    "drive": [],
    "links": [],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 0
+   "video": null
   },
   {
    "id": "80242726",
@@ -2594,7 +2390,6 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-how-to-get-started-with-a-nonprofit-today",
    "summary": "Explains why you should skip Google and go straight to free expert help from nonprofits and government agencies when starting a nonprofit, with Matthew's video and a downloadable Quick Guide.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_CB_B01_Free_Nonprofit_Help.pdf",
@@ -2609,11 +2404,7 @@
     }
    ],
    "links": [],
-   "download": "https://drive.google.com/uc?export=download&id=1INdivbAIgvpD9T_2qE2ejoWSae-J2Hs6",
-   "isLesson": true,
-   "video": "https://www.youtube.com/embed/iXy56ISl_Yk",
-   "preview": "https://drive.google.com/file/d/1INdivbAIgvpD9T_2qE2ejoWSae-J2Hs6/preview",
-   "wordCount": 58
+   "video": "https://www.youtube.com/embed/iXy56ISl_Yk"
   },
   {
    "id": "80242727",
@@ -2632,7 +2423,6 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-how-to-register-your-nonprofit-in-20-minutes-for-only-250",
    "summary": "Shows how to legally register your nonprofit yourself in about 20 minutes for the IRS filing fee, without paying lawyers or consultants, with a video and a downloadable Quick Guide.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_CB_B02_Register_Your_Nonprofit.pdf",
@@ -2647,11 +2437,7 @@
     }
    ],
    "links": [],
-   "download": "https://drive.google.com/uc?export=download&id=1Tuq_ixvblzZyp4F6zct8SYDvcy03CjWZ",
-   "isLesson": true,
-   "video": "https://www.youtube.com/embed/_aTpv0R3kFI",
-   "preview": "https://drive.google.com/file/d/1Tuq_ixvblzZyp4F6zct8SYDvcy03CjWZ/preview",
-   "wordCount": 61
+   "video": "https://www.youtube.com/embed/_aTpv0R3kFI"
   },
   {
    "id": "81701981",
@@ -2670,7 +2456,6 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-the-10-best-grants-to-start-a-nonprofit",
    "summary": "A downloadable Quick Guide listing the 10 best grants and funding sources to help you launch a new nonprofit.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_CB_B03_10_Best_Grants_Nonprofit.pdf",
@@ -2685,11 +2470,7 @@
     }
    ],
    "links": [],
-   "download": "https://drive.google.com/uc?export=download&id=14LtEBoH24TXR79lPBUkvJ6f_eO9rFoFA",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/14LtEBoH24TXR79lPBUkvJ6f_eO9rFoFA/preview",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "83478982",
@@ -2708,7 +2489,6 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-download-your-ultimate-checklist-to-start-a-nonprofit-here",
    "summary": "A downloadable checklist that walks you through every step of setting up your nonprofit properly, from paperwork to compliance.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "✅ SETTING UP YOUR NONPROFIT PROPERLY.pdf",
@@ -2723,11 +2503,7 @@
     }
    ],
    "links": [],
-   "download": "https://drive.google.com/uc?export=download&id=1X2IiR9rFpRYlrRM7s9xaoJPdP_Mue6gr",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1X2IiR9rFpRYlrRM7s9xaoJPdP_Mue6gr/preview",
-   "wordCount": 5
+   "video": null
   },
   {
    "id": "85344073",
@@ -2746,7 +2522,6 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-how-to-get-started-with-an-expert-career-advisor",
    "summary": "Explains how to get free career help from government agencies and nonprofit programs instead of paid services, with Matthew's video and a downloadable Quick Guide on free career help.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_CB_C01_Free_Career_Help.pdf",
@@ -2761,11 +2536,7 @@
     }
    ],
    "links": [],
-   "download": "https://drive.google.com/uc?export=download&id=12VEn0XgRQJi43Fq2zuvN1l5Yw0HOenJh",
-   "isLesson": true,
-   "video": "https://www.youtube.com/embed/svXGJMaHur8",
-   "preview": "https://drive.google.com/file/d/12VEn0XgRQJi43Fq2zuvN1l5Yw0HOenJh/preview",
-   "wordCount": 71
+   "video": "https://www.youtube.com/embed/svXGJMaHur8"
   },
   {
    "id": "85344076",
@@ -2784,7 +2555,6 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-contact-these-10-organizations-to-get-career-help-first",
    "summary": "A downloadable Quick Guide to the 10 organizations to contact first for free job training and career help.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_CB_C02_Free_Job_Training.pdf",
@@ -2799,11 +2569,7 @@
     }
    ],
    "links": [],
-   "download": "https://drive.google.com/uc?export=download&id=1tj7EcQh4OzQAEWbj2iG5evNhA17ShEj_",
-   "isLesson": true,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1tj7EcQh4OzQAEWbj2iG5evNhA17ShEj_/preview",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "87253537",
@@ -2822,7 +2588,6 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-financial-aid-basics-federal-state-resources",
    "summary": "A downloadable Quick Guide covering student aid basics, federal and state financial aid resources and loan forgiveness options.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_CB_C03_Student_Aid_Loan_Forgiveness.pdf",
@@ -2837,11 +2602,7 @@
     }
    ],
    "links": [],
-   "download": "https://drive.google.com/uc?export=download&id=1ifdmef72mRfH-DnCbx9Nn7vWdWXQEhkG",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1ifdmef72mRfH-DnCbx9Nn7vWdWXQEhkG/preview",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "87253693",
@@ -2860,7 +2621,6 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-scholarships-grants-guide",
    "summary": "A downloadable Quick Guide to scholarships, fellowships and grants that can help pay for education and training.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_CB_C07_Scholarships_Fellowships.pdf",
@@ -2875,11 +2635,7 @@
     }
    ],
    "links": [],
-   "download": "https://drive.google.com/uc?export=download&id=1Q86VXceaTWkqyfSFPb45Z5FhoXLTALaE",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1Q86VXceaTWkqyfSFPb45Z5FhoXLTALaE/preview",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "87253772",
@@ -2898,7 +2654,6 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-child-care-homeschooling-guide",
    "summary": "A downloadable Quick Guide to child care assistance and homeschooling resources for working parents.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_CB_C04_Child_Care_Homeschooling.pdf",
@@ -2913,11 +2668,7 @@
     }
    ],
    "links": [],
-   "download": "https://drive.google.com/uc?export=download&id=1Ny3ukd6kl0S2yfC_1HCQWPNUmyntO1Xz",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1Ny3ukd6kl0S2yfC_1HCQWPNUmyntO1Xz/preview",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "87253860",
@@ -2936,7 +2687,6 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-job-centers-apprenticeships-career-resources",
    "summary": "A downloadable Quick Guide to local job centers, apprenticeships and other career resources that can help you get trained and hired.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_CB_C05_Job_Centers_Apprenticeships.pdf",
@@ -2951,11 +2701,7 @@
     }
    ],
    "links": [],
-   "download": "https://drive.google.com/uc?export=download&id=1wigUctxgFAoellMP-zu-kdqm5fODo7pl",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1wigUctxgFAoellMP-zu-kdqm5fODo7pl/preview",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "87254065",
@@ -2974,7 +2720,6 @@
    "collection": "LESKO PRO | BUSINESS HUB",
    "url": "https://lesko-help-2.mn.co/posts/business-nonprofits-career-free-low-cost-alternative-training",
    "summary": "A downloadable Quick Guide to free and low-cost online learning and alternative training options for building new skills.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_CB_C06_Free_Online_Learning.pdf",
@@ -2989,11 +2734,7 @@
     }
    ],
    "links": [],
-   "download": "https://drive.google.com/uc?export=download&id=14lvtfI8rSMidPbZ8kBgjhcExbPZM2vYy",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/14lvtfI8rSMidPbZ8kBgjhcExbPZM2vYy/preview",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "83869940",
@@ -3012,7 +2753,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/grant-basics-step-0-where-to-find-emergency-help",
    "summary": "A quick list of where to turn first in a crisis: 211, United Way, HUD, FindHelp, food banks, gas and transportation help, free clothing, and free entertainment resources.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -3201,11 +2941,7 @@
      "href": "https://docs.google.com/document/d/1Rr1dfsZIJgwwa5hEheXVo_BOaq3ufKhwAZYmhkarspc/edit?usp=sharing"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 384
+   "video": null
   },
   {
    "id": "83645525",
@@ -3224,7 +2960,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/grant-basics-step-1-how-to-find-the-right-resources-to-get-started",
    "summary": "Your starting map for grant hunting: trusted government and nonprofit resources for housing, utilities, career, healthcare, taxes, veterans, emergencies, plus community grant spreadsheets.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -3537,11 +3272,7 @@
      "href": "https://docs.google.com/spreadsheets/d/1NXX5BAtQyLJh5DaXl6xHLp-cdlphloNwwSuQPo0egLk/edit#gid=545571511"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 984
+   "video": null
   },
   {
    "id": "83645530",
@@ -3560,7 +3291,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/grant-basics-step-2-find-the-opportunities-offered-by-the-resource",
    "summary": "Learn how to look, not just where: a Grant Hunting 101 video, the Grants.gov getting-started checklist, planner and note-taking mini-courses, and free typing and computer-skills tools.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -3621,11 +3351,7 @@
      "href": "https://docs.google.com/document/d/17Eq2bi2Fc9tTt94QhZVXxjzMToxCIfogwM3pHJuuP_8/edit?usp=sharing"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 449
+   "video": null
   },
   {
    "id": "83645533",
@@ -3644,7 +3370,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/grant-basics-step-3-find-the-contacts-communication-tips",
    "summary": "Direct contact pages for HUD, NCSHA, LIHEAP, CAP agencies, SBDCs, NeedyMeds and more, plus Matthew's How-To Phone Call series so you can confidently pick up the phone and ask.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -3721,11 +3446,7 @@
      "href": "https://docs.google.com/document/d/1Y9NFV7k4j_d-YsgkcsS3OXFtxmsYkZFbHPzLwyYIsjw/edit?usp=sharing"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 381
+   "video": null
   },
   {
    "id": "83645539",
@@ -3744,7 +3465,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/grant-basics-step-4-locate-the-application-form-to-apply-with-ease",
    "summary": "Two videos showing how to find and fill out government grant applications that never show up in Google, then practice by drafting one application of your own.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -3757,11 +3477,7 @@
      "href": "https://fb.watch/74KPN5fMjK/"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 275
+   "video": null
   },
   {
    "id": "83645542",
@@ -3780,15 +3496,10 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/grant-basics-step-5-prepare-for-grant-application-cheat-sheet",
    "summary": "A Documents and Financials Cheat Sheet listing the IDs, tax returns, bank, lease, insurance, utility, employment and military papers to gather before you submit any application.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 272
+   "video": null
   },
   {
    "id": "83645552",
@@ -3807,15 +3518,10 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/grant-basics-step-6-finalize-submit-your-application-like-a-pro",
    "summary": "An eight-point submission checklist: note the deadline, read the instructions, double-check answers and documents, keep copies, and submit exactly as instructed.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 324
+   "video": null
   },
   {
    "id": "83645555",
@@ -3834,7 +3540,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/grant-basics-step-7-keep-track-of-everything-that-youve-submitted",
    "summary": "How to set up a grant and resource notebook, use calendars for deadlines and follow-ups, and build a simple grant-hunting strategy using tools like the IFundWomen tracker.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -3863,11 +3568,7 @@
      "href": "https://docs.google.com/document/d/15tG5T_bJumwyPplyf1O8Vx0U06ldTe2R5zWVAW3ra4U/edit?usp=sharing"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 498
+   "video": null
   },
   {
    "id": "83645557",
@@ -3886,7 +3587,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/grant-basics-step-8-keep-copies-of-all-grant-answers-master-your-note-taking-system",
    "summary": "A note-taking video plus a seven-part tracking template for institutions, contacts, dates and requests, and the pro tip of saving every application answer for reuse.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -3899,11 +3599,7 @@
      "href": "https://www.youtube.com/watch?v=QB0yiq_MaQw"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 371
+   "video": null
   },
   {
    "id": "83645560",
@@ -3922,7 +3618,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/grant-basics-step-9-wait-follow-up-like-a-pro",
    "summary": "What to do after you submit: schedule follow-ups, choose a polite check-in rhythm (daily to monthly), and keep the pipeline moving by searching for your next opportunity.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -3931,11 +3626,7 @@
      "href": "https://www.ifundwomen.com/grants/grant-planner-tracker"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 315
+   "video": null
   },
   {
    "id": "78081802",
@@ -3954,7 +3645,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/home-housing-help-lesson-1",
    "summary": "Start your home-buying journey by watching Matthew's video, booking a free HUD-approved housing counselor, and getting second opinions from NeighborWorks or FindHelp.org.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -3979,11 +3669,7 @@
      "href": "https://www.findhelp.org/"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 261
+   "video": null
   },
   {
    "id": "78081803",
@@ -4002,7 +3688,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/home-housing-help-lesson-2",
    "summary": "Ten key organizations to call for home-buying grants and down-payment help, from NeighborWorks and state housing agencies to Habitat, USDA, CDFIs and $1 HUD homes, with calling tips.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -4055,11 +3740,7 @@
      "href": "https://www.rd.usda.gov"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 482
+   "video": null
   },
   {
    "id": "84491944",
@@ -4078,7 +3759,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/home-housing-help-quick-guide",
    "summary": "Trusted places to get help staying housed: Homeowner Assistance Fund, emergency rental assistance, CAP agencies, 211, HUD locators, NLIHC and CFPB housing-insecurity resources.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -4127,11 +3807,7 @@
      "href": "https://www.consumerfinance.gov/housing/housing-insecurity/"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 332
+   "video": null
   },
   {
    "id": "84492248",
@@ -4150,7 +3826,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/home-housing-help-quick-guide-84492248",
    "summary": "Programs to lower utility costs and stay connected: LIHEAP, LIHWAP, Dollar Energy Fund, Lifeline, low-cost internet plans, free or cheap computers, and free WiFi tools.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -4287,11 +3962,7 @@
      "href": "https://broadbandusa.ntia.gov/digital-equity-act-programs-public-resources-state-digital-equity-planning-grant-program-and-state"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 455
+   "video": null
   },
   {
    "id": "80037997",
@@ -4310,7 +3981,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/bills-debt-homes-cars-learn-how-to-get-a-free-financial-counselor-appointment",
    "summary": "Shows you how to book a free, government-backed financial counselor through HUD.gov, what to prepare, and how to steer clear of paid debt-relief scams.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -4327,11 +3997,7 @@
      "href": "https://www.findhelp.org/"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 378
+   "video": null
   },
   {
    "id": "80037998",
@@ -4350,7 +4016,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/bills-debt-homes-cars-how-to-get-companies-to-forgive-debt-bills",
    "summary": "Explains that debt is negotiable and walks you through calling creditors, offering less, and getting settlements in writing, using free CFPB guidance instead of paid services.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -4371,11 +4036,7 @@
      "href": "https://www.consumerfinance.gov/consumer-tools/debt-collection/"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 372
+   "video": null
   },
   {
    "id": "80037999",
@@ -4394,7 +4055,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/bills-debt-homes-cars-learn-how-to-get-bill-collectors-to-stop-calling-you-and-pay-you-1000",
    "summary": "Covers your rights under the Fair Debt Collection Practices Act, how to stop collector harassment with a cease-and-desist letter, and how to sue for up to $1,000 if they break the law.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -4423,11 +4083,7 @@
      "href": "https://www.consumerfinance.gov/ask-cfpb/how-do-i-find-an-attorney-in-my-state-en-1549/"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 438
+   "video": null
   },
   {
    "id": "80038000",
@@ -4446,7 +4102,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/bills-debt-homes-cars-contact-these-10-key-organizations-first-80038000",
    "summary": "A call-first list of ten trusted organizations for grants, bill help, and debt forgiveness, covering rent, utilities, medical bills, student loans, taxes, and child support.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -4499,11 +4154,7 @@
      "href": "https://acf.gov/css/child-support-professionals/state-agencies"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 620
+   "video": null
   },
   {
    "id": "103057720",
@@ -4522,7 +4173,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/bills-debt-homes-cars-debt-help-credit-counseling",
    "summary": "Downloadable Lesko Help Quick Guide on getting free debt help and nonprofit credit counseling.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_04_Debt_Help_Credit_Counseling_Quick_Guide.pdf",
@@ -4537,11 +4187,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/d545d9f6-97ce-49d3-b936-aaecf1ce7921/Lesko_Help_04_Debt_Help_Credit_Counseling_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1JBW0remNN1OL_gRuPDxB7su7v7RKkecR/preview?usp=embed_googleplus",
-   "wordCount": 0
+   "video": null
   },
   {
    "id": "103058215",
@@ -4560,7 +4206,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/bills-debt-homes-cars-utility-assistance-energy-water",
    "summary": "Downloadable Lesko Help Quick Guide on finding help paying utility, energy, and water bills.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_01_Utility_Assistance_Quick_Guide.pdf",
@@ -4575,11 +4220,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/60250b4f-0c14-4717-8818-1361367b2dac/Lesko_Help_01_Utility_Assistance_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1UlMODxzwaL83QWJTAw7EiSYMfORtu860/preview?usp=embed_googleplus",
-   "wordCount": 0
+   "video": null
   },
   {
    "id": "103058219",
@@ -4598,7 +4239,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/bills-debt-homes-cars-phone-internet-devices-help",
    "summary": "Downloadable Lesko Help Quick Guide on getting help with phone, internet, and device costs.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_02_Phone_Internet_Devices_Quick_Guide.pdf",
@@ -4613,11 +4253,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/117d9345-3c32-4285-aeb3-f6da37163677/Lesko_Help_02_Phone_Internet_Devices_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1318-XecrzXNBzUc0gOVBBakUlc13kLKT/preview?usp=embed_googleplus",
-   "wordCount": 0
+   "video": null
   },
   {
    "id": "103058224",
@@ -4636,7 +4272,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/bills-debt-homes-cars-food-grocery-help",
    "summary": "Downloadable Lesko Help Quick Guide on finding food and grocery assistance near you.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_03_Food_Grocery_Help_Quick_Guide.pdf",
@@ -4651,11 +4286,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/892468ed-0a08-4bb4-ad1c-a58d9b4662f0/Lesko_Help_03_Food_Grocery_Help_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1XzD3pB4BdlBf9KzeYQvgwRi9rSc3riMW/preview?usp=embed_googleplus",
-   "wordCount": 0
+   "video": null
   },
   {
    "id": "103058226",
@@ -4674,7 +4305,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/bills-debt-homes-cars-student-loan-help",
    "summary": "Downloadable Lesko Help Quick Guide on student loan relief, forgiveness, and repayment options.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_05_Student_Loan_Help_Quick_Guide.pdf",
@@ -4689,11 +4319,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/99f59d91-07d2-45cb-bfb3-a1883b6854a0/Lesko_Help_05_Student_Loan_Help_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1-ZzZW2Z88yY8w1YoxpwgzRhsxpUe98r3/preview?usp=embed_googleplus",
-   "wordCount": 0
+   "video": null
   },
   {
    "id": "103063706",
@@ -4712,7 +4338,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/bills-debt-homes-cars-get-a-free-hud-counselor-appointment",
    "summary": "Walks you through booking a free HUD-approved housing counselor to help you find home-buying grants, and encourages getting a second opinion from findhelp.org or NeighborWorks.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -4733,11 +4358,7 @@
      "href": "https://www.findhelp.org/"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 263
+   "video": null
   },
   {
    "id": "103063707",
@@ -4756,7 +4377,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/bills-debt-homes-cars-contact-these-10-key-organizations-first",
    "summary": "A call-first list of ten key organizations offering housing grants, down payment help, and reduced-price homes, from NeighborWorks and state housing agencies to Habitat for Humanity.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -4805,11 +4425,7 @@
      "href": "https://www.rd.usda.gov"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 497
+   "video": null
   },
   {
    "id": "103063811",
@@ -4828,7 +4444,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/bills-debt-homes-cars-rent-eviction-help",
    "summary": "Downloadable Lesko Help Quick Guide on rent assistance and stopping an eviction.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_06_Rent_Eviction_Help_Quick_Guide.pdf",
@@ -4843,11 +4458,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/d81dce2a-53d6-46f4-b50b-7740ff7a202c/Lesko_Help_06_Rent_Eviction_Help_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/12dslTXfklcJGrIRExWI6RZY66g_Q7T17/preview?usp=embed_googleplus",
-   "wordCount": 0
+   "video": null
   },
   {
    "id": "103063812",
@@ -4866,7 +4477,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/bills-debt-homes-cars-help-with-buying-a-home",
    "summary": "Downloadable Lesko Help Quick Guide on programs and grants that help you buy a home.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_07_Buying_A_Home_Quick_Guide.pdf",
@@ -4881,11 +4491,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/a24fb8a1-8300-4ad0-a8e9-ad9e0fd5c4a6/Lesko_Help_07_Buying_A_Home_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1w-mvBgZ2ptvKHD0cgeSsv1BVG5rWZf1c/preview?usp=embed_googleplus",
-   "wordCount": 0
+   "video": null
   },
   {
    "id": "103212390",
@@ -4904,7 +4510,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/bills-debt-homes-cars-home-repair-energy-upgrade",
    "summary": "Downloadable Lesko Help Quick Guide on home repair grants and energy-efficiency upgrades.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_08_Home_Repair_Energy_Upgrade_Quick_Guide.pdf",
@@ -4919,11 +4524,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/156aaef8-b0de-41a5-96a6-76e72165d698/Lesko_Help_08_Home_Repair_Energy_Upgrade_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/12B_9cJqQXJg12mcrhJgdA7UQy7o6gLf0/preview?usp=embed_googleplus",
-   "wordCount": 0
+   "video": null
   },
   {
    "id": "103212383",
@@ -4942,7 +4543,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/bills-debt-homes-cars-foreclosure-help-home-for-1",
    "summary": "Downloadable Lesko Help Quick Guide on foreclosure help and government homes-for-$1 programs.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_09_Foreclosure_Help_Homes_For_1_Quick_Guide.pdf",
@@ -4957,11 +4557,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/4cef7157-2d74-4bf2-a0d9-4fc23f03b250/Lesko_Help_09_Foreclosure_Help_Homes_For_1_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1h_mtJ2CmtOTYRWF356RMVgwVYGr6EoJF/preview?usp=embed_googleplus",
-   "wordCount": 0
+   "video": null
   },
   {
    "id": "103063722",
@@ -4980,7 +4576,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/bills-debt-homes-cars-free-cars-car-repairs",
    "summary": "Shows you how to use findhelp.org to find local nonprofits offering free cars, car repairs, and emergency financial assistance, and reminds you to call each one directly.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -4989,11 +4584,7 @@
      "href": "http://findhelp.org"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 216
+   "video": null
   },
   {
    "id": "103063726",
@@ -5012,15 +4603,10 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/103063726",
    "summary": "Draft lesson, not yet published in the community.",
-   "fetched": false,
    "pdfs": [],
    "drive": [],
    "links": [],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 0
+   "video": null
   },
   {
    "id": "103063748",
@@ -5039,7 +4625,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/bills-debt-homes-cars-car-repair-vehicle-help",
    "summary": "Downloadable Lesko Help Quick Guide on getting help with car repairs and vehicle costs.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_10_Car_Repair_Vehicle_Help_Quick_Guide.pdf",
@@ -5054,11 +4639,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/c7da23b0-c4d1-4ddf-be59-0ab4fb368df2/Lesko_Help_10_Car_Repair_Vehicle_Help_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1hRlodxdYiq6HLuFpppbx3TeFlSUdVDsr/preview?usp=embed_googleplus",
-   "wordCount": 0
+   "video": null
   },
   {
    "id": "103063751",
@@ -5077,7 +4658,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/bills-debt-homes-cars-free-cars-transportation-help",
    "summary": "Downloadable Lesko Help Quick Guide on free car programs and transportation help.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_11_Free_Cars_Transportation_Quick_Guide.pdf",
@@ -5092,11 +4672,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/1163983c-1a6b-4dfe-8323-34179e4b5208/Lesko_Help_11_Free_Cars_Transportation_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1zu0coC3FTnECo6lmpFtevLIVeRMipj7m/preview?usp=embed_googleplus",
-   "wordCount": 0
+   "video": null
   },
   {
    "id": "103063753",
@@ -5115,7 +4691,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/bills-debt-homes-cars-government-auctions-surplus",
    "summary": "Downloadable Lesko Help Quick Guide on buying vehicles and goods cheaply through government auctions and surplus sales.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_12_Government_Auctions_Surplus_Quick_Guide.pdf",
@@ -5124,11 +4699,7 @@
    ],
    "drive": [],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/28a7d8db-5606-4b9a-a320-a14723a85219/Lesko_Help_12_Government_Auctions_Surplus_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://media2-production.mightynetworks.com/asset/28a7d8db-5606-4b9a-a320-a14723a85219/Lesko_Help_12_Government_Auctions_Surplus_Quick_Guide.pdf",
-   "wordCount": 0
+   "video": null
   },
   {
    "id": "80242802",
@@ -5147,7 +4718,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/healthcare-assistance-find-free-and-low-cost-health-services",
    "summary": "Shows you where to find free and low-cost medical, dental and mental health clinics, apply for affordable insurance with free help, call 988 for counseling, explore clinical trials, and get Medicare advice.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -5180,11 +4750,7 @@
      "href": "https://findhelp.org/"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 521
+   "video": null
   },
   {
    "id": "80242803",
@@ -5203,7 +4769,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/healthcare-assistance-get-help-with-paying-your-medical-bills",
    "summary": "Points you to nonprofit and government programs that give grants for medical bills, prescriptions and co-pays, free case managers who fight high bills and insurance denials, and help with living costs while sick.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -5264,11 +4829,7 @@
      "href": "https://rarediseases.org/"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 505
+   "video": null
   },
   {
    "id": "80957140",
@@ -5287,7 +4848,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/healthcare-assistance-learn-how-to-eliminate-your-medical-bills-debt",
    "summary": "Walks you through 8 ways to lower or erase medical debt: hospital charity care, surprise-bill protections, crowdfunding, debt-forgiveness nonprofits, disputing charges, small claims court, and help with vision, hearing and vet bills.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -5332,11 +4892,7 @@
      "href": "https://docs.google.com/document/d/19Idh8N9skY-gOJD_Xqr4nd3QSgHu8HEm9obAh_qn1jE/edit?usp=drive_link"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 465
+   "video": null
   },
   {
    "id": "80957182",
@@ -5355,7 +4911,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/healthcare-assistance-5-ways-to-find-free-low-cost-dental-services",
    "summary": "Helps you find free or low-cost dental care through NeedyMeds clinic listings, state dental grants, hidden adult programs, Dental LifeLine volunteer dentists and government assistance, while avoiding dental grant scams.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -5384,11 +4939,7 @@
      "href": "https://www.youtube.com/watch?v=JdCDIg0rgbA"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 332
+   "video": null
   },
   {
    "id": "81350215",
@@ -5407,7 +4958,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/healthcare-assistance-247-crisis-help",
    "summary": "A downloadable Quick Guide to free, round-the-clock crisis lines and emergency support you can reach any time you or someone you love needs immediate help.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_HC01_24_7_Crisis_Help_Quick_Guide.pdf",
@@ -5422,11 +4972,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/b2267f15-626f-49a0-af05-93f11c33fc93/Lesko_Help_HC01_24_7_Crisis_Help_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1GTu-PRqDln21bD1t2FsVW1BzYuf38KHc/preview?usp=embed_googleplus",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "84450576",
@@ -5445,7 +4991,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/healthcare-assistance-stress-mental-health",
    "summary": "A downloadable Quick Guide to free and low-cost help for stress, anxiety and mental health, including counseling, hotlines and support programs.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_HC02_Stress_Mental_Health_Quick_Guide.pdf",
@@ -5460,11 +5005,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/b697655e-f2a6-4deb-9552-e6db70882900/Lesko_Help_HC02_Stress_Mental_Health_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1gEJOI5pqgRT1fbJQzXAWFapeCkADo__a/preview?usp=embed_googleplus",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "84451097",
@@ -5483,7 +5024,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/healthcare-assistance-addiction-recovery",
    "summary": "A downloadable Quick Guide to free and low-cost addiction treatment, recovery programs and support for you or a family member struggling with substance use.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_HC03_Addiction_Recovery_Quick_Guide.pdf",
@@ -5498,11 +5038,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/ece9b6a9-6df5-4a21-9542-8e055fb07c4d/Lesko_Help_HC03_Addiction_Recovery_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1GOMnBLeE3vW-a3RibbTKUACc3hePu_3X/preview?usp=embed_googleplus",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "84451457",
@@ -5521,7 +5057,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/healthcare-assistance-quit-smoking-vaping-help",
    "summary": "A downloadable Quick Guide to free quit-smoking and vaping programs, coaching and resources that can help you stop for good.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_HC04_Quit_Smoking_Help_Quick_Guide.pdf",
@@ -5536,11 +5071,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/439c0ebc-5756-4db1-8fb6-211f2a719b9d/Lesko_Help_HC04_Quit_Smoking_Help_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1I9DIPBqd1Xqrj1ZYzZ_0F3c4Api0ZlNt/preview?usp=embed_googleplus",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "84452145",
@@ -5559,7 +5090,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/healthcare-assistance-brain-neuro-support",
    "summary": "A downloadable Quick Guide to support and resources for brain and neurological conditions, from memory and dementia to stroke and other neuro disorders.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_HC05_Brain_Neuro_Support_Quick_Guide.pdf",
@@ -5574,11 +5104,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/738c5cf4-790e-4b9b-a33a-333ebf65be98/Lesko_Help_HC05_Brain_Neuro_Support_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1xOMUAlKe5rfLaiP5gLAYDd8tT10yITOg/preview?usp=embed_googleplus",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "84452354",
@@ -5597,7 +5123,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/healthcare-assistance-healthy-food-on-a-budget",
    "summary": "A downloadable Quick Guide to eating well for less, with food assistance programs, budget recipes and tools for finding affordable healthy groceries.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_HC06_Healthy_Food_Quick_Guide.pdf",
@@ -5612,11 +5137,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/986fc0a0-7a5d-4a5a-8421-f32b38117d8f/Lesko_Help_HC06_Healthy_Food_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1lqWEE8vhKTxGYtEgiAuX1otjqrQFYQFt/preview?usp=embed_googleplus",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "103397959",
@@ -5635,7 +5156,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/healthcare-assistance-free-low-cost-dental-care",
    "summary": "A downloadable Quick Guide to free and low-cost dental care, including clinics, dental schools and volunteer dentist programs near you.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_HC07_Dental_Care_Quick_Guide.pdf",
@@ -5650,11 +5170,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/10ac979a-188d-4393-8b2b-59a05d7a29e1/Lesko_Help_HC07_Dental_Care_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1hZHd9MsHs6dL0QptapeMYGYdpKXDo2a6/preview?usp=embed_googleplus",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "103397950",
@@ -5673,7 +5189,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/healthcare-assistance-free-clinics-health-insurance",
    "summary": "A downloadable Quick Guide to finding free and low-cost clinics and getting affordable health insurance coverage, with free application help.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_HC08_Clinics_Health_Insurance_Quick_Guide.pdf",
@@ -5688,11 +5203,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/5058ab73-0c39-485d-a78b-76af901aaf75/Lesko_Help_HC08_Clinics_Health_Insurance_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1JhNWU87E6j1Iv_yVZZzP95zkPK57vRC_/preview?usp=embed_googleplus",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "103397943",
@@ -5711,7 +5222,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/healthcare-assistance-prescription-drug-help",
    "summary": "A downloadable Quick Guide to programs that lower or cover the cost of prescription drugs, including patient assistance programs and discount tools.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_HC09_Prescription_Drug_Help_Quick_Guide.pdf",
@@ -5726,11 +5236,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/7a63dceb-5ade-4ef7-a4cd-50bcc41262a7/Lesko_Help_HC09_Prescription_Drug_Help_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1A6hzJhMrHTNerprPlPh2A7MCbPUpUBE_/preview?usp=embed_googleplus",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "103397934",
@@ -5749,7 +5255,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/healthcare-assistance-vision-hearing-care",
    "summary": "A downloadable Quick Guide to free and low-cost eye exams, glasses, hearing tests and hearing aids for people who need help paying for vision and hearing care.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_HC10_Vision_Hearing_Care_Quick_Guide.pdf",
@@ -5764,11 +5269,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/fd78322e-16fe-4b22-bfb3-c118a1bf7fe6/Lesko_Help_HC10_Vision_Hearing_Care_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1acc5WBsO5WUzrdNzWaHqhHRqrA1oq9Nm/preview?usp=embed_googleplus",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "103398065",
@@ -5787,7 +5288,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/healthcare-assistance-medicare-benefits",
    "summary": "A downloadable Quick Guide to understanding your Medicare benefits and getting free, unbiased help from local Medicare counselors.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_HC11_Medicare_Help_Benefits_Quick_Guide.pdf",
@@ -5802,11 +5302,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/e006e1f1-b3bb-474c-a64c-c1a88a02e0d9/Lesko_Help_HC11_Medicare_Help_Benefits_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/11E22FaR1sGifxqdfstqVdcBcf2Z93q8n/preview?usp=embed_googleplus",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "103398061",
@@ -5825,7 +5321,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/healthcare-assistance-medical-bills-assistance",
    "summary": "A downloadable Quick Guide to grants, co-pay relief and free case management that can help you pay or reduce your medical bills.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_HC12_Medical_Bill_Assistance_Quick_Guide.pdf",
@@ -5840,11 +5335,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/1beef249-18f5-4228-90f0-a30f0666b9c4/Lesko_Help_HC12_Medical_Bill_Assistance_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1h5phO12CFRwbSvUEKzF9RC7lEj9BfutY/preview?usp=embed_googleplus",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "103398050",
@@ -5863,7 +5354,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/healthcare-assistance-medical-debt-relief",
    "summary": "Despite its title, this post is a links directory for healthy eating on a budget: EatFresh.org recipes and free classes, farmers markets, CSAs and food co-ops, and apps to compare grocery deals and earn cash back.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -5928,11 +5418,7 @@
      "href": "https://home.ibotta.com/"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 333
+   "video": null
   },
   {
    "id": "103398237",
@@ -5951,7 +5437,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/healthcare-assistance-serious-chronic-illness",
    "summary": "A downloadable Quick Guide to financial help, support groups and services for people living with cancer, diabetes, rare diseases and other serious or chronic conditions.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_HC14_Serious_Chronic_Illness_Quick_Guide.pdf",
@@ -5966,11 +5451,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/89dafbf4-294e-4ff0-ad92-5325fae889b9/Lesko_Help_HC14_Serious_Chronic_Illness_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1W5-TDRbmTpWhiveXT0VBO5k6VGonoCNw/preview?usp=embed_googleplus",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "103398218",
@@ -5989,7 +5470,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/healthcare-assistance-help-for-caregivers",
    "summary": "A downloadable Quick Guide to support, respite and financial help for family caregivers looking after a loved one.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_HC15_Help_For_Caregivers_Quick_Guide.pdf",
@@ -6004,11 +5484,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/4a721c7e-acd6-4cb1-b267-3611541dc664/Lesko_Help_HC15_Help_For_Caregivers_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1UVLSbhGNhpOtZXZq2J-qyfxcl23CbtiI/preview?usp=embed_googleplus",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "103398205",
@@ -6027,7 +5503,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/healthcare-assistance-pet-veterinary-help",
    "summary": "A downloadable Quick Guide to grants, low-cost vet clinics and pet food assistance for pet owners who need help with veterinary bills.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_HC16_Pet_Veterinary_Care_Quick_Guide.pdf",
@@ -6042,11 +5517,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/d1318dec-5d17-44d3-8233-385558968723/Lesko_Help_HC16_Pet_Veterinary_Care_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1OnxQk6hA0XvhdggU1MEswsafcnlMZXCd/preview?usp=embed_googleplus",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "98435149",
@@ -6065,7 +5536,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/taxes-legal-help-start-with-the-irs",
    "summary": "Matthew's video plus a downloadable lesson PDF on where to start with the IRS when you need tax help or relief.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_TL_Taxes_Lesson_1_Start_With_The_IRS.pdf",
@@ -6080,11 +5550,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/3ba8f199-5d29-483e-8d30-8be5be186286/Lesko_Help_TL_Taxes_Lesson_1_Start_With_The_IRS.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1i8hmSLBV2hmuDZNZn5XA79OEEV56VMbi/preview?usp=embed_googleplus",
-   "wordCount": 4
+   "video": null
   },
   {
    "id": "98435371",
@@ -6103,7 +5569,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/taxes-legal-help-taxes-support-unit-your-irs-direct-line-directory",
    "summary": "A downloadable directory of direct IRS phone lines and support units so you can reach the right office fast.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_TL_Taxes_Lesson_3_Support_Unit.pdf",
@@ -6118,11 +5583,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/6b01581f-7c0a-447a-a2be-cf6dc176ee2d/Lesko_Help_TL_Taxes_Lesson_3_Support_Unit.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1_HJhnIVrIjCJ5yMPZfBEfRXQPRro0lja/preview?usp=embed_googleplus",
-   "wordCount": 0
+   "video": null
   },
   {
    "id": "95298988",
@@ -6141,7 +5602,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/taxes-legal-help-free-tax-filing-preperation",
    "summary": "Downloadable Lesko Help guide on getting your taxes filed and prepared for free.",
-   "fetched": true,
    "pdfs": [],
    "drive": [
     {
@@ -6151,11 +5611,7 @@
     }
    ],
    "links": [],
-   "download": "https://drive.google.com/file/d/1OSilGGtXx3K3159qlBmWcQxj-CZTqXPw/view?usp=sharing",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1OSilGGtXx3K3159qlBmWcQxj-CZTqXPw/preview?usp=embed_googleplus",
-   "wordCount": 0
+   "video": null
   },
   {
    "id": "104518065",
@@ -6174,7 +5630,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/taxes-legal-help-tax-dept-irs-relief",
    "summary": "Downloadable Lesko Help guide on tax debt relief programs and IRS options for settling what you owe.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_TL_A02_Tax_Debt_IRS_Relief.pdf",
@@ -6189,11 +5644,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/8a2c2510-a723-4e39-8a75-80cbf243b0f0/Lesko_Help_TL_A02_Tax_Debt_IRS_Relief.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1MFGTtB-8s6LDjeuM0qrKE10uG0Q7-zW6/preview?usp=embed_googleplus",
-   "wordCount": 0
+   "video": null
   },
   {
    "id": "104518225",
@@ -6212,7 +5663,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/taxes-legal-help-free-legal-help-to-fight-irs",
    "summary": "Downloadable Lesko Help guide on free legal help when you need to fight or negotiate with the IRS.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_TL_A03_Free_Legal_Help_Fight_IRS.pdf",
@@ -6227,11 +5677,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/6f8415c2-43e7-4bde-a724-5a282987e346/Lesko_Help_TL_A03_Free_Legal_Help_Fight_IRS.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1c9pBXV9YG9NlDpMj0eFE7-sM6KdHnC4o/preview?usp=embed_googleplus",
-   "wordCount": 0
+   "video": null
   },
   {
    "id": "104518434",
@@ -6250,7 +5696,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/taxes-legal-help-tax-credits-you-might-be-missing",
    "summary": "Downloadable Lesko Help guide on tax credits you may be missing and how to claim them.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_TL_A04_Tax_Credits_You_May_Be_Missing.pdf",
@@ -6265,11 +5710,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/3b1093fa-4524-42d7-84be-ae9908e291a0/Lesko_Help_TL_A04_Tax_Credits_You_May_Be_Missing.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1N0RB06Mdhumerx4HuyY7s-B9xHd1ZMhw/preview?usp=embed_googleplus",
-   "wordCount": 0
+   "video": null
   },
   {
    "id": "104518594",
@@ -6288,7 +5729,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/taxes-legal-help-property-state-tax-relief",
    "summary": "Downloadable Lesko Help guide on property tax and state tax relief programs.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_TL_A05_Property_State_Tax_Relief.pdf",
@@ -6303,11 +5743,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/d5c25028-207d-403f-8a9d-3bb63a9bb44a/Lesko_Help_TL_A05_Property_State_Tax_Relief.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1k-o9oE4cK3BbG4qYF_VtmIheafoxG3tp/preview?usp=embed_googleplus",
-   "wordCount": 0
+   "video": null
   },
   {
    "id": "98433706",
@@ -6326,7 +5762,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/taxes-legal-help-use-the-system-free-legal-power",
    "summary": "Matthew's video plus a downloadable lesson PDF on using the legal system and free legal power available to you.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_TL_Legal_Lesson_1_Use_The_System.pdf",
@@ -6341,11 +5776,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/76c2d5e0-1268-4d61-9a3a-eb665b301a4f/Lesko_Help_TL_Legal_Lesson_1_Use_The_System.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1UFFaRQkfnEV7v-1gAIhp4HSzVyg_WSJD/preview?usp=embed_googleplus",
-   "wordCount": 4
+   "video": null
   },
   {
    "id": "98435329",
@@ -6364,7 +5795,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/taxes-legal-help-free-legal-help-legal-aid",
    "summary": "Downloadable Lesko Help guide on finding free legal help and legal aid organizations.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_TL_B01_Free_Legal_Help_Legal_Aid.pdf",
@@ -6379,11 +5809,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/ae0cb099-81b0-450b-9de8-6cce028c318d/Lesko_Help_TL_B01_Free_Legal_Help_Legal_Aid.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1o2ljpZYXCZH8mhc2S5wKNcjfGfE8uRA0/preview?usp=embed_googleplus",
-   "wordCount": 0
+   "video": null
   },
   {
    "id": "104521956",
@@ -6402,7 +5828,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/taxes-legal-help-know-your-consumer-rights",
    "summary": "Downloadable Lesko Help guide on knowing and using your consumer rights.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_TL_B02_Know_Your_Consumer_Rights.pdf",
@@ -6417,11 +5842,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/26e842e3-0471-48c1-b821-6431ddec3322/Lesko_Help_TL_B02_Know_Your_Consumer_Rights.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1ovLeDHfqwj19XlqqwzW6eIVrfPRC7eQB/preview?usp=embed_googleplus",
-   "wordCount": 0
+   "video": null
   },
   {
    "id": "104522044",
@@ -6440,7 +5861,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/taxes-legal-help-help-with-specifics-legal-needs",
    "summary": "Downloadable Lesko Help guide on getting help with specific legal needs.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_TL_B03_Specific_Legal_Needs.pdf",
@@ -6455,11 +5875,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/bcdbf12a-30e1-412a-b877-271f7c02c4a7/Lesko_Help_TL_B03_Specific_Legal_Needs.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1bi6dMYFy9Coonp3ZHKrBQxQvj8DfPyDF/preview?usp=embed_googleplus",
-   "wordCount": 0
+   "video": null
   },
   {
    "id": "98434840",
@@ -6478,7 +5894,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/families-seniors-disabilities-explore-the-core-federal-programs-by-state",
    "summary": "Matthew's video plus a downloadable Lesko Help lesson PDF on finding the core federal family benefit programs in your state.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_FC_Lesson_Find_Family_Benefits.pdf",
@@ -6498,11 +5913,7 @@
      "href": "https://www.youtube.com/watch?v=Eh_eHfogwz8"
     }
    ],
-   "download": "https://media2-production.mightynetworks.com/asset/ad362968-d619-49c3-a188-68cce0299937/Lesko_Help_FC_Lesson_Find_Family_Benefits.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1sPGGj7g-EPLGDcgYVjvRPGQhFXIKTkmv/preview?usp=embed_googleplus",
-   "wordCount": 5
+   "video": null
   },
   {
    "id": "98435336",
@@ -6521,7 +5932,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/families-seniors-disabilities-help-for-families-children",
    "summary": "Downloadable Lesko Help Quick Guide (FC-A1) on help for families and children.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_FC_A1_Families_Children_Quick_Guide.pdf",
@@ -6536,11 +5946,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/91645dfd-edff-45fc-9f7e-39d94efdea3a/Lesko_Help_FC_A1_Families_Children_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1LRsPtPcYFn-CV5YBECRrzW597LqkRTIg/preview?usp=embed_googleplus",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "104522827",
@@ -6559,7 +5965,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/families-seniors-disabilities-childcare-assistance",
    "summary": "Downloadable Lesko Help Quick Guide (FC-A2) on child care assistance programs.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_FC_A2_Child_Care_Assistance_Quick_Guide.pdf",
@@ -6574,11 +5979,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/a1fac24e-d7ce-4a23-9c90-bb258b4352cd/Lesko_Help_FC_A2_Child_Care_Assistance_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1A3Z6rSZCF0E_5CPBwJMYlurRXyqIxU0D/preview?usp=embed_googleplus",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "104523348",
@@ -6597,7 +5998,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/families-seniors-disabilities-pregnancy-newborn-baby",
    "summary": "Downloadable Lesko Help Quick Guide (FC-A3) on support during pregnancy and for a new baby.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_FC_A3_Pregnancy_New_Baby_Quick_Guide.pdf",
@@ -6612,11 +6012,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/77e00b3e-4837-4d31-a069-127e9be0f9a4/Lesko_Help_FC_A3_Pregnancy_New_Baby_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1l47odpfch7ZbHUvb3q4MI7R5j7rrBh0n/preview?usp=embed_googleplus",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "104523430",
@@ -6635,7 +6031,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/families-seniors-disabilities-domestic-violence-safety",
    "summary": "Downloadable Lesko Help Quick Guide (FC-A4) on domestic violence and safety resources.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_FC_A4_Domestic_Violence_Safety_Quick_Guide.pdf",
@@ -6650,11 +6045,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/d59722e2-a3cc-4744-9f66-88b5afe55d8a/Lesko_Help_FC_A4_Domestic_Violence_Safety_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1qrB60HokXMEDe0W-zioCbSBHvyD-y3Xj/preview?usp=embed_googleplus",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "104523555",
@@ -6673,7 +6064,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/families-seniors-disabilities-foster-adoption-help",
    "summary": "Downloadable Lesko Help Quick Guide (FC-A5) on foster care and adoption help.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_FC_A5_Foster_Adoption_Quick_Guide.pdf",
@@ -6688,11 +6078,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/eeac15e9-b6e2-46e2-83ae-8882d71c038f/Lesko_Help_FC_A5_Foster_Adoption_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1ZvqRxNFFBysB2eXG6BxxU1FaaHhiNRE3/preview?usp=embed_googleplus",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "104523724",
@@ -6711,7 +6097,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/families-seniors-disabilities-special-education-iep-help",
    "summary": "Downloadable Lesko Help Quick Guide (FC-A6) on special education and IEP help.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_FC_A6_Special_Education_IEP_Quick_Guide.pdf",
@@ -6726,11 +6111,7 @@
     }
    ],
    "links": [],
-   "download": "https://media2-production.mightynetworks.com/asset/45c24411-1acc-40f7-a68f-cb139b86f8a5/Lesko_Help_FC_A6_Special_Education_IEP_Quick_Guide.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/1L3uMn4IMtbqLjmRoVe62Nxd9DR8XkPJv/preview?usp=embed_googleplus",
-   "wordCount": 1
+   "video": null
   },
   {
    "id": "98433226",
@@ -6749,7 +6130,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/families-seniors-disabilities-seniors-disabilities-your-free-starting-points",
    "summary": "Matthew's video plus a downloadable Lesko Help lesson PDF of free starting points for seniors and people with disabilities.",
-   "fetched": true,
    "pdfs": [
     {
      "name": "Lesko_Help_FC_Lesson_Seniors_Disabilities_Starting_Points.pdf",
@@ -6769,11 +6149,7 @@
      "href": "https://www.youtube.com/watch?v=-YC70MHqfr8&t=7s"
     }
    ],
-   "download": "https://media2-production.mightynetworks.com/asset/eeca3c96-e95e-4550-b07d-a8abd2ebca42/Lesko_Help_FC_Lesson_Seniors_Disabilities_Starting_Points.pdf",
-   "isLesson": false,
-   "video": null,
-   "preview": "https://drive.google.com/file/d/11rd_DGbJZkefnOKb0kOtR9EgCBrrVmY1/preview?usp=embed_googleplus",
-   "wordCount": 5
+   "video": null
   },
   {
    "id": "98435338",
@@ -6792,7 +6168,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/families-seniors-disabilities-lesson-2-18-things-every-senior-should-know-starting-at-40",
    "summary": "Eighteen quick truths for anyone over 40: age-discrimination rights, free legal help, property-tax breaks, Medicare counseling, home repairs, caregiver funds, free tax prep, jobs, college and more.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -6845,11 +6220,7 @@
      "href": "https://www.commoncause.org/find-your-representative/"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 601
+   "video": null
   },
   {
    "id": "98434932",
@@ -6868,7 +6239,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/cars-car-repairs-lesson-1",
    "summary": "Watch Matthew's video, then search FindHelp.org by ZIP code for free car, car-repair and emergency financial assistance programs, and call the organizations directly.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -6881,11 +6251,7 @@
      "href": "http://findhelp.org"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 216
+   "video": null
   },
   {
    "id": "98435306",
@@ -6904,15 +6270,10 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/98435306",
    "summary": "Draft lesson, not yet published in the community.",
-   "fetched": false,
    "pdfs": [],
    "drive": [],
    "links": [],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 0
+   "video": null
   },
   {
    "id": "98438183",
@@ -6931,7 +6292,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/cars-car-repairs-%F0%9F%9A%97-car-repair-vehicle-help",
    "summary": "Grants, free cars, low-interest loans and local support for car trouble: repair-help guides, vehicle donation charities, CAP, Salvation Army, VA allowances, recalls and Modest Needs.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -7008,11 +6368,7 @@
      "href": "https://www.nhtsa.gov/recalls"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 780
+   "video": null
   },
   {
    "id": "98438241",
@@ -7031,7 +6387,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/cars-car-repairs-%F0%9F%9A%97-how-to-apply-for-a-modest-needs-grant-other-options",
    "summary": "Where to look for transportation help: 211, FindHelp, CAP agencies, Salvation Army, trade-school repairs and free recalls, plus loan cautions and a recommended order of action.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -7064,11 +6419,7 @@
      "href": "https://www.nhtsa.gov/recalls"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 360
+   "video": null
   },
   {
    "id": "98438344",
@@ -7087,7 +6438,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/cars-car-repairs-%F0%9F%9A%97-foreclosures-surpluses-series",
    "summary": "A safe starting map for government auctions, surplus sales, HUD foreclosures, GSA vehicle sales, unclaimed money, charity cars, car-insurance help, and EV and e-bike incentives.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -7152,11 +6502,7 @@
      "href": "http://211.org"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 979
+   "video": null
   },
   {
    "id": "98434010",
@@ -7175,7 +6521,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/programs-for-veterans-lesson-1",
    "summary": "Watch Matthew's video, then contact your Veteran Service Officer via nacvso.org, expand your search on FindHelp.org, use your elected officials, and avoid paid .com services.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -7192,11 +6537,7 @@
      "href": "http://findhelp.org"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 325
+   "video": null
   },
   {
    "id": "98435344",
@@ -7215,7 +6556,6 @@
    "collection": "QUICK GUIDE LIBRARY",
    "url": "https://lesko-help-2.mn.co/posts/programs-for-veterans-lesson-2-18-things-every-veteran-should-know-%F0%9F%87%BA%F0%9F%87%B8",
    "summary": "Eighteen quick truths for veterans: $400B in benefits, free County Veterans Service Offices, FindHelp searches, family eligibility, help with bills, business, career and housing, and why to keep asking.",
-   "fetched": true,
    "pdfs": [],
    "drive": [],
    "links": [
@@ -7252,11 +6592,7 @@
      "href": "https://www.commoncause.org/find-your-representative/"
     }
    ],
-   "download": null,
-   "isLesson": false,
-   "video": null,
-   "preview": null,
-   "wordCount": 446
+   "video": null
   }
  ]
 }
