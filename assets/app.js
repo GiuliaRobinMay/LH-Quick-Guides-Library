@@ -89,8 +89,7 @@
   function cardHTML(it) {
     const t = TOPIC_BY_KEY[it.topic] || {};
     const marked = !!store.bookmarks[it.id];
-    const done = !!store.done[it.id];
-    return `<article class="card${done ? ' is-done' : ''}" data-id="${it.id}" style="${styleVars(it.topic)}">
+    return `<article class="card" data-id="${it.id}" style="${styleVars(it.topic)}">
       <div class="cover" data-open="${it.id}">
         <span class="label">${st(it.topic).icon}${esc(t.label || '')}</span>
         <button class="star" type="button" data-star="${it.id}" aria-pressed="${marked}" title="${marked ? 'Remove bookmark' : 'Bookmark'}" aria-label="Bookmark">${marked ? ICON.star : ICON.starOutline}</button>
@@ -100,24 +99,20 @@
         <p class="summary">${esc(it.summary)}</p>
         <div class="card-meta">
           <span class="left">${it.hasVideo && !it.hasPdf ? ICON.play : ICON.file}${typeLabel(it)}</span>
-          <span class="right">${it.hasPdf ? `<a href="${esc(it.download)}" target="_blank" rel="noopener" title="Download PDF">${ICON.download} Download</a>` : ''}${done ? '<span class="status done">Done</span>' : ''}</span>
+          <span class="right">${it.hasPdf ? `<a href="${esc(it.download)}" target="_blank" rel="noopener" title="Download PDF">${ICON.download} Download</a>` : ''}</span>
         </div>
-        <div class="progress"><i></i></div>
       </div>
     </article>`;
   }
   function rowHTML(it) {
-    const t = TOPIC_BY_KEY[it.topic] || {};
     const marked = !!store.bookmarks[it.id];
-    const done = !!store.done[it.id];
-    return `<article class="row${done ? ' is-done' : ''}" data-id="${it.id}" style="${styleVars(it.topic)}">
+    return `<article class="row" data-id="${it.id}" style="${styleVars(it.topic)}">
       <div class="block" data-open="${it.id}">${st(it.topic).icon}</div>
       <div class="row-main">
         <button class="title-btn" type="button" data-open="${it.id}"><span class="title">${esc(it.title)}</span></button>
-        <div class="meta"><span class="topic">${esc(t.label || '')}</span><span class="sep">·</span><span>${typeLabel(it)}</span></div>
+        <p class="about">${esc(it.summary)}</p>
       </div>
       <div class="right">
-        ${done ? '<span class="status done">Done</span>' : ''}
         ${it.hasPdf ? `<a class="icon-btn" href="${esc(it.download)}" target="_blank" rel="noopener" title="Download PDF" aria-label="Download PDF">${ICON.download}</a>` : ''}
         <button class="icon-btn star" type="button" data-star="${it.id}" aria-pressed="${marked}" title="${marked ? 'Remove bookmark' : 'Bookmark'}" aria-label="Bookmark">${marked ? ICON.star : ICON.starOutline}</button>
       </div>
@@ -145,8 +140,7 @@
   function renderMine() {
     const items = Object.keys(store.bookmarks).filter(id => store.bookmarks[id] && byId[id]).map(id => byId[id]).sort(byTitle);
     const badge = $('#mine-badge'); badge.textContent = items.length; badge.hidden = items.length === 0;
-    const done = items.filter(i => store.done[i.id]).length;
-    $('#mine-sub').textContent = items.length ? `${items.length} bookmarked · ${done} done` : 'The guides you star will show up here.';
+    $('#mine-sub').textContent = items.length ? `${items.length} bookmarked` : 'The guides you star will show up here.';
     renderInto($('#mine-grid'), items, `<div class="empty"><h3>No bookmarks yet.</h3><p>Tap the star on any guide and it will show up here.</p></div>`);
   }
 
@@ -189,33 +183,19 @@
     const it = byId[id]; if (!it) return;
     state.open = id;
     const t = TOPIC_BY_KEY[it.topic] || {};
-    const marked = !!store.bookmarks[id], done = !!store.done[id];
-    const checked = store.checked[id] || {};
+    const marked = !!store.bookmarks[id];
     const eyebrow = $('#viewer-eyebrow');
     eyebrow.style.cssText = styleVars(it.topic);
-    eyebrow.innerHTML = `<span class="tag" style="background:var(--tint);color:var(--ink);font-weight:600">${esc(t.label || '')}</span><span class="tag">${typeLabel(it)}</span>`;
+    eyebrow.innerHTML = `<span class="chip static" style="${styleVars(it.topic)}"><span class="swatch">${st(it.topic).icon}</span>${esc(t.label || '')}</span>`;
     $('#viewer-body').innerHTML = `
       <div class="stage" id="stage">${stageHTML(it)}</div>
       <div class="detail">
         <h2 id="viewer-title" tabindex="-1">${esc(it.title)}</h2>
-        <p class="series"><a href="${esc(it.spaceUrl)}" target="_blank" rel="noopener">${esc(it.space)}</a></p>
         <p class="summary">${esc(it.summary)}</p>
         <div class="cta-row">
           ${it.hasPdf ? `<a class="btn primary small" href="${esc(it.download)}" target="_blank" rel="noopener">${ICON.download} Download PDF</a>` : ''}
           ${it.hasVideo ? `<button class="btn small" type="button" data-stage="video">${ICON.play} Watch video</button>` : ''}
-          <a class="btn small" href="${esc(it.url)}" target="_blank" rel="noopener">Open in community ${ICON.ext}</a>
-        </div>
-        <div class="cta-row" style="margin-top:8px">
-          <button class="btn small" type="button" data-star="${id}" aria-pressed="${marked}">${marked ? ICON.star + ' Bookmarked' : ICON.starOutline + ' Bookmark'}</button>
-          <button class="btn small done-btn" type="button" data-done="${id}" aria-pressed="${done}">${done ? ICON.check + ' Done' : 'Mark done'}</button>
-        </div>
-        <div class="section">
-          <div class="section-title"><h3>Organizations &amp; links</h3><span class="hint">${(it.links || []).length ? 'Tick the ones you contacted' : ''}</span></div>
-          ${(it.links || []).length ? `<ul class="links">${it.links.map(l => `<li class="${checked[l.href] ? 'checked' : ''}">
-              <button class="check" type="button" role="checkbox" aria-checked="${!!checked[l.href]}" data-check="${esc(l.href)}" aria-label="Contacted">${ICON.check}</button>
-              <span><span class="label"><a href="${esc(l.href)}" target="_blank" rel="noopener">${esc(l.label || host(l.href))}</a></span><br><span class="host">${esc(host(l.href))}</span></span>
-            </li>`).join('')}</ul>`
-            : `<p class="help">The organizations for this guide are listed inside the PDF.</p>`}
+          <button class="btn small star-btn" type="button" data-star="${id}" aria-pressed="${marked}">${marked ? ICON.star + ' Bookmarked' : ICON.starOutline + ' Bookmark'}</button>
         </div>
         <div class="section">
           <div class="section-title"><h3>My notes</h3><span class="hint">Saved on this device</span></div>
@@ -256,7 +236,6 @@
   }
   function syncViewerButtons(id) {
     const s = $('#viewer [data-star]'); if (s) { const on = !!store.bookmarks[id]; s.setAttribute('aria-pressed', on); s.innerHTML = on ? ICON.star + ' Bookmarked' : ICON.starOutline + ' Bookmark'; }
-    const d = $('#viewer [data-done]'); if (d) { const on = !!store.done[id]; d.setAttribute('aria-pressed', on); d.innerHTML = on ? ICON.check + ' Done' : 'Mark done'; }
   }
   let noteTimer;
   function saveNote(id, text) {
@@ -293,6 +272,7 @@
   function setTab(tab) {
     state.tab = tab;
     $$('.nav-item[data-tab]').forEach(b => b.setAttribute('aria-selected', String(b.dataset.tab === tab)));
+    $('.brand').classList.toggle('active', tab === 'library');
     ['library', 'mine', 'request'].forEach(k => { $('#view-' + k).hidden = k !== tab; });
     if (tab === 'mine') renderMine();
     if (tab === 'request') renderRequestForm();
@@ -308,7 +288,6 @@
       if (act === 'home') { e.preventDefault(); state.topic = null; setTab('library'); refresh(); }
       if (act === 'close') closeViewer();
       if (act === 'prev' || act === 'next') { const idx = state.listIds.indexOf(state.open); const nid = state.listIds[idx + (act === 'next' ? 1 : -1)]; if (nid) openGuide(nid); }
-      if (act === 'print') window.print();
       if (act === 'export') exportNotes();
       if (act === 'reset' && confirm('Clear all bookmarks, notes, check-marks and saved requests on this device?')) {
         ['bookmarks', 'done', 'notes', 'checked'].forEach(k => store[k] = {}); store.requests = []; save(); refresh(); renderRequestForm(); toast('Cleared');

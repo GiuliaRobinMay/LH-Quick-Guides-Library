@@ -16,7 +16,6 @@
       <span class="brand-word">Lesko Help</span>
     </a>
     <nav class="nav" role="tablist" aria-label="Sections">
-      <button class="nav-item" role="tab" id="tab-library" aria-selected="true" aria-controls="view-library" data-tab="library">Library</button>
       <button class="nav-item" role="tab" id="tab-mine" aria-selected="false" aria-controls="view-mine" data-tab="mine">Bookmarked <span class="badge" id="mine-badge" hidden>0</span></button>
       <button class="nav-item" role="tab" id="tab-request" aria-selected="false" aria-controls="view-request" data-tab="request">Request a guide</button>
     </nav>
@@ -31,7 +30,7 @@
 <main class="page">
 
   <!-- ===== Library ===== -->
-  <section id="view-library" role="tabpanel" aria-labelledby="tab-library">
+  <section id="view-library" role="tabpanel" aria-label="Library">
     <div class="filterbar">
       <div class="chips" id="topics" role="group" aria-label="Topic"></div>
       <div class="seg" role="group" aria-label="View">
@@ -56,9 +55,8 @@
   <!-- ===== Bookmarked ===== -->
   <section id="view-mine" role="tabpanel" aria-labelledby="tab-mine" hidden>
     <div class="section-head">
-      <div><h2>Bookmarked</h2><p id="mine-sub">The guides you starred, with your progress and notes.</p></div>
+      <div><h2>Bookmarked</h2><p id="mine-sub">The guides you starred, with your notes.</p></div>
       <div class="tools">
-        <button class="btn small" type="button" data-action="print">Print</button>
         <button class="btn small" type="button" data-action="export">Copy my notes</button>
         <button class="btn small" type="button" data-action="reset">Clear all</button>
       </div>
