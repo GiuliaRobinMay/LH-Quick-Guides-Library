@@ -12,25 +12,31 @@
     {
       "key": "start",
       "label": "Getting Started",
-      "color": "#2CA01C",
+      "color": "#0060FF",
       "icon": "medal"
     },
     {
       "key": "benefits",
-      "label": "Health, Disability & Pension",
+      "label": "Health & Pension",
       "color": "#F93946",
       "icon": "heart-pulse"
     },
     {
-      "key": "life",
-      "label": "Education, Housing & Work",
+      "key": "education",
+      "label": "Education",
       "color": "#7C3BB0",
       "icon": "graduation-cap"
     },
     {
+      "key": "work",
+      "label": "Housing & Work",
+      "color": "#2CA01C",
+      "icon": "home"
+    },
+    {
       "key": "family",
       "label": "Family & Survivors",
-      "color": "#0060FF",
+      "color": "#FF24B1",
       "icon": "users"
     }
   ],
@@ -65,19 +71,19 @@
     },
     {
       "code": "VET 5",
-      "topic": "life",
+      "topic": "education",
       "title": "Veteran Education & GI Bill",
       "summary": "Post-9/11 GI Bill and the comparison tool, apprenticeships and on-the-job training, VR&E, Yellow Ribbon, VetSuccess on Campus, and transferring benefits to your family."
     },
     {
       "code": "VET 6",
-      "topic": "life",
+      "topic": "work",
       "title": "Veteran Housing & Home Loans",
       "summary": "Zero-down VA home loans and your Certificate of Eligibility, SAH, SHA and HISA adaptation grants, help if you are behind on a VA loan, and HUD-VASH and SSVF if you are homeless."
     },
     {
       "code": "VET 7",
-      "topic": "life",
+      "topic": "work",
       "title": "Veteran Jobs & Business Support",
       "summary": "VA careers hub and CareerOneStop priority service, VR&E training, apprenticeships, Veterans Business Outreach Centers, Boots to Business and veteran-owned business certification."
     },

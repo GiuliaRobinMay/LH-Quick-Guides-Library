@@ -17,13 +17,13 @@
     },
     {
       "key": "housing",
-      "label": "Home & Housing",
+      "label": "Housing",
       "color": "#F93946",
       "icon": "home"
     },
     {
       "key": "cars",
-      "label": "Cars & Car Repairs",
+      "label": "Cars",
       "color": "#7C3BB0",
       "icon": "car"
     }
@@ -39,7 +39,8 @@
   },
   "titleOverrides": {
     "80037999": "Get Bill Collectors to Stop Calling You and Pay You $1,000",
-    "103063707": "Contact These 10 Key Organizations First"
+    "103063707": "Contact These 10 Key Organizations First",
+    "80037997": "Get a Free Financial Counselor Appointment"
   },
   "summaryOverrides": {
     "103058215": "LIHEAP heating and cooling help, water company hardship plans and 211, Community Action Agencies, Dollar Energy Fund and Salvation Army, and free weatherization that lowers bills for good.",

@@ -7,54 +7,98 @@
   "driveListing": "drive_health.json",
   "topics": [
     {
-      "key": "care",
-      "label": "Care & Coverage",
-      "color": "#2CA01C",
+      "key": "coverage",
+      "label": "Coverage",
+      "color": "#0060FF",
       "icon": "stethoscope"
     },
     {
+      "key": "medicare",
+      "label": "Medicare",
+      "color": "#0040B8",
+      "icon": "shield"
+    },
+    {
+      "key": "rx",
+      "label": "Prescriptions",
+      "color": "#2CA01C",
+      "icon": "pill"
+    },
+    {
+      "key": "dental",
+      "label": "Dental",
+      "color": "#0093B0",
+      "icon": "tooth"
+    },
+    {
+      "key": "vision",
+      "label": "Vision & Hearing",
+      "color": "#00857A",
+      "icon": "eye"
+    },
+    {
       "key": "mind",
-      "label": "Mind & Recovery",
+      "label": "Mental Health",
       "color": "#7C3BB0",
       "icon": "brain"
     },
     {
-      "key": "medbills",
-      "label": "Bills, Illness & Caregivers",
+      "key": "living",
+      "label": "Healthy Living",
+      "color": "#4F9612",
+      "icon": "leaf"
+    },
+    {
+      "key": "illness",
+      "label": "Illness & Caregiving",
       "color": "#F93946",
-      "icon": "coins"
+      "icon": "heart-handshake"
+    },
+    {
+      "key": "medbills",
+      "label": "Medical Bills",
+      "color": "#FF24B1",
+      "icon": "receipt"
+    },
+    {
+      "key": "pets",
+      "label": "Pet Care",
+      "color": "#4B35C4",
+      "icon": "paw"
     }
   ],
   "lessons": {
     "80242802": 1,
-    "80957182": 2,
+    "80957182": 1,
     "80242803": 1,
     "80957140": 2
   },
   "topicOverrides": {
-    "80242802": "care",
-    "80957182": "care",
-    "103397959": "care",
-    "103397950": "care",
-    "103397943": "care",
-    "103397934": "care",
-    "103398065": "care",
-    "84452354": "care",
+    "80242802": "coverage",
+    "103397950": "coverage",
+    "103398065": "medicare",
+    "103397943": "rx",
+    "80957182": "dental",
+    "103397959": "dental",
+    "103397934": "vision",
     "81350215": "mind",
     "84450576": "mind",
     "84451097": "mind",
-    "84451457": "mind",
-    "84452145": "mind",
+    "84452354": "living",
+    "84451457": "living",
+    "84452145": "illness",
+    "103398237": "illness",
+    "103398218": "illness",
     "80242803": "medbills",
     "80957140": "medbills",
     "103398061": "medbills",
     "103398050": "medbills",
-    "103398237": "medbills",
-    "103398218": "medbills",
-    "103398205": "medbills"
+    "103398205": "pets"
   },
   "titleOverrides": {
-    "103398061": "Medical Bill Assistance"
+    "103398061": "Medical Bill Assistance",
+    "80957182": "Find Free & Low-Cost Dental Services",
+    "80957140": "Eliminate Your Medical Bills & Debt"
   },
   "driveFiles": {
     "103398050": "1ZC2M2TM8GbH7lJG5rMoLKTr91pvVAoPb"

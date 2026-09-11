@@ -27,5 +27,24 @@
     "98435149": "1i8hmSLBV2hmuDZNZn5XA79OEEV56VMbi",
     "98435371": "1_HJhnIVrIjCJ5yMPZfBEfRXQPRro0lja",
     "98433706": "1UFFaRQkfnEV7v-1gAIhp4HSzVyg_WSJD"
+  },
+  "titleOverrides": {
+    "95298988": "Free Tax Filing & Preparation",
+    "104518065": "Tax Debt & IRS Relief",
+    "104518225": "Free Legal Help to Fight the IRS",
+    "104522044": "Help With Specific Legal Needs"
+  },
+  "summaryOverrides": {
+    "95298988": "IRS Free File guided software, VITA and TCE sites where certified volunteers prepare your return in person, AARP Tax-Aide for people over 60, GetYourRefund online and MilTax for military families.",
+    "104518065": "Online IRS payment plans, settling for less through an Offer in Compromise with a free pre-qualifier, hardship status that pauses collection, penalty forgiveness, and the free Taxpayer Advocate Service.",
+    "104518225": "Low Income Taxpayer Clinics that represent you for free, even in Tax Court, your ten rights as a taxpayer, the free IRS Appeals process, and small-case procedures under $50,000.",
+    "104518434": "The Earned Income Tax Credit and its free eligibility assistant, Child Tax Credit and child care credit, college and Lifetime Learning credits, the Saver's Credit, and claiming credits you missed in past years.",
+    "104518594": "The one question to ask your county assessor, homestead exemptions and senior freezes, veteran and disability exemptions, BenefitsCheckUp screening, and payment plans if you are behind.",
+    "98435329": "The national legal aid locator and LawHelp state guides, free written answers from volunteer lawyers, law school clinics, and legal help for people over 60 and military families.",
+    "104521956": "Your state attorney general's free complaint process, CFPB complaints that companies must answer within 15 days, FTC fraud reporting, insurance commissioners, free credit reports and identity theft recovery.",
+    "104522044": "Eviction defense and free housing counselors, protective orders and the domestic violence hotline, free immigration legal providers, clearing an old record, and appealing denied Social Security or Medicare decisions.",
+    "98435149": "Free appointments at your local IRS office, payment and forgiveness programs, Low Income Taxpayer Clinics that represent you for free, free volunteer tax preparation, and the fear-based companies to avoid.",
+    "98435371": "Direct IRS phone lines and the local office locator, the Taxpayer Advocate who fights your case from inside the IRS, and free clinic representation when you disagree with a decision.",
+    "98433706": "Why a letter from your state attorney general beats a private lawyer, how to complain about any regulated business, insurance commissioners for denied claims, and finding free local legal help by ZIP code."
   }
 }

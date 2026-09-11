@@ -34,5 +34,19 @@
     "85344073": 1,
     "85344076": 2
   },
-  "driveFiles": {}
+  "driveFiles": {},
+  "summaryOverrides": {
+    "83136879": "An 8-step checklist for legally setting up your business, from choosing a name and structure to getting an EIN, a bank account and the licences your state requires.",
+    "80242726": "Why you should skip Google and go straight to free expert help from nonprofits and government agencies when you start a nonprofit.",
+    "80242727": "How to legally register your nonprofit yourself in about 20 minutes for the IRS filing fee, without paying lawyers or consultants.",
+    "85344073": "How to get free career help from government agencies and nonprofit programs instead of paying for advice.",
+    "81701981": "Ten places to find nonprofit funding: free grant databases at your public library, county block grants, APEX Accelerators, your elected representatives, crowdfunding, free business centre help, Google Ad Grants and government surplus property.",
+    "83478982": "A ten-step setup checklist: checking your name, a business address that is not your home, a domain and website, professional email and phone, state registration, your free EIN, 501(c)(3) status and your state charity office.",
+    "85344076": "Ten places for free job training and career help: findhelp.org by ZIP code, community college workforce programs, American Job Centers, CareerOneStop training tools, and navigators who help you enrol and pay for training.",
+    "87253537": "Federal student aid and grants, the free student loan hotlines, education tax credits, forgiveness and income-driven repayment, scholarships and state aid, and free legal help for borrowers.",
+    "87253693": "Federal scholarships like TEACH and SMART, free scholarship search platforms, state tuition assistance, teacher fellowships, awards from UNCF, Thurgood Marshall and Jack Kent Cooke, and free college for seniors.",
+    "87253772": "Head Start centres near you, state-by-state child care resources and fee assistance, homeschooling grants and free curriculum deals, and free Microsoft Office training.",
+    "87253860": "American Job Centers and the CareerOneStop locators, paid apprenticeships through Apprenticeship.gov, free GED classes, discounted laptops and free textbooks, and free resume tools.",
+    "87254065": "Free courses from Harvard, Stanford, edX and the Open University, Microsoft Office and typing training, free GED preparation, and classroom and university crowdfunding platforms."
+  }
 }
