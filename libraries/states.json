@@ -1,0 +1,255 @@
+{
+  "key": "states",
+  "title": "Help in Your State",
+  "searchPlaceholder": "Search states, programs and organizations",
+  "markSvg": "map-pin",
+  "spaceId": "",
+  "stateReports": "state_reports.json",
+  "source": "https://docs.google.com/document/d/1fJKvYYK3G0dmf4A5o_ehx1cOg38K-6qMsDAlE0k8RB8/edit",
+  "topics": [
+    {
+      "key": "northeast",
+      "label": "Northeast",
+      "color": "#7C3BB0",
+      "icon": "maple"
+    },
+    {
+      "key": "southeast",
+      "label": "Southeast",
+      "color": "#F93946",
+      "icon": "palm"
+    },
+    {
+      "key": "midwest",
+      "label": "Midwest",
+      "color": "#0093B0",
+      "icon": "lakes"
+    },
+    {
+      "key": "southwest",
+      "label": "Southwest",
+      "color": "#FF24B1",
+      "icon": "cactus"
+    },
+    {
+      "key": "west",
+      "label": "West",
+      "color": "#2CA01C",
+      "icon": "mountains"
+    }
+  ],
+  "sectionLabels": {
+    "financial": "Financial Assistance",
+    "business": "Business & Nonprofits",
+    "jobs": "Jobs, Education & Training",
+    "health": "Health, Dental & Pet Care",
+    "mentoring": "Free Local Mentoring",
+    "housing": "Housing & Real Estate"
+  },
+  "states": {
+    "Alabama": {
+      "abbr": "AL",
+      "region": "southeast"
+    },
+    "Alaska": {
+      "abbr": "AK",
+      "region": "west"
+    },
+    "Arizona": {
+      "abbr": "AZ",
+      "region": "southwest"
+    },
+    "Arkansas": {
+      "abbr": "AR",
+      "region": "southeast"
+    },
+    "California": {
+      "abbr": "CA",
+      "region": "west"
+    },
+    "Colorado": {
+      "abbr": "CO",
+      "region": "west"
+    },
+    "Connecticut": {
+      "abbr": "CT",
+      "region": "northeast"
+    },
+    "Delaware": {
+      "abbr": "DE",
+      "region": "southeast"
+    },
+    "District of Columbia": {
+      "abbr": "DC",
+      "region": "southeast"
+    },
+    "Florida": {
+      "abbr": "FL",
+      "region": "southeast"
+    },
+    "Georgia": {
+      "abbr": "GA",
+      "region": "southeast"
+    },
+    "Hawaii": {
+      "abbr": "HI",
+      "region": "west"
+    },
+    "Idaho": {
+      "abbr": "ID",
+      "region": "west"
+    },
+    "Illinois": {
+      "abbr": "IL",
+      "region": "midwest"
+    },
+    "Indiana": {
+      "abbr": "IN",
+      "region": "midwest"
+    },
+    "Iowa": {
+      "abbr": "IA",
+      "region": "midwest"
+    },
+    "Kansas": {
+      "abbr": "KS",
+      "region": "midwest"
+    },
+    "Kentucky": {
+      "abbr": "KY",
+      "region": "southeast"
+    },
+    "Louisiana": {
+      "abbr": "LA",
+      "region": "southeast"
+    },
+    "Maine": {
+      "abbr": "ME",
+      "region": "northeast"
+    },
+    "Maryland": {
+      "abbr": "MD",
+      "region": "southeast"
+    },
+    "Massachusetts": {
+      "abbr": "MA",
+      "region": "northeast"
+    },
+    "Michigan": {
+      "abbr": "MI",
+      "region": "midwest"
+    },
+    "Minnesota": {
+      "abbr": "MN",
+      "region": "midwest"
+    },
+    "Mississippi": {
+      "abbr": "MS",
+      "region": "southeast"
+    },
+    "Missouri": {
+      "abbr": "MO",
+      "region": "midwest"
+    },
+    "Montana": {
+      "abbr": "MT",
+      "region": "west"
+    },
+    "Nebraska": {
+      "abbr": "NE",
+      "region": "midwest"
+    },
+    "Nevada": {
+      "abbr": "NV",
+      "region": "west"
+    },
+    "New Hampshire": {
+      "abbr": "NH",
+      "region": "northeast"
+    },
+    "New Jersey": {
+      "abbr": "NJ",
+      "region": "northeast"
+    },
+    "New Mexico": {
+      "abbr": "NM",
+      "region": "southwest"
+    },
+    "New York": {
+      "abbr": "NY",
+      "region": "northeast"
+    },
+    "North Carolina": {
+      "abbr": "NC",
+      "region": "southeast"
+    },
+    "North Dakota": {
+      "abbr": "ND",
+      "region": "midwest"
+    },
+    "Ohio": {
+      "abbr": "OH",
+      "region": "midwest"
+    },
+    "Oklahoma": {
+      "abbr": "OK",
+      "region": "southwest"
+    },
+    "Oregon": {
+      "abbr": "OR",
+      "region": "west"
+    },
+    "Pennsylvania": {
+      "abbr": "PA",
+      "region": "northeast"
+    },
+    "Rhode Island": {
+      "abbr": "RI",
+      "region": "northeast"
+    },
+    "South Carolina": {
+      "abbr": "SC",
+      "region": "southeast"
+    },
+    "South Dakota": {
+      "abbr": "SD",
+      "region": "midwest"
+    },
+    "Tennessee": {
+      "abbr": "TN",
+      "region": "southeast"
+    },
+    "Texas": {
+      "abbr": "TX",
+      "region": "southwest"
+    },
+    "Utah": {
+      "abbr": "UT",
+      "region": "west"
+    },
+    "Vermont": {
+      "abbr": "VT",
+      "region": "northeast"
+    },
+    "Virginia": {
+      "abbr": "VA",
+      "region": "southeast"
+    },
+    "Washington": {
+      "abbr": "WA",
+      "region": "west"
+    },
+    "West Virginia": {
+      "abbr": "WV",
+      "region": "southeast"
+    },
+    "Wisconsin": {
+      "abbr": "WI",
+      "region": "midwest"
+    },
+    "Wyoming": {
+      "abbr": "WY",
+      "region": "west"
+    }
+  }
+}

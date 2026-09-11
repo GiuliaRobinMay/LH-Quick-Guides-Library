@@ -158,12 +158,41 @@ input, textarea, select { font: inherit; color: inherit; }
 .group-label .swatch { width: 26px; height: 26px; border-radius: 50%; background: var(--grad); color: #fff; display: grid; place-items: center; }
 .group-label .swatch svg { width: 15px; height: 15px; }
 
+/* ---------- the state links page inside the viewer ---------- */
+.links-page { flex: 1; min-height: 0; overflow-y: auto; padding: 20px clamp(16px, 3vw, 34px) 40px; background: #FFFFFF; }
+.lp-nav { display: flex; flex-wrap: wrap; gap: 8px; position: sticky; top: 0; z-index: 2; background: #FFFFFF; padding: 2px 0 14px; margin-bottom: 4px; }
+.lp-nav button { border: 1px solid var(--border-2); background: #fff; color: var(--text); border-radius: 999px; padding: 6px 12px; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 7px; }
+.lp-nav button:hover { border-color: var(--ink); color: var(--ink); }
+.lp-nav .n, .lp-sec h3 .n { color: var(--text-3); font-weight: 500; font-variant-numeric: tabular-nums; }
+.lp-sec { padding-top: 22px; scroll-margin-top: 52px; }
+.lp-sec + .lp-sec { border-top: 1px solid var(--border); margin-top: 22px; }
+.lp-sec h3 { display: flex; align-items: baseline; gap: 9px; font-size: 13px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); }
+.lp-note { margin-top: 6px; font-size: 15px; font-weight: 500; color: var(--text); max-width: 68ch; }
+.lp-intro { margin-top: 5px; font-size: 13.5px; font-style: italic; color: var(--about); max-width: 68ch; }
+.lp-list { list-style: none; margin: 16px 0 0; padding: 0; display: grid; gap: 12px; }
+.lp-list li { border-left: 2px solid var(--tint); padding: 1px 0 1px 14px; }
+.lp-title { font-size: 14.5px; font-weight: 600; color: var(--text); max-width: 72ch; }
+.lp-sub { margin-top: 3px; font-size: 13px; color: var(--about); max-width: 72ch; }
+.lp-links { margin-top: 7px; display: flex; flex-wrap: wrap; gap: 7px; }
+.lp-links a { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; font-weight: 600; text-decoration: none; color: var(--ink); background: var(--tint); border: 1px solid transparent; border-radius: 999px; padding: 4px 11px; }
+.lp-links a:hover { border-color: var(--ink); }
+.lp-links svg { width: 12px; height: 12px; }
+.lp-empty { margin-top: 12px; font-size: 14px; color: var(--text-2); }
+.lp-source { margin-top: 16px; font-size: 13px; }
+.lp-source a { display: inline-flex; align-items: center; gap: 6px; color: var(--text-2); font-weight: 600; text-decoration: none; }
+.lp-source a:hover { color: var(--ink); }
+.lp-source svg { width: 12px; height: 12px; }
+@media (max-width: 640px) { .links-page { padding: 16px 16px 32px; } }
+
 /* ---------- Rows (Luma-style): coloured block with icon, title, subline ---------- */
 .rows { display: grid; gap: 12px; }
 .row { background: var(--surface); -webkit-backdrop-filter: var(--glass); backdrop-filter: var(--glass); border: 1px solid rgba(255,255,255,.75); border-radius: 12px; box-shadow: 0 1px 2px rgba(0,90,110,.06), 0 6px 20px -10px rgba(0,90,110,.18); display: grid; grid-template-columns: 84px minmax(0, 1fr) auto; align-items: center; overflow: hidden; transition: box-shadow .14s, transform .14s; }
 .row:hover { box-shadow: 0 2px 4px rgba(17,24,39,.06), 0 14px 32px -14px rgba(17,24,39,.22); transform: translateY(-1px); }
 .row .block { align-self: stretch; background: var(--grad); color: #fff; display: grid; place-items: center; cursor: pointer; min-height: 88px; }
 .row .block svg { width: 38px; height: 38px; }
+.row .block.with-code { grid-auto-flow: row; gap: 3px; }
+.row .block.with-code svg { width: 30px; height: 30px; }
+.row .block .code { font-size: 11px; font-weight: 700; letter-spacing: .1em; line-height: 1; }
 .row-main { padding: 16px 20px; min-width: 0; }
 .row .title-btn { all: unset; cursor: pointer; display: block; max-width: 100%; }
 .row .title { font-size: 15px; font-weight: 600; letter-spacing: .055em; text-transform: uppercase; line-height: 1.4; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; }
@@ -371,6 +400,11 @@ window.LESKO_GUIDES = {"generated": "2026-09-11", "library": {"key": "veterans",
     'eye': '<path d="M2.06 12.35a1 1 0 0 1 0-.7 10.75 10.75 0 0 1 19.88 0 1 1 0 0 1 0 .7 10.75 10.75 0 0 1-19.88 0"/><circle cx="12" cy="12" r="3"/>',
     'leaf': '<path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z"/><path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12"/>',
     'paw': '<ellipse cx="6.6" cy="11.2" rx="2.2" ry="2.8"/><ellipse cx="17.4" cy="11.2" rx="2.2" ry="2.8"/><ellipse cx="10" cy="6.4" rx="2.1" ry="2.7"/><ellipse cx="14" cy="6.4" rx="2.1" ry="2.7"/><path d="M12 13.2c2.4 0 4.5 1.9 4.5 4 0 1.9-1.5 3.1-3.2 3.1-.6 0-1-.2-1.3-.2s-.7.2-1.3.2c-1.7 0-3.2-1.2-3.2-3.1 0-2.1 2.1-4 4.5-4Z"/>',
+    'maple': '<path d="M12 2.6 10.4 6c-.2.4-.6.3-1 .1l-1.6-.8 1.2 5.2c.2.9-.4 1-.8.6L5.9 9l-.5 1.3c-.1.2-.3.3-.6.2l-2.5-.5 1.3 3c.1.3.1.5-.2.7l-1 .7 4.5 3.6c.3.2.4.5.3.9l-.5 1.3 4.3-.5c.3 0 .6.1.6.4l-.1 3.5h1.2l-.1-3.5c0-.3.3-.4.6-.4l4.3.5-.5-1.3c-.1-.4 0-.7.3-.9l4.5-3.6-1-.7c-.3-.2-.3-.4-.2-.7l1.3-3-2.5.5c-.3.1-.5 0-.6-.2L18.1 9l-2.3 2.1c-.4.4-1 .3-.8-.6l1.2-5.2-1.6.8c-.4.2-.8.3-1-.1z"/>',
+    'palm': '<path d="M11.2 21c.5-4.8 1.3-8.1 2.6-10.9M7.6 21h9M13.8 10.1c1.3-2.4 3.9-3.4 6.4-2.5M13.8 10.1c2.6-.4 5 1.2 5.7 3.7M13.8 10.1c-2-1.9-4.9-2.1-7.1-.5M13.8 10.1c-2.5.4-4.4 2.3-4.8 4.8"/>',
+    'lakes': '<path d="M12 3.4v1.8M5.6 6.1l1.3 1.3M18.4 6.1l-1.3 1.3M2.6 12.6h18.8"/><path d="M7.2 12.6a4.8 4.8 0 0 1 9.6 0"/><path d="M2.8 16.6c1.6 0 1.6-1.3 3.2-1.3s1.6 1.3 3.2 1.3 1.6-1.3 3.2-1.3 1.6 1.3 3.2 1.3 1.6-1.3 3.2-1.3"/><path d="M2.8 20.3c1.6 0 1.6-1.3 3.2-1.3s1.6 1.3 3.2 1.3 1.6-1.3 3.2-1.3 1.6 1.3 3.2 1.3 1.6-1.3 3.2-1.3"/>',
+    'cactus': '<path d="M10.6 5.6a1.7 1.7 0 0 1 3.4 0V21"/><path d="M10.6 21V9"/><path d="M10.6 14.6H8.4A2.4 2.4 0 0 1 6 12.2V9.6"/><path d="M14 11.8h2.2a2.4 2.4 0 0 0 2.4-2.4V7.4"/><path d="M8.6 21h7.4"/><circle cx="19.4" cy="3.8" r="1.4"/>',
+    'mountains': '<path d="m2.4 19.6 6.2-10.9a.7.7 0 0 1 1.2 0l3.1 5.4 1.7-3a.7.7 0 0 1 1.2 0l5 8.5Z"/><path d="m6.3 12.8 2.4 1.4 2.2-1.4"/>',
     'star': '<path d="m12 2.8 2.9 6 6.6.9-4.8 4.6 1.2 6.5L12 17.7l-5.9 3.1 1.2-6.5L2.5 9.7l6.6-.9z"/>'
   };
   const iconSvg = name => `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">${ICONS[name] || ICONS.star}</svg>`;
@@ -411,7 +445,8 @@ window.LESKO_GUIDES = {"generated": "2026-09-11", "library": {"key": "veterans",
   // "LESSON 1 | Title" (numbered in teaching order inside the topic) or "QUICK GUIDE | Title"
   const LESSON_NO = {};
   TOPICS.forEach(t => ITEMS.filter(i => i.topic === t.key && i.isLesson).sort((x, y) => x.order - y.order).forEach((i, n) => { LESSON_NO[i.id] = n + 1; }));
-  const prefix = it => it.isLesson ? `Lesson ${it.lessonNo || LESSON_NO[it.id] || ''}`.trim() : 'Quick guide';
+  const prefix = it => it.kind === 'state' ? (TOPIC_BY_KEY[it.topic]?.label || 'State')
+    : (it.isLesson ? `Lesson ${it.lessonNo || LESSON_NO[it.id] || ''}`.trim() : 'Quick guide');
   const titleHTML = it => `<span class="prefix">${esc(prefix(it))}</span><span class="pipe">|</span>${esc(it.title)}`;
 
   const ICON = {
@@ -435,7 +470,9 @@ window.LESKO_GUIDES = {"generated": "2026-09-11", "library": {"key": "veterans",
       else if (state.topic && it.topic !== state.topic) return false;
       if (terms.length) {
         const hay = it._hay || (it._hay = [it.title, it.summary, it.series, TOPIC_BY_KEY[it.topic]?.label,
-          ...(it.links || []).map(l => l.label + ' ' + host(l.href))].join(' ').toLowerCase());
+          ...(it.links || []).map(l => l.label + ' ' + host(l.href)),
+          ...(it.sections || []).flatMap(sec => [sec.label, ...sec.entries.map(e => e.title + ' ' + e.note)])
+          ].join(' ').toLowerCase());
         if (!terms.every(t => hay.includes(t))) return false;
       }
       return true;
@@ -463,7 +500,7 @@ window.LESKO_GUIDES = {"generated": "2026-09-11", "library": {"key": "veterans",
   function rowHTML(it) {
     const marked = !!store.bookmarks[it.id];
     return `<article class="row" data-id="${it.id}" style="${styleVars(it.topic)}">
-      <div class="block" data-open="${it.id}">${st(it.topic).icon}</div>
+      <div class="block${it.code && it.kind === 'state' ? ' with-code' : ''}" data-open="${it.id}">${st(it.topic).icon}${it.code && it.kind === 'state' ? `<span class="code">${esc(it.code)}</span>` : ''}</div>
       <div class="row-main">
         <button class="title-btn" type="button" data-open="${it.id}"><span class="title">${titleHTML(it)}</span></button>
         <p class="about">${esc(it.summary)}</p>
@@ -499,7 +536,28 @@ window.LESKO_GUIDES = {"generated": "2026-09-11", "library": {"key": "veterans",
     renderInto($('#grid'), items, `<div class="empty"><h3>${state.topic === 'bookmarked' ? 'No bookmarks yet.' : 'Nothing matches.'}</h3><p>${state.topic === 'bookmarked' ? 'Tap the star on any guide and it will show up here.' : 'Try fewer words or pick another topic.'}</p></div>`);
   }
   /* ---------- viewer ---------- */
+  function linksPageHTML(it) {
+    const secs = it.sections.filter(s => s.entries.length || s.source);
+    const nav = secs.length > 1 ? `<nav class="lp-nav">${secs.map(s =>
+      `<button type="button" data-jump="${s.key}">${esc(s.label)}<span class="n">${s.entries.length}</span></button>`).join('')}</nav>` : '';
+    const body = secs.map(s => `<section class="lp-sec" id="sec-${s.key}">
+        <h3>${esc(s.label)}<span class="n">${s.entries.length}</span></h3>
+        ${s.note ? `<p class="lp-note">${esc(s.note)}</p>` : ''}
+        ${s.intro ? `<p class="lp-intro">${esc(s.intro)}</p>` : ''}
+        ${s.entries.length ? `<ol class="lp-list">${s.entries.map(e => `<li>
+            <p class="lp-title">${esc(e.title)}</p>
+            ${e.note ? `<p class="lp-sub">${esc(e.note)}</p>` : ''}
+            ${e.links.length ? `<p class="lp-links">${e.links.map(l =>
+              `<a href="${esc(l.href)}" target="_blank" rel="noopener">${esc(l.label || host(l.href))}${ICON.ext}</a>`).join('')}</p>` : ''}
+          </li>`).join('')}</ol>`
+          : `<p class="lp-empty">${s.accessible ? 'This report has no links yet.' : 'This report could not be opened. The link in the source document needs checking.'}</p>`}
+        ${s.source ? `<p class="lp-source"><a href="${esc(s.source)}" target="_blank" rel="noopener">Open the full ${esc(s.label)} report${ICON.ext}</a></p>` : ''}
+      </section>`).join('');
+    return `<div class="links-page">${nav}${body}</div>`;
+  }
+
   function stageHTML(it) {
+    if (it.sections) return linksPageHTML(it);
     const tabs = [];
     if (it.hasVideo) tabs.push(['video', 'Video']);
     if (it.preview) tabs.push(['pdf', 'PDF']);
@@ -520,7 +578,7 @@ window.LESKO_GUIDES = {"generated": "2026-09-11", "library": {"key": "veterans",
     $('#viewer-actions').innerHTML = `
       ${it.hasPdf ? `<a class="btn primary small" href="${esc(it.download)}" target="_blank" rel="noopener">${ICON.download} Download PDF</a>` : ''}
       <button class="icon-btn star" type="button" data-star="${id}" aria-pressed="${marked}" title="${marked ? 'Remove bookmark' : 'Bookmark'}" aria-label="Bookmark">${marked ? ICON.star : ICON.starOutline}</button>`;
-    $('#viewer-body').innerHTML = `<div class="stage" id="stage">${stageHTML(it)}</div>`;
+    $('#viewer-body').innerHTML = `<div class="stage" id="stage" style="${styleVars(it.topic)}">${stageHTML(it)}</div>`;
     const v = $('#viewer'), scrim = $('#scrim');
     v.hidden = false; scrim.hidden = false;
     requestAnimationFrame(() => { v.classList.add('open'); scrim.classList.add('open'); });
@@ -591,6 +649,8 @@ window.LESKO_GUIDES = {"generated": "2026-09-11", "library": {"key": "veterans",
     const tp = e.target.closest('[data-topic]'); if (tp) { state.topic = tp.dataset.topic || null; refresh(); return; }
     const st_ = e.target.closest('[data-star]'); if (st_) { e.stopPropagation(); toggleStar(st_.dataset.star); return; }
     const dn = e.target.closest('[data-done]'); if (dn) { e.stopPropagation(); toggleDone(dn.dataset.done); return; }
+    const jp = e.target.closest('[data-jump]');
+    if (jp) { document.getElementById('sec-' + jp.dataset.jump)?.scrollIntoView({ block: 'start', behavior: 'smooth' }); return; }
     const sg = e.target.closest('[data-stage]'); if (sg) { state.stage = sg.dataset.stage; const it = byId[state.open]; if (it) $('#stage').innerHTML = stageHTML(it); return; }
     const ck = e.target.closest('[data-check]'); if (ck) { toggleCheck(state.open, ck.dataset.check, ck); return; }
     const op = e.target.closest('[data-open]'); if (op) { state.stage = 'video'; openGuide(op.dataset.open); return; }

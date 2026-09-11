@@ -161,10 +161,77 @@ def library_data(lib, items):
         'topics': topics, 'items': out,
     }
 
+SECTION_ORDER = ['financial', 'business', 'jobs', 'health', 'mentoring', 'housing']
+NOTE_CAP = 190
+
+def trim(text, cap):
+    t = ' '.join((text or '').split())
+    if len(t) <= cap: return t
+    cut = t[:cap]
+    dot = max(cut.rfind('. '), cut.rfind('? '), cut.rfind('! '))
+    return (cut[:dot + 1] if dot > cap * 0.5 else cut.rstrip() + '\u2026')
+
+def state_summary(name, n, total, live):
+    """One honest line per state: how much is in there, and what is missing."""
+    if not n:
+        return f"Six reports for {name}: money help, business, jobs, health, free local mentoring and housing."
+    base = f"{n} places to call and apply in {name}, across money help, business, jobs, health, free local mentoring and housing."
+    missing = total - live
+    if missing:
+        base += f" {missing} of the {total} reports could not be opened."
+    return base
+
+def state_library_data(lib):
+    """One row per state; the viewer shows that state's links instead of a PDF."""
+    reports = load_json(os.path.join(SRC, lib['stateReports']))
+    keys = [t['key'] for t in lib['topics']]
+    labels = lib['sectionLabels']
+    out = []
+    for name, meta in lib['states'].items():
+        rec = reports.get(name, {})
+        secs = []
+        for key in SECTION_ORDER:
+            s = rec.get(key)
+            if not s: continue
+            entries = []
+            for e in s.get('entries', []):
+                title = ' '.join((e.get('title') or '').split())
+                if not title: continue
+                entries.append({'title': trim(title, 130), 'note': trim(e.get('note', ''), NOTE_CAP),
+                                'links': [{'href': l['href'], 'label': l.get('label') or ''} for l in e.get('links', []) if l.get('href')]})
+            secs.append({'key': key, 'label': labels.get(key, key.title()), 'note': trim(s.get('note', ''), 160),
+                         'intro': trim(s.get('intro', ''), 260), 'source': s.get('url') or '',
+                         'accessible': bool(s.get('accessible', True)), 'entries': entries})
+        n = sum(len(x['entries']) for x in secs)
+        live = [x for x in secs if x['accessible']]
+        out.append({
+            'id': 'us-' + meta['abbr'].lower(), 'code': meta['abbr'], 'title': name, 'kind': 'state', 'status': 'POSTED',
+            'topic': meta['region'], 'topicOrder': keys.index(meta['region']),
+            'series': f"{meta['abbr']} {name}", 'seriesOrder': 0, 'order': 0,
+            'space': lib['title'], 'spaceId': '', 'spaceUrl': '', 'collection': '',
+            'url': lib.get('source', ''),
+            'summary': state_summary(name, n, len(secs), len(live)),
+            'pdfs': [], 'drive': [], 'links': [], 'video': None, 'download': None, 'preview': None,
+            'isLesson': False, 'lessonNo': None, 'sections': secs, 'entryCount': n, 'reportCount': len(live),
+        })
+    out.sort(key=lambda i: (i['topicOrder'], i['title']))
+    topics = [{'key': t['key'], 'label': t['label'], 'color': t['color'], 'tint': mix(t['color']),
+               'grad': f"linear-gradient(135deg, {t['color']} 0%, {lighten(t['color'])} 100%)", 'icon': t['icon']} for t in lib['topics']]
+    return {'generated': datetime.date.today().isoformat(),
+            'library': {'key': lib['key'], 'title': lib['title'], 'spaceId': ''},
+            'topics': topics, 'items': out}
+
 def read(p): return open(os.path.join(ROOT, p), encoding='utf-8').read()
+
+MARK_SVG = {
+    'map-pin': '<path d="M20 10.2c0 5.8-8 11.8-8 11.8s-8-6-8-11.8a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/>',
+}
 
 def brand_mark_html(lib):
     """The library's own icon, inlined as a data URI, for the white square in the top bar."""
+    if lib.get('markSvg') in MARK_SVG:
+        return ('<span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" '
+                'stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round">' + MARK_SVG[lib['markSvg']] + '</svg></span>')
     name = lib.get('mark')
     if not name:
         return None
@@ -174,7 +241,7 @@ def brand_mark_html(lib):
     b64 = base64.b64encode(open(path, 'rb').read()).decode('ascii')
     return f'<span class="brand-mark has-img" aria-hidden="true"><img src="data:image/png;base64,{b64}" alt=""></span>'
 
-def single_file(data_js, title, mark=None):
+def single_file(data_js, title, mark=None, placeholder=None):
     """Inline styles, font, data and script into one HTML page."""
     css = read('assets/styles.css')
     font_path = os.path.join(ROOT, 'assets', 'fonts', 'inter-var.woff2')
@@ -182,6 +249,9 @@ def single_file(data_js, title, mark=None):
         b64 = base64.b64encode(open(font_path, 'rb').read()).decode('ascii')
         css = css.replace('url("fonts/inter-var.woff2")', f'url("data:font/woff2;base64,{b64}")')
     page = read('index.html')
+    if placeholder:
+        page = page.replace('placeholder="Search quick guides, lessons and organizations"',
+                            'placeholder="%s"' % html.escape(placeholder, quote=True))
     if mark:
         page = re.sub(r'<span class="brand-mark[^"]*"[^>]*>.*?</span>', lambda m: mark, page, count=1, flags=re.S)
     page = page.replace('<title>Lesko Help Quick Guide Library</title>', f'<title>{html.escape(title)}</title>')
@@ -196,13 +266,14 @@ def main():
         json.dump({'generated': datetime.date.today().isoformat(), 'topics': [{'key': k, 'label': l} for k, l in TOPICS], 'items': items}, f, ensure_ascii=False, indent=1)
     for path in sorted(glob.glob(os.path.join(LIB, '*.json'))):
         lib = load_json(path)
-        data = library_data(lib, items)
+        data = state_library_data(lib) if lib.get('stateReports') else library_data(lib, items)
         data_js = '/* Generated by scripts/build_data.py */\nwindow.LESKO_GUIDES = ' + json.dumps(data, ensure_ascii=False) + ';\n'
         if lib['key'] == 'business':
             open(os.path.join(ROOT, 'data', 'guides.js'), 'w', encoding='utf-8').write(data_js)
         out_dir = os.path.join(ROOT, 'dist', lib['key']); os.makedirs(out_dir, exist_ok=True)
-        open(os.path.join(out_dir, 'index.html'), 'w', encoding='utf-8').write(single_file(data_js, 'Lesko Help ' + lib['title'], brand_mark_html(lib)))
-        print(f"{lib['key']:10} {len(data['items']):3} items, {sum(1 for i in data['items'] if i['download'])} with PDFs, {sum(1 for i in data['items'] if i['isLesson'])} lessons -> dist/{lib['key']}/index.html")
+        open(os.path.join(out_dir, 'index.html'), 'w', encoding='utf-8').write(single_file(data_js, 'Lesko Help ' + lib['title'], brand_mark_html(lib), lib.get('searchPlaceholder')))
+        extra = (f", {sum(i.get('entryCount', 0) for i in data['items'])} links" if lib.get('stateReports') else '')
+        print(f"{lib['key']:10} {len(data['items']):3} items, {sum(1 for i in data['items'] if i['download'])} with PDFs, {sum(1 for i in data['items'] if i['isLesson'])} lessons{extra} -> dist/{lib['key']}/index.html")
 
 if __name__ == '__main__':
     main()

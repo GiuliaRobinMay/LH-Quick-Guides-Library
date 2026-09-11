@@ -32,6 +32,9 @@ any static host). No build step is needed for the site itself.
 | `dist/<library>/index.html` | One self-contained app per library, the folder a Netlify site publishes |
 | `data/guides.js` / `data/guides.json` | The generated catalogue (guides.js is the Business library for the root page) |
 | `data/source/` | Raw export from the community: coursework manifest, per-space post details, Google Drive folder listing |
+| `data/source/state_reports.json` | The state-by-state report index and the links extracted from each of the six reports per state |
+| `scripts/merge_state_reports.py` | Merges the per-state extraction files into `data/source/state_reports.json` |
+| `brand/` | The Lesko Help icons, one per library, inlined into the top bar at build time |
 | `data/INVENTORY.md` | Human-readable inventory of every space, series and guide, including gaps and content issues |
 | `scripts/build_data.py` | Rebuilds `data/guides.*` from `data/source/` |
 | `scripts/build_single_file.py` | Inlines everything into `dist/index.html` for previews |
@@ -44,6 +47,21 @@ any static host). No build step is needed for the site itself.
 
 Topic mapping (which community section lands in which topic chip) lives at the
 top of `scripts/build_data.py`.
+
+## The state library
+
+`libraries/states.json` is different from the others: it has no community space.
+Each row is a US state, grouped into five regions, and the viewer shows a page of
+links rather than a PDF. The content comes from the Lesko state index document,
+which links six reports per state. `scripts/merge_state_reports.py` turns the
+extracted links into `data/source/state_reports.json`, which `build_data.py` reads.
+
+## Netlify
+
+One site per library, all from this branch. Set the environment variable
+`LIBRARY` to one of `business`, `taxes`, `families`, `health`, `bills`,
+`veterans` or `states`, then trigger a deploy. Without it the build falls back
+to `business`.
 
 ## Where requests go
 
