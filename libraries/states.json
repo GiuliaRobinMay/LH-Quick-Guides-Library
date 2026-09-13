@@ -46,6 +46,14 @@
     "mentoring": "Free Local Mentoring",
     "housing": "Housing & Real Estate"
   },
+  "sectionColors": {
+    "financial": "#2CA01C",
+    "business": "#7C3BB0",
+    "jobs": "#0093B0",
+    "health": "#F93946",
+    "mentoring": "#4B35C4",
+    "housing": "#FF24B1"
+  },
   "states": {
     "Alabama": {
       "abbr": "AL",

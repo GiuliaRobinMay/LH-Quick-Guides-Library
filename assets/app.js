@@ -48,7 +48,7 @@
   /* ---------- storage ---------- */
   const store = load();
   function load() {
-    const base = { bookmarks: {}, done: {}, notes: {}, checked: {}, requests: [], view: 'list', pinnedOpen: true };
+    const base = { bookmarks: {}, done: {}, notes: {}, checked: {}, saved: {}, requests: [], view: 'list', pinnedOpen: true };
     try { const raw = localStorage.getItem(STORE_KEY); return raw ? Object.assign(base, JSON.parse(raw)) : base; } catch (e) { return base; }
   }
   function save() { try { localStorage.setItem(STORE_KEY, JSON.stringify(store)); } catch (e) { /* private mode */ } }
@@ -97,7 +97,7 @@
     const q = state.q.trim().toLowerCase();
     const terms = q ? q.split(/\s+/) : [];
     return ITEMS.filter(it => {
-      if (state.topic === 'bookmarked') { if (!store.bookmarks[it.id]) return false; }
+      if (state.topic === 'bookmarked') { if (!store.bookmarks[it.id] && !savedCount(it.id)) return false; }
       else if (state.topic && it.topic !== state.topic) return false;
       if (terms.length) {
         const hay = it._hay || (it._hay = [it.title, it.summary, it.series, TOPIC_BY_KEY[it.topic]?.label,
@@ -112,7 +112,7 @@
 
   /* ---------- render: topic chips ---------- */
   function renderTopics() {
-    const marked = ITEMS.filter(i => store.bookmarks[i.id]).length;
+    const marked = ITEMS.filter(i => store.bookmarks[i.id] || savedCount(i.id)).length;
     const all = `<button type="button" class="chip" data-topic="" aria-pressed="${!state.topic}"><span class="swatch" style="background:#111827">${ICON.grid}</span>All<span class="count">${ITEMS.length}</span></button>`;
     const saved = `<button type="button" class="chip" data-topic="bookmarked" aria-pressed="${state.topic === 'bookmarked'}"><span class="swatch" style="background:${YELLOW}">${ICON.starThin}</span>Bookmarked<span class="count">${marked}</span></button>`;
     $('#topics').innerHTML = all + TOPICS.map(t => {
@@ -138,6 +138,7 @@
         <p class="about">${esc(it.summary)}</p>
       </div>
       <div class="right">
+        ${savedCount(it.id) ? `<span class="saved-pill" title="Saved inside this state">${ICON.star}${savedCount(it.id)}</span>` : ''}
         ${it.hasPdf ? `<a class="icon-btn" href="${esc(it.download)}" target="_blank" rel="noopener" title="Download PDF" aria-label="Download PDF">${ICON.download}</a>` : ''}
         <button class="icon-btn star" type="button" data-star="${it.id}" aria-pressed="${marked}" title="${marked ? 'Remove bookmark' : 'Bookmark'}" aria-label="Bookmark">${marked ? ICON.star : ICON.starOutline}</button>
       </div>
@@ -168,27 +169,45 @@
     renderInto($('#grid'), items, `<div class="empty"><h3>${state.topic === 'bookmarked' ? 'No bookmarks yet.' : 'Nothing matches.'}</h3><p>${state.topic === 'bookmarked' ? 'Tap the star on any guide and it will show up here.' : 'Try fewer words or pick another topic.'}</p></div>`);
   }
   /* ---------- viewer ---------- */
+  function entryHTML(it, sec, e, n, mark) {
+    const key = entryKey(sec, e);
+    const on = !!savedMap(it.id)[key];
+    return `<li style="--sec:${sec.color};--sec-tint:${sec.tint}">
+      <span class="num">${n}</span>
+      <div class="lp-body">
+        ${mark ? `<span class="lp-tag">${esc(sec.label)}</span>` : ''}
+        <p class="lp-title">${esc(e.title)}</p>
+        ${e.note ? `<p class="lp-sub">${esc(e.note)}</p>` : ''}
+        ${e.links.length ? `<p class="lp-links">${e.links.map(l =>
+          `<a href="${esc(l.href)}" target="_blank" rel="noopener">${esc(l.label || host(l.href))}${ICON.ext}</a>`).join('')}</p>` : ''}
+      </div>
+      <button class="icon-btn star lp-star" type="button" data-save="${it.id}|${key}" aria-pressed="${on}"
+        title="${on ? 'Remove from saved' : 'Save this'}" aria-label="Save">${on ? ICON.star : ICON.starOutline}</button>
+    </li>`;
+  }
+
   function linksPageHTML(it) {
     const secs = it.sections.filter(s => s.entries.length || s.source);
-    const nav = secs.length > 1 ? `<nav class="lp-nav">${secs.map(s =>
-      `<button type="button" data-jump="${s.key}">${esc(s.label)}<span class="n">${s.entries.length}</span></button>`).join('')}</nav>` : '';
-    const body = secs.map(s => `<section class="lp-sec" id="sec-${s.key}">
+    const marks = savedMap(it.id);
+    const saved = [];
+    secs.forEach(s => s.entries.forEach(e => { if (marks[entryKey(s, e)]) saved.push([s, e]); }));
+    const nav = `<nav class="lp-nav">${saved.length
+      ? `<button type="button" class="is-saved" data-jump="saved">${ICON.star}Saved<span class="n">${saved.length}</span></button>` : ''}${
+      secs.map(s => `<button type="button" data-jump="${s.key}" style="--sec:${s.color};--sec-tint:${s.tint}">${esc(s.label)}<span class="n">${s.entries.length}</span></button>`).join('')}</nav>`;
+    const savedBlock = saved.length ? `<section class="lp-sec lp-saved" id="sec-saved">
+        <div class="lp-head"><h3>${ICON.star}Saved in ${esc(it.title)}</h3><span class="n">${saved.length} kept</span></div>
+        <p class="lp-note">The places you starred, so you do not have to scroll the whole report again.</p>
+        <ol class="lp-list">${saved.map(([s, e], i) => entryHTML(it, s, e, i + 1, true)).join('')}</ol>
+      </section>` : '';
+    const body = secs.map(s => `<section class="lp-sec" id="sec-${s.key}" style="--sec:${s.color};--sec-tint:${s.tint}">
         <div class="lp-head"><h3>${esc(s.label)}</h3><span class="n">${s.entries.length} ${s.entries.length === 1 ? 'place to contact' : 'places to contact'}</span></div>
         ${s.note ? `<p class="lp-note">${esc(s.note)}</p>` : ''}
         ${s.intro ? `<p class="lp-intro">${esc(s.intro)}</p>` : ''}
-        ${s.entries.length ? `<ol class="lp-list">${s.entries.map((e, i) => `<li>
-            <span class="num">${i + 1}</span>
-            <div>
-              <p class="lp-title">${esc(e.title)}</p>
-              ${e.note ? `<p class="lp-sub">${esc(e.note)}</p>` : ''}
-              ${e.links.length ? `<p class="lp-links">${e.links.map(l =>
-                `<a href="${esc(l.href)}" target="_blank" rel="noopener">${esc(l.label || host(l.href))}${ICON.ext}</a>`).join('')}</p>` : ''}
-            </div>
-          </li>`).join('')}</ol>`
+        ${s.entries.length ? `<ol class="lp-list">${s.entries.map((e, i) => entryHTML(it, s, e, i + 1, false)).join('')}</ol>`
           : `<p class="lp-empty">${s.accessible ? 'This report has no links in it yet.' : 'This report could not be opened. The link in the source document needs checking.'}</p>`}
         ${s.source ? `<p class="lp-source"><a href="${esc(s.source)}" target="_blank" rel="noopener">Open the full ${esc(s.label)} report${ICON.ext}</a></p>` : ''}
       </section>`).join('');
-    return `<div class="links-page">${nav}${body}</div>`;
+    return `<div class="links-page">${nav}${savedBlock}${body}</div>`;
   }
 
   function stageHTML(it) {
@@ -235,6 +254,22 @@
   }
 
   /* ---------- actions ---------- */
+  /* a saved entry is keyed by its section and a hash of its text, so it survives a rebuild */
+  function hash(str) { let h = 5381; for (let i = 0; i < str.length; i++) h = ((h << 5) + h + str.charCodeAt(i)) | 0; return (h >>> 0).toString(36); }
+  const entryKey = (sec, e) => sec.key + ':' + hash(e.title + '|' + ((e.links[0] || {}).href || ''));
+  const savedMap = id => store.saved[id] || {};
+  const savedCount = id => Object.keys(savedMap(id)).length;
+  function toggleSave(id, key) {
+    const m = store.saved[id] || (store.saved[id] = {});
+    if (m[key]) delete m[key]; else m[key] = 1;
+    if (!Object.keys(m).length) delete store.saved[id];
+    save(); toast(m[key] ? 'Saved' : 'Removed from saved');
+    const page = $('.links-page'); const top = page ? page.scrollTop : 0;
+    const it = byId[id]; if (it) $('#stage').innerHTML = stageHTML(it);
+    const p2 = $('.links-page'); if (p2) p2.scrollTop = top;
+    renderTopics(); renderGrid();
+  }
+
   function toggleStar(id) {
     store.bookmarks[id] = !store.bookmarks[id]; if (!store.bookmarks[id]) delete store.bookmarks[id];
     save(); toast(store.bookmarks[id] ? 'Bookmarked' : 'Bookmark removed');
@@ -282,6 +317,8 @@
       return;
     }
     const tp = e.target.closest('[data-topic]'); if (tp) { state.topic = tp.dataset.topic || null; refresh(); return; }
+    const sv = e.target.closest('[data-save]');
+    if (sv) { e.stopPropagation(); const [id, key] = sv.dataset.save.split('|'); toggleSave(id, key); return; }
     const st_ = e.target.closest('[data-star]'); if (st_) { e.stopPropagation(); toggleStar(st_.dataset.star); return; }
     const dn = e.target.closest('[data-done]'); if (dn) { e.stopPropagation(); toggleDone(dn.dataset.done); return; }
     const jp = e.target.closest('[data-jump]');

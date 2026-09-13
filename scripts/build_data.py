@@ -209,7 +209,9 @@ def state_library_data(lib):
                 if not title: continue
                 entries.append({'title': trim(title, 130), 'note': trim(e.get('note', ''), NOTE_CAP),
                                 'links': [{'href': l['href'], 'label': l.get('label') or ''} for l in e.get('links', []) if l.get('href')]})
-            secs.append({'key': key, 'label': labels.get(key, key.title()), 'note': trim(s.get('note', ''), 160),
+            colour = lib.get('sectionColors', {}).get(key, '#0060FF')
+            secs.append({'key': key, 'label': labels.get(key, key.title()), 'color': colour,
+                         'tint': mix(colour, .90), 'note': trim(s.get('note', ''), 160),
                          'intro': trim(s.get('intro', ''), 260), 'source': s.get('url') or '',
                          'accessible': bool(s.get('accessible', True)), 'entries': entries})
         n = sum(len(x['entries']) for x in secs)

@@ -161,23 +161,32 @@ input, textarea, select { font: inherit; color: inherit; }
 .group-label .swatch svg { width: 15px; height: 15px; }
 
 /* ---------- the state links page inside the viewer ---------- */
-.links-page { flex: 1; min-height: 0; overflow-y: auto; padding: 18px clamp(14px, 3vw, 30px) 40px; background: #F5FBFD; }
-.lp-nav { display: flex; flex-wrap: wrap; gap: 8px; position: sticky; top: 0; z-index: 2; background: #F5FBFD; padding: 4px 0 14px; }
-.lp-nav button { border: 1px solid var(--border-2); background: #fff; color: var(--text); border-radius: 999px; padding: 6px 13px; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 7px; }
-.lp-nav button:hover { border-color: var(--accent); color: var(--accent-ink); }
-.lp-nav .n { color: var(--text-3); font-weight: 600; font-variant-numeric: tabular-nums; }
-.lp-sec { padding-top: 10px; scroll-margin-top: 54px; }
+.links-page { flex: 1; min-height: 0; overflow-y: auto; padding: 18px clamp(14px, 3vw, 30px) 40px; background: #E7F1F6; }
+.lp-nav { display: flex; flex-wrap: wrap; gap: 8px; position: sticky; top: 0; z-index: 2; background: #E7F1F6; padding: 4px 0 14px; }
+.lp-nav button { --sec: var(--text-2); --sec-tint: #fff; border: 1px solid var(--sec); background: var(--sec-tint); color: var(--sec);
+  border-radius: 999px; padding: 6px 13px; font-size: 13px; font-weight: 600; display: inline-flex; align-items: center; gap: 7px; }
+.lp-nav button:hover { background: var(--sec); color: #fff; }
+.lp-nav button:hover .n { color: rgba(255,255,255,.85); }
+.lp-nav .n { color: var(--sec); opacity: .7; font-weight: 600; font-variant-numeric: tabular-nums; }
+.lp-nav button svg { width: 14px; height: 14px; }
+.lp-nav button.is-saved { --sec: #A87F00; --sec-tint: #FFF6D6; }
+.lp-sec { --sec: var(--accent); --sec-tint: var(--accent-soft); padding-top: 10px; scroll-margin-top: 54px; }
 .lp-sec + .lp-sec { margin-top: 30px; }
-.lp-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; padding-bottom: 4px; border-bottom: 2px solid var(--ink); }
-.lp-head h3 { font-size: 14px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--ink); }
+.lp-saved { --sec: #A87F00; --sec-tint: #FFF6D6; }
+.lp-head { display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; padding-bottom: 5px; border-bottom: 1px solid var(--sec); }
+.lp-head h3 { display: inline-flex; align-items: center; gap: 7px; font-size: 14px; font-weight: 700; letter-spacing: .07em; text-transform: uppercase; color: var(--sec); }
+.lp-head h3 svg { width: 15px; height: 15px; }
 .lp-head .n { font-size: 12.5px; font-weight: 600; color: var(--text-2); font-variant-numeric: tabular-nums; }
 .lp-note { margin-top: 10px; font-size: 15px; font-weight: 500; color: var(--text); max-width: 68ch; }
 .lp-intro { margin-top: 5px; font-size: 13.5px; font-style: italic; color: var(--about); max-width: 68ch; }
 .lp-list { list-style: none; margin: 14px 0 0; padding: 0; display: grid; gap: 8px; }
-.lp-list li { display: grid; grid-template-columns: 30px minmax(0, 1fr); gap: 13px; align-items: start;
-  background: #fff; border: 1px solid #E3EDF2; border-radius: 12px; padding: 13px 16px; box-shadow: 0 1px 2px rgba(0,90,110,.04); }
-.lp-list .num { width: 30px; height: 26px; border-radius: 8px; background: var(--accent-soft); color: var(--accent-ink);
-  font-size: 12.5px; font-weight: 700; display: grid; place-items: center; font-variant-numeric: tabular-nums; }
+.lp-list li { display: grid; grid-template-columns: 28px minmax(0, 1fr) 34px; gap: 12px; align-items: start;
+  background: #fff; border: 1px solid #DCE8EE; border-radius: 12px; padding: 13px 14px 13px 16px; box-shadow: 0 1px 2px rgba(0,90,110,.05); }
+.lp-list .num { width: 28px; height: 28px; border-radius: 50%; background: var(--sec); color: #fff;
+  font-size: 12px; font-weight: 700; display: grid; place-items: center; font-variant-numeric: tabular-nums; }
+.lp-body { min-width: 0; }
+.lp-tag { display: inline-block; margin-bottom: 5px; font-size: 11px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  color: var(--sec); background: var(--sec-tint); border-radius: 999px; padding: 3px 9px; }
 .lp-title { font-size: 15px; font-weight: 600; line-height: 1.35; color: var(--text); max-width: 72ch; }
 .lp-sub { margin-top: 4px; font-size: 13px; line-height: 1.5; color: var(--about); max-width: 72ch; }
 .lp-links { margin-top: 9px; display: flex; flex-wrap: wrap; gap: 7px; }
@@ -185,12 +194,18 @@ input, textarea, select { font: inherit; color: inherit; }
   color: var(--accent-ink); background: var(--accent-soft); border: 1px solid transparent; border-radius: 999px; padding: 5px 12px; }
 .lp-links a:hover { border-color: var(--accent); background: #fff; }
 .lp-links svg { width: 12px; height: 12px; }
+.lp-star { width: 32px; height: 32px; margin-top: -2px; }
+.lp-star svg { width: 21px; height: 21px; }
+.lp-star[aria-pressed="true"] { color: #FDCC0A; }
 .lp-empty { margin-top: 12px; font-size: 14px; color: var(--text-2); background: #fff; border: 1px dashed var(--border-2); border-radius: 12px; padding: 14px 16px; }
 .lp-source { margin-top: 14px; font-size: 13px; }
 .lp-source a { display: inline-flex; align-items: center; gap: 6px; color: var(--accent-ink); font-weight: 600; text-decoration: none; }
 .lp-source a:hover { text-decoration: underline; }
 .lp-source svg { width: 12px; height: 12px; }
-@media (max-width: 640px) { .links-page { padding: 14px 14px 32px; } .lp-list li { grid-template-columns: 26px minmax(0, 1fr); gap: 10px; padding: 12px 13px; } }
+.saved-pill { display: inline-flex; align-items: center; gap: 4px; font-size: 12px; font-weight: 700; color: #A87F00;
+  background: #FFF6D6; border-radius: 999px; padding: 4px 9px; font-variant-numeric: tabular-nums; }
+.saved-pill svg { width: 13px; height: 13px; color: #FDCC0A; }
+@media (max-width: 640px) { .links-page { padding: 14px 14px 32px; } .lp-list li { grid-template-columns: 26px minmax(0, 1fr) 30px; gap: 9px; padding: 12px 11px 12px 13px; } }
 
 /* ---------- Rows (Luma-style): coloured block with icon, title, subline ---------- */
 .rows { display: grid; gap: 12px; }
@@ -425,7 +440,7 @@ window.LESKO_GUIDES = {"generated": "2026-09-13", "library": {"key": "bills", "t
   /* ---------- storage ---------- */
   const store = load();
   function load() {
-    const base = { bookmarks: {}, done: {}, notes: {}, checked: {}, requests: [], view: 'list', pinnedOpen: true };
+    const base = { bookmarks: {}, done: {}, notes: {}, checked: {}, saved: {}, requests: [], view: 'list', pinnedOpen: true };
     try { const raw = localStorage.getItem(STORE_KEY); return raw ? Object.assign(base, JSON.parse(raw)) : base; } catch (e) { return base; }
   }
   function save() { try { localStorage.setItem(STORE_KEY, JSON.stringify(store)); } catch (e) { /* private mode */ } }
@@ -474,7 +489,7 @@ window.LESKO_GUIDES = {"generated": "2026-09-13", "library": {"key": "bills", "t
     const q = state.q.trim().toLowerCase();
     const terms = q ? q.split(/\s+/) : [];
     return ITEMS.filter(it => {
-      if (state.topic === 'bookmarked') { if (!store.bookmarks[it.id]) return false; }
+      if (state.topic === 'bookmarked') { if (!store.bookmarks[it.id] && !savedCount(it.id)) return false; }
       else if (state.topic && it.topic !== state.topic) return false;
       if (terms.length) {
         const hay = it._hay || (it._hay = [it.title, it.summary, it.series, TOPIC_BY_KEY[it.topic]?.label,
@@ -489,7 +504,7 @@ window.LESKO_GUIDES = {"generated": "2026-09-13", "library": {"key": "bills", "t
 
   /* ---------- render: topic chips ---------- */
   function renderTopics() {
-    const marked = ITEMS.filter(i => store.bookmarks[i.id]).length;
+    const marked = ITEMS.filter(i => store.bookmarks[i.id] || savedCount(i.id)).length;
     const all = `<button type="button" class="chip" data-topic="" aria-pressed="${!state.topic}"><span class="swatch" style="background:#111827">${ICON.grid}</span>All<span class="count">${ITEMS.length}</span></button>`;
     const saved = `<button type="button" class="chip" data-topic="bookmarked" aria-pressed="${state.topic === 'bookmarked'}"><span class="swatch" style="background:${YELLOW}">${ICON.starThin}</span>Bookmarked<span class="count">${marked}</span></button>`;
     $('#topics').innerHTML = all + TOPICS.map(t => {
@@ -515,6 +530,7 @@ window.LESKO_GUIDES = {"generated": "2026-09-13", "library": {"key": "bills", "t
         <p class="about">${esc(it.summary)}</p>
       </div>
       <div class="right">
+        ${savedCount(it.id) ? `<span class="saved-pill" title="Saved inside this state">${ICON.star}${savedCount(it.id)}</span>` : ''}
         ${it.hasPdf ? `<a class="icon-btn" href="${esc(it.download)}" target="_blank" rel="noopener" title="Download PDF" aria-label="Download PDF">${ICON.download}</a>` : ''}
         <button class="icon-btn star" type="button" data-star="${it.id}" aria-pressed="${marked}" title="${marked ? 'Remove bookmark' : 'Bookmark'}" aria-label="Bookmark">${marked ? ICON.star : ICON.starOutline}</button>
       </div>
@@ -545,27 +561,45 @@ window.LESKO_GUIDES = {"generated": "2026-09-13", "library": {"key": "bills", "t
     renderInto($('#grid'), items, `<div class="empty"><h3>${state.topic === 'bookmarked' ? 'No bookmarks yet.' : 'Nothing matches.'}</h3><p>${state.topic === 'bookmarked' ? 'Tap the star on any guide and it will show up here.' : 'Try fewer words or pick another topic.'}</p></div>`);
   }
   /* ---------- viewer ---------- */
+  function entryHTML(it, sec, e, n, mark) {
+    const key = entryKey(sec, e);
+    const on = !!savedMap(it.id)[key];
+    return `<li style="--sec:${sec.color};--sec-tint:${sec.tint}">
+      <span class="num">${n}</span>
+      <div class="lp-body">
+        ${mark ? `<span class="lp-tag">${esc(sec.label)}</span>` : ''}
+        <p class="lp-title">${esc(e.title)}</p>
+        ${e.note ? `<p class="lp-sub">${esc(e.note)}</p>` : ''}
+        ${e.links.length ? `<p class="lp-links">${e.links.map(l =>
+          `<a href="${esc(l.href)}" target="_blank" rel="noopener">${esc(l.label || host(l.href))}${ICON.ext}</a>`).join('')}</p>` : ''}
+      </div>
+      <button class="icon-btn star lp-star" type="button" data-save="${it.id}|${key}" aria-pressed="${on}"
+        title="${on ? 'Remove from saved' : 'Save this'}" aria-label="Save">${on ? ICON.star : ICON.starOutline}</button>
+    </li>`;
+  }
+
   function linksPageHTML(it) {
     const secs = it.sections.filter(s => s.entries.length || s.source);
-    const nav = secs.length > 1 ? `<nav class="lp-nav">${secs.map(s =>
-      `<button type="button" data-jump="${s.key}">${esc(s.label)}<span class="n">${s.entries.length}</span></button>`).join('')}</nav>` : '';
-    const body = secs.map(s => `<section class="lp-sec" id="sec-${s.key}">
+    const marks = savedMap(it.id);
+    const saved = [];
+    secs.forEach(s => s.entries.forEach(e => { if (marks[entryKey(s, e)]) saved.push([s, e]); }));
+    const nav = `<nav class="lp-nav">${saved.length
+      ? `<button type="button" class="is-saved" data-jump="saved">${ICON.star}Saved<span class="n">${saved.length}</span></button>` : ''}${
+      secs.map(s => `<button type="button" data-jump="${s.key}" style="--sec:${s.color};--sec-tint:${s.tint}">${esc(s.label)}<span class="n">${s.entries.length}</span></button>`).join('')}</nav>`;
+    const savedBlock = saved.length ? `<section class="lp-sec lp-saved" id="sec-saved">
+        <div class="lp-head"><h3>${ICON.star}Saved in ${esc(it.title)}</h3><span class="n">${saved.length} kept</span></div>
+        <p class="lp-note">The places you starred, so you do not have to scroll the whole report again.</p>
+        <ol class="lp-list">${saved.map(([s, e], i) => entryHTML(it, s, e, i + 1, true)).join('')}</ol>
+      </section>` : '';
+    const body = secs.map(s => `<section class="lp-sec" id="sec-${s.key}" style="--sec:${s.color};--sec-tint:${s.tint}">
         <div class="lp-head"><h3>${esc(s.label)}</h3><span class="n">${s.entries.length} ${s.entries.length === 1 ? 'place to contact' : 'places to contact'}</span></div>
         ${s.note ? `<p class="lp-note">${esc(s.note)}</p>` : ''}
         ${s.intro ? `<p class="lp-intro">${esc(s.intro)}</p>` : ''}
-        ${s.entries.length ? `<ol class="lp-list">${s.entries.map((e, i) => `<li>
-            <span class="num">${i + 1}</span>
-            <div>
-              <p class="lp-title">${esc(e.title)}</p>
-              ${e.note ? `<p class="lp-sub">${esc(e.note)}</p>` : ''}
-              ${e.links.length ? `<p class="lp-links">${e.links.map(l =>
-                `<a href="${esc(l.href)}" target="_blank" rel="noopener">${esc(l.label || host(l.href))}${ICON.ext}</a>`).join('')}</p>` : ''}
-            </div>
-          </li>`).join('')}</ol>`
+        ${s.entries.length ? `<ol class="lp-list">${s.entries.map((e, i) => entryHTML(it, s, e, i + 1, false)).join('')}</ol>`
           : `<p class="lp-empty">${s.accessible ? 'This report has no links in it yet.' : 'This report could not be opened. The link in the source document needs checking.'}</p>`}
         ${s.source ? `<p class="lp-source"><a href="${esc(s.source)}" target="_blank" rel="noopener">Open the full ${esc(s.label)} report${ICON.ext}</a></p>` : ''}
       </section>`).join('');
-    return `<div class="links-page">${nav}${body}</div>`;
+    return `<div class="links-page">${nav}${savedBlock}${body}</div>`;
   }
 
   function stageHTML(it) {
@@ -612,6 +646,22 @@ window.LESKO_GUIDES = {"generated": "2026-09-13", "library": {"key": "bills", "t
   }
 
   /* ---------- actions ---------- */
+  /* a saved entry is keyed by its section and a hash of its text, so it survives a rebuild */
+  function hash(str) { let h = 5381; for (let i = 0; i < str.length; i++) h = ((h << 5) + h + str.charCodeAt(i)) | 0; return (h >>> 0).toString(36); }
+  const entryKey = (sec, e) => sec.key + ':' + hash(e.title + '|' + ((e.links[0] || {}).href || ''));
+  const savedMap = id => store.saved[id] || {};
+  const savedCount = id => Object.keys(savedMap(id)).length;
+  function toggleSave(id, key) {
+    const m = store.saved[id] || (store.saved[id] = {});
+    if (m[key]) delete m[key]; else m[key] = 1;
+    if (!Object.keys(m).length) delete store.saved[id];
+    save(); toast(m[key] ? 'Saved' : 'Removed from saved');
+    const page = $('.links-page'); const top = page ? page.scrollTop : 0;
+    const it = byId[id]; if (it) $('#stage').innerHTML = stageHTML(it);
+    const p2 = $('.links-page'); if (p2) p2.scrollTop = top;
+    renderTopics(); renderGrid();
+  }
+
   function toggleStar(id) {
     store.bookmarks[id] = !store.bookmarks[id]; if (!store.bookmarks[id]) delete store.bookmarks[id];
     save(); toast(store.bookmarks[id] ? 'Bookmarked' : 'Bookmark removed');
@@ -659,6 +709,8 @@ window.LESKO_GUIDES = {"generated": "2026-09-13", "library": {"key": "bills", "t
       return;
     }
     const tp = e.target.closest('[data-topic]'); if (tp) { state.topic = tp.dataset.topic || null; refresh(); return; }
+    const sv = e.target.closest('[data-save]');
+    if (sv) { e.stopPropagation(); const [id, key] = sv.dataset.save.split('|'); toggleSave(id, key); return; }
     const st_ = e.target.closest('[data-star]'); if (st_) { e.stopPropagation(); toggleStar(st_.dataset.star); return; }
     const dn = e.target.closest('[data-done]'); if (dn) { e.stopPropagation(); toggleDone(dn.dataset.done); return; }
     const jp = e.target.closest('[data-jump]');
