@@ -77,7 +77,8 @@
   TOPICS.forEach(t => ITEMS.filter(i => i.topic === t.key && i.isLesson).sort((x, y) => x.order - y.order).forEach((i, n) => { LESSON_NO[i.id] = n + 1; }));
   const prefix = it => it.kind === 'state' ? (TOPIC_BY_KEY[it.topic]?.label || 'State')
     : (it.isLesson ? `Lesson ${it.lessonNo || LESSON_NO[it.id] || ''}`.trim() : 'Quick guide');
-  const titleHTML = it => `<span class="prefix">${esc(prefix(it))}</span><span class="pipe">|</span>${esc(it.title)}`;
+  const titleHTML = it => it.kind === 'state' ? esc(it.title)
+    : `<span class="prefix">${esc(prefix(it))}</span><span class="pipe">|</span>${esc(it.title)}`;
 
   const ICON = {
     grid: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.5"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.5"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.5"/></svg>',
@@ -130,7 +131,8 @@
   function rowHTML(it) {
     const marked = !!store.bookmarks[it.id];
     return `<article class="row" data-id="${it.id}" style="${styleVars(it.topic)}">
-      <div class="block${it.code && it.kind === 'state' ? ' with-code' : ''}" data-open="${it.id}">${st(it.topic).icon}${it.code && it.kind === 'state' ? `<span class="code">${esc(it.code)}</span>` : ''}</div>
+      <div class="block${it.kind === 'state' ? ' state' : ''}" data-open="${it.id}">${it.kind === 'state'
+        ? `<span class="code">${esc(it.code)}</span>${st(it.topic).icon}` : st(it.topic).icon}</div>
       <div class="row-main">
         <button class="title-btn" type="button" data-open="${it.id}"><span class="title">${titleHTML(it)}</span></button>
         <p class="about">${esc(it.summary)}</p>
