@@ -132,7 +132,7 @@
     const marked = !!store.bookmarks[it.id];
     return `<article class="row" data-id="${it.id}" style="${styleVars(it.topic)}">
       <div class="block${it.kind === 'state' ? ' state' : ''}" data-open="${it.id}">${it.kind === 'state'
-        ? `<span class="code">${esc(it.code)}</span>${st(it.topic).icon}` : st(it.topic).icon}</div>
+        ? `<span class="code">${esc(it.code)}</span>` : st(it.topic).icon}</div>
       <div class="row-main">
         <button class="title-btn" type="button" data-open="${it.id}"><span class="title">${titleHTML(it)}</span></button>
         <p class="about">${esc(it.summary)}</p>

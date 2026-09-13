@@ -3,6 +3,7 @@
    wide search, gradient card covers with a pill label, soft shading, Inter. */
 
 @font-face { font-family: "Inter"; font-style: normal; font-weight: 100 900; font-display: swap; src: url("fonts/inter-var.woff2") format("woff2"); }
+@font-face { font-family: "Anton"; font-style: normal; font-weight: 400; font-display: swap; src: url("fonts/anton.woff2") format("woff2"); }
 
 :root {
   /* Frosted glass over the community page: light, slightly transparent tint of #00D6F6 */
@@ -27,6 +28,7 @@
   --shadow-hover: 0 2px 4px rgba(17,24,39,.05), 0 16px 40px -16px rgba(17,24,39,.22);
   --shadow-lg: 0 32px 80px -24px rgba(17,24,39,.35), 0 0 0 1px rgba(17,24,39,.04);
   --font: "Inter", -apple-system, "Segoe UI", Helvetica, Arial, sans-serif;
+  --font-display: "Anton", "Arial Narrow", Impact, sans-serif;
   --sidebar: 250px;
   color-scheme: light only;
 }
@@ -189,8 +191,7 @@ input, textarea, select { font: inherit; color: inherit; }
 .row .block { align-self: stretch; background: var(--grad); color: #fff; display: grid; place-items: center; cursor: pointer; min-height: 88px; }
 .row .block svg { width: 38px; height: 38px; }
 .row .block.state { position: relative; }
-.row .block.state svg { position: absolute; left: 50%; bottom: 9px; transform: translateX(-50%); width: 17px; height: 17px; opacity: .85; }
-.row .block .code { font-size: 28px; font-weight: 700; letter-spacing: .01em; line-height: 1; }
+.row .block .code { font-family: var(--font-display); font-size: 34px; font-weight: 400; letter-spacing: .04em; line-height: 1; }
 .row-main { padding: 16px 20px; min-width: 0; }
 .row .title-btn { all: unset; cursor: pointer; display: block; max-width: 100%; }
 .row .title { font-size: 15px; font-weight: 600; letter-spacing: .055em; text-transform: uppercase; line-height: 1.4; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; }

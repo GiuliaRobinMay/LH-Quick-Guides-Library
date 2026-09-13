@@ -254,10 +254,11 @@ def brand_mark_html(lib):
 def single_file(data_js, title, mark=None, placeholder=None):
     """Inline styles, font, data and script into one HTML page."""
     css = read('assets/styles.css')
-    font_path = os.path.join(ROOT, 'assets', 'fonts', 'inter-var.woff2')
-    if os.path.exists(font_path):
-        b64 = base64.b64encode(open(font_path, 'rb').read()).decode('ascii')
-        css = css.replace('url("fonts/inter-var.woff2")', f'url("data:font/woff2;base64,{b64}")')
+    for name in ('inter-var.woff2', 'anton.woff2'):
+        font_path = os.path.join(ROOT, 'assets', 'fonts', name)
+        if os.path.exists(font_path):
+            b64 = base64.b64encode(open(font_path, 'rb').read()).decode('ascii')
+            css = css.replace(f'url("fonts/{name}")', f'url("data:font/woff2;base64,{b64}")')
     page = read('index.html')
     if placeholder:
         page = page.replace('placeholder="Search quick guides, lessons and organizations"',
