@@ -171,6 +171,14 @@ def trim(text, cap):
     dot = max(cut.rfind('. '), cut.rfind('? '), cut.rfind('! '))
     return (cut[:dot + 1] if dot > cap * 0.5 else cut.rstrip() + '\u2026')
 
+LEAD_NUM = re.compile(r'^\s*(?:\*+\s*)?(?:#\s*)?\d{1,2}\s*(?:\.{2,}|\u2026|[.)\]:-])\s+')
+
+def clean_entry_title(t):
+    """Drop numbering the document carried in the heading; the list numbers itself."""
+    t = ' '.join((t or '').split())
+    t = LEAD_NUM.sub('', t)
+    return t.strip(' -\u2013\u2014:')
+
 def state_summary(name, n, total, live):
     """One honest line per state: how much is in there, and what is missing."""
     if not n:
@@ -196,6 +204,8 @@ def state_library_data(lib):
             entries = []
             for e in s.get('entries', []):
                 title = ' '.join((e.get('title') or '').split())
+                if not title: continue
+                title = clean_entry_title(title)
                 if not title: continue
                 entries.append({'title': trim(title, 130), 'note': trim(e.get('note', ''), NOTE_CAP),
                                 'links': [{'href': l['href'], 'label': l.get('label') or ''} for l in e.get('links', []) if l.get('href')]})

@@ -173,16 +173,19 @@
     const nav = secs.length > 1 ? `<nav class="lp-nav">${secs.map(s =>
       `<button type="button" data-jump="${s.key}">${esc(s.label)}<span class="n">${s.entries.length}</span></button>`).join('')}</nav>` : '';
     const body = secs.map(s => `<section class="lp-sec" id="sec-${s.key}">
-        <h3>${esc(s.label)}<span class="n">${s.entries.length}</span></h3>
+        <div class="lp-head"><h3>${esc(s.label)}</h3><span class="n">${s.entries.length} ${s.entries.length === 1 ? 'place to contact' : 'places to contact'}</span></div>
         ${s.note ? `<p class="lp-note">${esc(s.note)}</p>` : ''}
         ${s.intro ? `<p class="lp-intro">${esc(s.intro)}</p>` : ''}
-        ${s.entries.length ? `<ol class="lp-list">${s.entries.map(e => `<li>
-            <p class="lp-title">${esc(e.title)}</p>
-            ${e.note ? `<p class="lp-sub">${esc(e.note)}</p>` : ''}
-            ${e.links.length ? `<p class="lp-links">${e.links.map(l =>
-              `<a href="${esc(l.href)}" target="_blank" rel="noopener">${esc(l.label || host(l.href))}${ICON.ext}</a>`).join('')}</p>` : ''}
+        ${s.entries.length ? `<ol class="lp-list">${s.entries.map((e, i) => `<li>
+            <span class="num">${i + 1}</span>
+            <div>
+              <p class="lp-title">${esc(e.title)}</p>
+              ${e.note ? `<p class="lp-sub">${esc(e.note)}</p>` : ''}
+              ${e.links.length ? `<p class="lp-links">${e.links.map(l =>
+                `<a href="${esc(l.href)}" target="_blank" rel="noopener">${esc(l.label || host(l.href))}${ICON.ext}</a>`).join('')}</p>` : ''}
+            </div>
           </li>`).join('')}</ol>`
-          : `<p class="lp-empty">${s.accessible ? 'This report has no links yet.' : 'This report could not be opened. The link in the source document needs checking.'}</p>`}
+          : `<p class="lp-empty">${s.accessible ? 'This report has no links in it yet.' : 'This report could not be opened. The link in the source document needs checking.'}</p>`}
         ${s.source ? `<p class="lp-source"><a href="${esc(s.source)}" target="_blank" rel="noopener">Open the full ${esc(s.label)} report${ICON.ext}</a></p>` : ''}
       </section>`).join('');
     return `<div class="links-page">${nav}${body}</div>`;
